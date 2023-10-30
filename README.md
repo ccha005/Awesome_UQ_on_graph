@@ -5,13 +5,13 @@ This repository contains research papers and surveys that are relevant to **Unce
 
 ### UQ on Machine Learning
 
-Model-based Uncertainty: MC Dropout, BNN
+**Model-based Uncertainty: MC Dropout, BNN**
 
 Dropout as a Bayesian Approximation Representing Model Uncertainty in Deep Learning [PMLR 2016](https://proceedings.mlr.press/v48/gal16.html)
 
 B-PINNs Bayesian physics-informed neural networks for forward and inverse PDE problems with noisy data [JCP 2020](https://arxiv.org/abs/2003.06097)
 
-Data-driven Uncertainty: VAE
+**Data-driven Uncertainty: VAE**
 
 
 
