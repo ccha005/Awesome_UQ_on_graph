@@ -13,6 +13,19 @@ B-PINNs Bayesian physics-informed neural networks for forward and inverse PDE pr
 
 **Data-driven Uncertainty: VAE**
 
+### UQ on Graph
+
+**Graphical Model**
+The Power of Certainty: A Dirichlet-Multinomial Model for Belief Propagation [SDM 2017](https://epubs.siam.org/doi/pdf/10.1137/1.9781611974973.17)
+
+CAMLP: Confidence-Aware Modulated Label Propagation [SDM 2016](https://epubs.siam.org/doi/pdf/10.1137/1.9781611974348.58)
+
+SocNL: Bayesian Label Propagation with Confidence [PAKDD 2015](https://link.springer.com/chapter/10.1007/978-3-319-18038-0_49)
+
+Uncertainty Quantification for Markov Random Fields [SIAM/ASA Journal on Uncertainty Quantification 2021](https://epubs.siam.org/doi/abs/10.1137/20M1374614)
+
+Model Uncertainty and Correctability for Directed Graphical Models [SIAM/ASA Journal on Uncertainty Quantification 2022](https://epubs.siam.org/doi/abs/10.1137/21M1434453)
+**GNN**
 
 
 ## Survey Papers
