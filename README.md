@@ -25,8 +25,8 @@ SocNL: Bayesian Label Propagation with Confidence [PAKDD 2015](https://link.spri
 Uncertainty Quantification for Markov Random Fields [SIAM/ASA Journal on Uncertainty Quantification 2021](https://epubs.siam.org/doi/abs/10.1137/20M1374614)
 
 Model Uncertainty and Correctability for Directed Graphical Models [SIAM/ASA Journal on Uncertainty Quantification 2022](https://epubs.siam.org/doi/abs/10.1137/21M1434453)
-**GNN**
 
+**GNN**
 
 ## Survey Papers
 
