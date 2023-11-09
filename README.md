@@ -48,6 +48,9 @@ A review of uncertainty quantification in deep learning Techniques, applications
 
 Basic Framework and Main Methods of Uncertainty Quantification [MPE 2020](https://www.hindawi.com/journals/mpe/2020/6068203/)
 
+Calibrating Uncertainty Models for Steering Angle Estimation [IEEE 2019](https://ieeexplore.ieee.org/document/8917207)
+
+
 Hands-on Bayesian Neural Networks -- A Tutorial for Deep Learning Users [IEEE CIM 2022](https://arxiv.org/abs/2007.06823)
 
 ## Benchmark
