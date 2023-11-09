@@ -21,13 +21,22 @@ Model Uncertainty and Correctability for Directed Graphical Models [SIAM/ASA Jou
 
 Uncertainty Quantification for Markov Random Fields [SIAM/ASA Journal on Uncertainty Quantification 2021](https://epubs.siam.org/doi/abs/10.1137/20M1374614)
 
+Uncertainty Quantification in Graph-Based Classification of High Dimensional Data [SIAM/ASA Journal on Uncertainty Quantification 2018](https://epubs.siam.org/doi/abs/10.1137/17M1134214)
+
 The Power of Certainty: A Dirichlet-Multinomial Model for Belief Propagation [SDM 2017](https://epubs.siam.org/doi/pdf/10.1137/1.9781611974973.17)
 
 CAMLP: Confidence-Aware Modulated Label Propagation [SDM 2016](https://epubs.siam.org/doi/pdf/10.1137/1.9781611974348.58)
 
 SocNL: Bayesian Label Propagation with Confidence [PAKDD 2015](https://link.springer.com/chapter/10.1007/978-3-319-18038-0_49)
 
+
 **GNN**
+
+Predictive Uncertainty Quantification for Graph Neural Network Driven Relaxed Energy Calculations [NeurIPS AI4Science Workshop 2023](https://openreview.net/forum?id=rdgB5BqWCw)
+
+Uncertainty Quantification of Spatiotemporal Travel Demand with Probabilistic Graph Neural Networks [ArXiv 2023](https://arxiv.org/abs/2303.04040)
+
+Uncertainty Quantification of Sparse Travel Demand Prediction with Spatial-Temporal Graph Neural Networks [SIGKDD 2022](https://dl.acm.org/doi/abs/10.1145/3534678.3539093)
 
 ## Survey Papers
 
