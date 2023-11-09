@@ -1,0 +1,54 @@
+\section{Preliminary}
+\label{sec:preliminary}
+In this section, we briefly introduce two key families of models for graphs, the Probabilistic Graphical Model and the Graph Neural Network.
+
+\subsection{Probabilistic Graphical Model}
+A probabilistic graphical model (PGM) \cite{bishop2006pattern,jordan2004graphical} is widely used to represent the probability distribution of random variables, whose relations can be depicted in a graph.
+PGMs aim to minimize the cost of establishing compatible dependency relationships among all the variables. 
+There are two distinct categories of PGMs, depending on whether the graph's edges are directed or undirected. 
+Specifically, a Bayesian Network is employed for modeling a directed graph, where edges represent causality. 
+Conversely, a Markov Random Field (MRF) is utilized to model an undirected graph, where edges signify the correlation between nodes. 
+In an MRF, each node is conditionally independent of all other nodes, except for its immediate (e.g., 1-hop) neighbors.
+% In this paper, we will focus on MRF.
+
+Formally, 
+we denote a graph $G=(V,E)$ consisting of a set of $n$ random variables $V=\{ X_1, \dots, X_n \}$ and $E$ implies the relationship between any two variables. 
+Each variable $X_i \in V$ may take values in $\{1,\dots, C\}$ where $C$ is the number of classes.
+% given a set of $n$ random variables $V=\{ X_1, \dots, X_n \}$, each taking values in $\{1,\dots, C\}$ where $C$ is the number of classes, 
+An MRF factories the joint distribution $P(V)$ as 
+\begin{equation}
+\label{eq:pgm_joint}
+    P(V)=\frac{1}{Z}\prod_{X_i\in V} \phi(X_i=x_i) \prod_{X_j\in \mathcal{N}(X_i)}\psi(X_i=x_i, X_j=x_j),
+\end{equation}
+where $Z$ normalizes the product to a probability distribution.
+$\mathcal{N}(X_i)$ represents the neighbors of $X_i$ within the graph $G$.
+$\phi(X_i=x_i)$ denotes the prior distribution of $X_i$ taking on the value $x_i$, independent of other variables in the graph.
+The compatibility $\psi(X_i=x_i, X_j=x_j)$ encodes the likelihood of the pair
+$(X_i, X_j)$ jointly taking the value $(x_i, x_j)$,
+and capture the dependencies between variables.
+The marginal distribution $b(X_i)$, also known as belief, for any $X_i \in V$ is naturally given by
+\begin{equation}
+\label{eq:pgm_margin}
+    b(X_i=x_i) = \sum_{X_1} \dots \sum_{X_{i-1}} \sum_{X_{i+1}} \dots \sum_{X_n} P(X_1, X_2, \dots, X_i=x_i, \dots, X_n).
+\end{equation}
+
+However, computing $b(X_i=x_i)$ for any node $X_i \in V$ by Eq. (\ref{eq:pgm_margin}) is exponential complexity in the worst case. 
+We show that Belief Propagation (BP) \cite{bishop2006pattern} infers the beliefs much more efficiently. 
+First, the message $m_{i\to j}(X_j=x_j)$ from $X_i$ to $X_j$ is defined by
+\begin{equation}
+\label{eq:pgm_sum_prod}
+\frac{1}{Z_j}\sum_{X_i=x_i}
+\left[\psi(X_i=x_i, X_j=x_j)\phi(X_i=x_i) \prod_{k\in \mathcal{N}(X_i)\setminus \{X_j\}} m_{k\to i}(X_i=x_i)\right],
+\end{equation}
+where $Z_j$ is a normalization factor so that $m_{i\to j}$ is a probability distribution of $X_j$.
+The messages in both directions on all edges $(X_i, X_j) \in E$ will be updated iteratively. 
+As the message updating converges (guaranteed when $G$ is acyclic~\cite{pearl1988probabilistic}).
+The belief $b(X_i=x_i)$ is given by
+\begin{equation}
+\label{eq:pgm_belief}
+    b(X_i=x_i) \propto \phi(X_i=x_i)\prod_{X_j\in \mathcal{N}(X_i)} m_{j\to i}(X_i=x_i).
+\end{equation}
+For simplicity, we will omit $X_i$ in $\phi(X_i=x_i)$ and use $\phi(x_i)$, and similarly for $\psi(x_i,x_j)$, $m_{j\to i}(x_i)$ and $b(x_i)$ if there is no ambiguity.
+
+\subsection{Graph Neural Networks}
+Graph Neural Network (GNN) is a deep learning-based method that 
