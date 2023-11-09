@@ -1,1 +1,72 @@
-\section{Uncertainty Quantification on Graphs}
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{UQML}
+\author{Rui Xu}
+\date{November 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Reviews}
+\subsection{Calibrating Uncertainty Models for Steering Angle Estimation - 2019 IEEE}
+This paper reviews three main kinds of UQ methods in machine learning: Monte Carlo Dropout, Bootstrap Model, and Gaussian Mixture Model. Evaluation metrics are also introduced. Prediction accuracy, usually chosen as RMSE or MAE, is used to see if the predicted value is close to the training data. Calibration, on the other hand, is to measure if the predicted distribution is similar to the training data distribution.  
+\subsubsection{Monte Carlo Dropout}
+\begin{figure}[ht]
+\includegraphics[width=3in]{MC dropout.png}
+\end{figure}
+\noindent To construct the dropout variant based on the baseline model, dropout layers are added after every fully connected layer but the last. Dropout is implemented by sampling a Bernoulli random variable with probability p. Neuron k in layer l thus gets dropped with probability $z^{l;k}$  $\sim$ Bernoulli(p).\\
+
+\noindent Inference for an unknown sample x is performed by doing multiple stochastic forward passes and averaging the result. The randomness comes from generating new dropout weight matrices $\hat{W}_t$ from the Bernoulli distribution for every forward pass t. A forward pass with network weights $\hat{W}_t$ is denoted as $f ^{\hat{W}_t}(x)$. The predicted mean steering angle can then be calculated as
+\[ E[\hat{y}]=\frac{1}{T}\sum_{t=1}^{T}\hat{y}_t=\frac{1}{T}\sum_{t=1}^{T}f ^{\hat{W}_t}(x) \]
+We can also get the predictive variance of the stochastic forward passes, seen as our uncertainty estimate, by calculating the variance over all T results plus the inverse model
+precision $\tau^{-1}$ as
+\[Var[\hat{y}]=\tau^{-1}+\frac{1}{T}\sum_{t=1}^{T}(f ^{\hat{W}_t}(x))^2-(E[\hat{y}])^2\]
+The model precision $\tau^{-1}$ can be interpreted as label noise and thus representing the aleatoric uncertainty. Being a fixed constant it implies homoscedastic aleatoric uncertainty. We omit the model precision and use the variance of the outputs as predictive uncertainty.
+\subsubsection{Bootstrap Model}
+We would have to train models separately and make inferences in those networks K in parallel, we rely on a simplification instead: multiple models are fused into one model by sharing the visual encoder network.\\
+
+\noindent The process of sampling K subsets of the training data for each subnetwork is done by generating a mask for every sample indicating which head it is passed to during training.\\
+
+\noindent This ensures that every head sees only a subset of the whole training data. The data subsampling is realized by generating a binary mask $\{0, 1\}^K$ for every training sample indicating whether it is seen by head $k \in [1, K]$.\\
+
+\begin{figure}[ht]
+\includegraphics[width=3in]{Bootstrap.png}
+\end{figure}
+
+\noindent For sample t and head k, this results in variable $m^{k}_t\sim$ Bernoulli(p) with p = 0:5 specifying whether a head is trained on a certain sample.\\
+
+\noindent The loss thus is defined as
+\[L(\theta)=\sum_{i=1}^{N}\sum_{k=1}^{K}m^k_i\frac{1}{2}||y_i-\hat{y}_i||^2\]
+
+\noindent Inference is performed by forward-propagation through all heads resulting in K outputs. Note that only a single pass is required to get K outputs, instead of having to do K passes as in the dropout model. $f^k(x)$ is the prediction of head $k$ for sample $x$. 
+\[E[\hat{y}]=\frac{1}{K}\sum_{k=1}^{K}f^k(x)\]
+\[Var[\hat{y}]=\frac{1}{K}\sum_{k=1}^{K}(f^k(x))^2-(E[\hat{y}])^{2}\]
+
+\noindent Bootstrap model can not get aleatoric and epistemic uncertainty separated. Instead, it only yields the predictive variance which is used as predictive uncertainty. The inference step is computationally more expensive than inference in the baseline model as there are K more computations in the fully connected layer.
+\subsubsection{Gaussian Mixture Model}
+A Gaussian Mixture Model is composed of multiple Gaussians combined in a weighted sum. The parameters of a GMM are $\theta = \pi_i; \mu_i; \sigma^2_i; i \in [1, K]$ for $K$ mixtures.
+\begin{center}
+\includegraphics[width=2in]{GMM.png}
+\end{center}
+\noindent The mixture model is trained using the negative log-likelihood as a loss. A small constant 
+$\epsilon$ = 1e - 6 is added to the argument of the logarithm for numerical stability.
+\[L(\theta)=-\frac{1}{N}\sum_{i=1}^{N}\log(p(y_i|x_i))=\-\frac{1}{N}\sum_{i=1}^{N}\log(\sum_{j=1}^{K}\pi_j^{(i)}N(y_i|\mu_j^{(i)},\sigma_j^{2(i)})+\epsilon)\]
+\noindent All mixture components are combined in a weighted sum and we get the following results for the expected value:
+\[E[\hat{y}]=\sum_{j=1}^{K}\pi_j(x)\mu_j(x)\]
+\noindent The total variance, in our context, called the predicted variance which is interpreted as predictive uncertainty, decomposes into the weighted sum of the variances and the weighted variances of the means,
+\[Var[\hat{y}]=\sum_{j=1}^{K}\pi_j(x)\sigma_j^{2}(x)+\sum_{j=1}^{K}\pi_j(x)||\mu_j(x)-\sum_{k=1}^{K}\pi_k(x)\mu_k(x)||^{2}\]
+\noindent The second term is also referred to as explained variance or epistemic uncertainty as it vanishes with more data. A decreasing aleatoric uncertainty can be interpreted as a decreasing variance of the mixture components. In turn, intuitively, a decreasing epistemic uncertainty equals to the means of the mixture components getting closer. However, this is only the case as long as there are no ambiguous situations as would be the case at intersections with multiple possible routes.
+
+
+\subsubsection{Prediction Accuracy}
+The prediction accuracy is usually chosen as root mean square error(RMSE) or mean absolute error(MAE) to measure the distance between the predicted values and true values. 
+\subsubsection{Calibration}
+\noindent Intuitively, this means that the uncertainty estimations have to be a true probability and should reflect the true likelihood.
+\begin{center}
+\includegraphics[width=2.75in]{Calibration.png}
+\end{center}
+\noindent First, a z\% confidence interval is computed for each sample in the data set based on the predicted mean and variance. The confidence interval (CI) specifies the lower and upper bound arranged symmetrically around the mean, containing z\% of the given Gaussian distribution mass.
+
+\end{document}
