@@ -11,9 +11,13 @@ Dropout as a Bayesian Approximation Representing Model Uncertainty in Deep Learn
 
 B-PINNs Bayesian physics-informed neural networks for forward and inverse PDE problems with noisy data [JCP 2020](https://arxiv.org/abs/2003.06097)
 
+Deep Bayesian Active Learning with Image Data[ICML 2017](https://arxiv.org/abs/1703.02910)
+
 **Data-driven Uncertainty: VAE, Conformal Prediction**
 
 Conformalized Quantile Regression [NPIS 2019](https://proceedings.neurips.cc/paper_files/paper/2019/hash/5103c3584b063c431bd1268e9b5e76fb-Abstract.html)
+
+
 
 
 ### UQ on Graph
