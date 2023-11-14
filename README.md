@@ -11,7 +11,7 @@ Dropout as a Bayesian Approximation Representing Model Uncertainty in Deep Learn
 
 B-PINNs Bayesian physics-informed neural networks for forward and inverse PDE problems with noisy data [JCP 2020](https://arxiv.org/abs/2003.06097)
 
-Deep Bayesian Active Learning with Image Data[ICML 2017](https://arxiv.org/abs/1703.02910)
+Deep Bayesian Active Learning with Image Data [ICML 2017](https://arxiv.org/abs/1703.02910)
 
 **Data-driven Uncertainty: VAE, Conformal Prediction**
 
