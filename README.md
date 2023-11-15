@@ -15,7 +15,7 @@ Deep Bayesian Active Learning with Image Data [ICML 2017](https://arxiv.org/abs/
 
 **Data-driven Uncertainty: VAE, Conformal Prediction**
 
-Conformalized Quantile Regression [NPIS 2019](https://proceedings.neurips.cc/paper_files/paper/2019/hash/5103c3584b063c431bd1268e9b5e76fb-Abstract.html)
+Conformalized Quantile Regression [NeurIPS 2019](https://proceedings.neurips.cc/paper_files/paper/2019/hash/5103c3584b063c431bd1268e9b5e76fb-Abstract.html)
 
 
 
@@ -38,12 +38,15 @@ SocNL: Bayesian Label Propagation with Confidence [PAKDD 2015](https://link.spri
 
 
 **GNN**
+Uncertainty Quantification over Graph with Conformalized Graph Neural Networks [NeurIPS 2023](https://arxiv.org/abs/2305.14535)
 
 Predictive Uncertainty Quantification for Graph Neural Network Driven Relaxed Energy Calculations [NeurIPS AI4Science Workshop 2023](https://openreview.net/forum?id=rdgB5BqWCw)
 
 Uncertainty Quantification of Spatiotemporal Travel Demand with Probabilistic Graph Neural Networks [ArXiv 2023](https://arxiv.org/abs/2303.04040)
 
 Uncertainty Quantification of Sparse Travel Demand Prediction with Spatial-Temporal Graph Neural Networks [SIGKDD 2022](https://dl.acm.org/doi/abs/10.1145/3534678.3539093)
+
+High-Quality Prediction Intervals for Deep Learning- A Distribution-Free, Ensembled Approach [ICML 2018](https://proceedings.mlr.press/v80/pearce18a.html)
 
 ## Survey Papers
 
