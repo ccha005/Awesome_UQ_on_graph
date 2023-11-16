@@ -62,5 +62,6 @@ Calibrating Uncertainty Models for Steering Angle Estimation [IEEE 2019](https:/
 
 Hands-on Bayesian Neural Networks -- A Tutorial for Deep Learning Users [IEEE CIM 2022](https://arxiv.org/abs/2007.06823)
 
+Uncertainty Quantification in Machine Learning for Engineering Design and Health Prognostics: A Tutorial [Mechanical Systems and Signal Processing 2015](https://www.sciencedirect.com/science/article/pii/S0888327023007045)
 ## Benchmark
 
