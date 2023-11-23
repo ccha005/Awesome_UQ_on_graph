@@ -38,6 +38,7 @@ SocNL: Bayesian Label Propagation with Confidence [PAKDD 2015](https://link.spri
 
 
 **GNN**
+
 Uncertainty Quantification over Graph with Conformalized Graph Neural Networks [NeurIPS 2023](https://arxiv.org/abs/2305.14535)
 
 Predictive Uncertainty Quantification for Graph Neural Network Driven Relaxed Energy Calculations [NeurIPS AI4Science Workshop 2023](https://openreview.net/forum?id=rdgB5BqWCw)
@@ -45,6 +46,10 @@ Predictive Uncertainty Quantification for Graph Neural Network Driven Relaxed En
 Uncertainty Quantification of Spatiotemporal Travel Demand with Probabilistic Graph Neural Networks [ArXiv 2023](https://arxiv.org/abs/2303.04040)
 
 Uncertainty Quantification of Sparse Travel Demand Prediction with Spatial-Temporal Graph Neural Networks [SIGKDD 2022](https://dl.acm.org/doi/abs/10.1145/3534678.3539093)
+
+Natural Posterior Network: Deep Bayesian Uncertainty for Exponential Family Distributions [ICLR 2022](https://arxiv.org/pdf/2105.04471.pdf)
+
+Graph posterior network: Bayesian predictive uncertainty for node classification [NeurIPS 2021](https://proceedings.neurips.cc/paper_files/paper/2021/file/95b431e51fc53692913da5263c214162-Paper.pdf)
 
 High-Quality Prediction Intervals for Deep Learning- A Distribution-Free, Ensembled Approach [ICML 2018](https://proceedings.mlr.press/v80/pearce18a.html)
 
