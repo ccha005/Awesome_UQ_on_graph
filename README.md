@@ -45,6 +45,8 @@ SocNL: Bayesian Label Propagation with Confidence [PAKDD 2015](https://link.spri
 
 Uncertainty Quantification over Graph with Conformalized Graph Neural Networks [NeurIPS 2023](https://arxiv.org/abs/2305.14535)
 
+A General Framework for quantifying Aleatoric and Epistemic uncertainty in Graph Neural Networks [Neurocomputing 2023](https://arxiv.org/pdf/2205.09968.pdf) 
+
 Predictive Uncertainty Quantification for Graph Neural Network Driven Relaxed Energy Calculations [NeurIPS AI4Science Workshop 2023](https://openreview.net/forum?id=rdgB5BqWCw)
 
 Uncertainty Quantification of Spatiotemporal Travel Demand with Probabilistic Graph Neural Networks [ArXiv 2023](https://arxiv.org/abs/2303.04040)
