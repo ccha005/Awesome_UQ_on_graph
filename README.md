@@ -21,7 +21,7 @@ Conformal Prediction Under Covariate Shift [NeurIPS 2019](https://proceedings.ne
 
 Adaptive Conformal Inference Under Distribution Shift [NeurIPS 2021](https://proceedings.neurips.cc/paper/2021/hash/0d441de75945e5acbc865406fc9a2559-Abstract.html)
 
-Localized conformal prediction: a generalized inference framework for conformal prediction [Biometrika](https://academic.oup.com/biomet/article/110/1/33/6647831?login=false)
+Localized conformal prediction: a generalized inference framework for conformal prediction [Biometrika 2023](https://academic.oup.com/biomet/article/110/1/33/6647831?login=false)
 
 
 ### UQ on Graph
