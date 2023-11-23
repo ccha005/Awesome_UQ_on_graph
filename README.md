@@ -17,7 +17,11 @@ Deep Bayesian Active Learning with Image Data [ICML 2017](https://arxiv.org/abs/
 
 Conformalized Quantile Regression [NeurIPS 2019](https://proceedings.neurips.cc/paper_files/paper/2019/hash/5103c3584b063c431bd1268e9b5e76fb-Abstract.html)
 
+Conformal Prediction Under Covariate Shift [NeurIPS 2019](https://proceedings.neurips.cc/paper/2019/file/8fb21ee7a2207526da55a679f0332de2-Paper.pdf)
 
+Adaptive Conformal Inference Under Distribution Shift [NeurIPS 2021](https://proceedings.neurips.cc/paper/2021/hash/0d441de75945e5acbc865406fc9a2559-Abstract.html)
+
+Localized conformal prediction: a generalized inference framework for conformal prediction [Biometrika](https://academic.oup.com/biomet/article/110/1/33/6647831?login=false)
 
 
 ### UQ on Graph
