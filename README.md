@@ -43,6 +43,10 @@ SocNL: Bayesian Label Propagation with Confidence [PAKDD 2015](https://link.spri
 
 **GNN**
 
+Conformal Prediction Sets for Graph Neural Networks [ICML 2023](https://proceedings.mlr.press/v202/h-zargarbashi23a.html)
+
+Distribution Free Prediction Sets for Node Classification [ICML 2023](https://proceedings.mlr.press/v202/clarkson23a.html)
+
 Uncertainty Quantification over Graph with Conformalized Graph Neural Networks [NeurIPS 2023](https://arxiv.org/abs/2305.14535)
 
 A General Framework for quantifying Aleatoric and Epistemic uncertainty in Graph Neural Networks [Neurocomputing 2023](https://arxiv.org/pdf/2205.09968.pdf) 
