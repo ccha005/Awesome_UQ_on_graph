@@ -38,10 +38,7 @@ Uncertainty Quantification in Graph-Based Classification of High Dimensional Dat
 
 The Power of Certainty: A Dirichlet-Multinomial Model for Belief Propagation [SDM 2017](https://epubs.siam.org/doi/pdf/10.1137/1.9781611974973.17)
 
-CAMLP: Confidence-Aware Modulated Label Propagation [SDM 2016](https://epubs.siam.org/doi/pdf/10.1137/1.9781611974348.58)
-
 SocNL: Bayesian Label Propagation with Confidence [PAKDD 2015](https://link.springer.com/chapter/10.1007/978-3-319-18038-0_49)
-
 
 **GNN**
 
