@@ -15,6 +15,8 @@ Deep Bayesian Active Learning with Image Data [ICML 2017](https://arxiv.org/abs/
 
 **Data-driven Uncertainty: VAE, Conformal Prediction**
 
+Intra Order-Preserving Functions for Calibration of Multi-Class Neural Networks [NeurIPS 2020](https://proceedings.neurips.cc/paper/2020/hash/9bc99c590be3511b8d53741684ef574c-Abstract.html)
+
 Conformalized Quantile Regression [NeurIPS 2019](https://proceedings.neurips.cc/paper_files/paper/2019/hash/5103c3584b063c431bd1268e9b5e76fb-Abstract.html)
 
 Conformal Prediction Under Covariate Shift [NeurIPS 2019](https://proceedings.neurips.cc/paper/2019/file/8fb21ee7a2207526da55a679f0332de2-Paper.pdf)
@@ -58,6 +60,8 @@ Uncertainty Quantification of Spatiotemporal Travel Demand with Probabilistic Gr
 Uncertainty Quantification of Sparse Travel Demand Prediction with Spatial-Temporal Graph Neural Networks [SIGKDD 2022](https://dl.acm.org/doi/abs/10.1145/3534678.3539093)
 
 JuryGCN: Quantifying Jackknife Uncertainty on Graph Convolutional Networks [KDD 2022](https://dl.acm.org/doi/pdf/10.1145/3534678.3539286)
+
+Be Confident! Towards Trustworthy Graph Neural Networks via Confidence Calibration [NeurIPS 2021](https://proceedings.neurips.cc/paper/2021/hash/c7a9f13a6c0940277d46706c7ca32601-Abstract.html)
 
 Graph posterior network: Bayesian predictive uncertainty for node classification [NeurIPS 2021](https://proceedings.neurips.cc/paper_files/paper/2021/file/95b431e51fc53692913da5263c214162-Paper.pdf)
 
