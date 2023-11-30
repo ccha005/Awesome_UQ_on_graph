@@ -25,7 +25,7 @@ Adaptive Conformal Inference Under Distribution Shift [NeurIPS 2021](https://pro
 
 Localized conformal prediction: a generalized inference framework for conformal prediction [Biometrika 2023](https://academic.oup.com/biomet/article/110/1/33/6647831?login=false)
 
-Conformal Prediction with Missing Values [ICML 2023]([https://arxiv.org/abs/2306.02732](https://proceedings.mlr.press/v202/zaffran23a.html))
+Conformal Prediction with Missing Values [ICML 2023](https://proceedings.mlr.press/v202/zaffran23a.html)
 
 Beyond Pinball Loss: Quantile Methods for Calibrated Uncertainty Quantification [NIPS 2021](https://openreview.net/forum?id=QbVza2PKM7T)
 
