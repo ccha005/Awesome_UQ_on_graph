@@ -25,6 +25,10 @@ Adaptive Conformal Inference Under Distribution Shift [NeurIPS 2021](https://pro
 
 Localized conformal prediction: a generalized inference framework for conformal prediction [Biometrika 2023](https://academic.oup.com/biomet/article/110/1/33/6647831?login=false)
 
+Conformal Prediction with Missing Values [ICML 2023]([https://arxiv.org/abs/2306.02732](https://proceedings.mlr.press/v202/zaffran23a.html))
+
+Beyond Pinball Loss: Quantile Methods for Calibrated Uncertainty Quantification [NIPS 2021](https://openreview.net/forum?id=QbVza2PKM7T)
+
 
 ### UQ on Graph
 
@@ -77,6 +81,9 @@ Basic Framework and Main Methods of Uncertainty Quantification [MPE 2020](https:
 Calibrating Uncertainty Models for Steering Angle Estimation [IEEE 2019](https://ieeexplore.ieee.org/document/8917207)
 
 Hands-on Bayesian Neural Networks -- A Tutorial for Deep Learning Users [IEEE CIM 2022](https://arxiv.org/abs/2007.06823)
+
+A view on model misspecification in uncertainty quantification [BNAIC 2022](https://arxiv.org/abs/2210.16938)
+
 
 Uncertainty Quantification in Machine Learning for Engineering Design and Health Prognostics: A Tutorial [Mechanical Systems and Signal Processing 2015](https://www.sciencedirect.com/science/article/pii/S0888327023007045)
 
