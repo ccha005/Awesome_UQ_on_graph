@@ -89,9 +89,9 @@ Uncertainty Quantification in Machine Learning for Engineering Design and Health
 
 ## Benchmark
 ## Classification
-| Tables        | Bayesian Method           | Conformal Prediction  |
-| ------------- |:-------------:| -----:|
-|               | right-aligned | $1600 |
+| Tables        | Bayesian Method                               | Conformal Prediction (CP)  |
+| ------------- |:---------------------------------------------:| ------------------------------------------------------:|
+|               | Approximated Inference | Closed-form Solution |Baseline CP|Conformalized Quantile CP |CP with Covariate Shift| CP with Localization|
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
 
