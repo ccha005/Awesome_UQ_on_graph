@@ -51,4 +51,27 @@ The belief $b(X_i=x_i)$ is given by
 For simplicity, we will omit $X_i$ in $\phi(X_i=x_i)$ and use $\phi(x_i)$, and similarly for $\psi(x_i,x_j)$, $m_{j\to i}(x_i)$ and $b(x_i)$ if there is no ambiguity.
 
 \subsection{Graph Neural Networks}
-Graph Neural Network (GNN) is a deep learning-based method that 
+Graph Neural Network (GNN) is a deep learning-based method that works with graph data. 
+Unlike traditional neural networks that operate on grid-like data (such as images or sequences),  
+GNN could learn from complex relationships and dependencies in graphs.
+
+Formally, 
+given a graph $G=(V, E)$, $V$ is the set of nodes and $E$ is the set of edges connecting the nodes. 
+Let $\mathcal{N}(X_i)$ be the set of neighbors of node $X_i\in V$, $i=1,\dots, |V|$.
+Assume that a GNN of $L$ layers is trained to predict class distributions of the nodes on the graph $G$.
+On the $l$-th layer, $l=1,\dots, L$, 
+GNN calculates $\mathbf{h}_i^{(l)}$ for node $X_i$ considering messages sent from its neighborhood $\mathcal{N}(X_i)$.
+Formally,
+\begin{eqnarray}
+% \mathbf{m}^{(l)}_{ji} & = & \textnormal{MSG}\left(\mathbf{h}^{(l-1)}_j,\mathbf{h}^{(l-1)}_i\right),\\
+\mathbf{a}^{(l)}_i & = & \textnormal{AGG}\left(\left\{\mathbf{m}^{(l)}_{ji}|X_j \in \mathcal{N}(X_i)\right\}\right),\\
+\mathbf{h}^{(l)}_i & = & \textnormal{UPDATE}\left(\mathbf{a}^{(l)}_i, \mathbf{h}^{(l-1)}_i \right).
+\end{eqnarray}
+% The MSG function computes the message sent from $X_j$ to $X_i$ (e.g., $\mathbf{m}_{ji}^{(l)}=\mathbf{h}_{j}^{(l-1)}$).
+The AGG function aggregates the messages sent from all $X_j\in \mathcal{N}(X_i)$ to $X_i$, which can be the element-wise average, maximum of the messages, or a parametric layer \cite{xu2018powerful}.
+The UPDATE function combines representations from the $l-1$ and the current $l$ layers.
+For example, it is defined as $W\cdot \left[ \mathbf{h}_i^{(l-1)}, \mathbf{a}_i^{(l)} \right]$ with trainable matrix $W$ in GraphSAGE \cite{hamilton2017inductive}.
+$\mathbf{h}^{(0)}_i$ is the input node feature for node $X_i$, 
+and the output of the GNN is $\mathbf{h}_i^{(L)}$, which can be softmaxed to a class distribution $y_i$.
+The parameters of GNN, $\boldsymbol{\theta} = \{ \theta^{(l)}$, $l=1,\dots,L$ \},
+are trained in an end-to-end style using labeled nodes on $G$.
