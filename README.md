@@ -88,4 +88,10 @@ A view on model misspecification in uncertainty quantification [BNAIC 2022](http
 Uncertainty Quantification in Machine Learning for Engineering Design and Health Prognostics: A Tutorial [Mechanical Systems and Signal Processing 2015](https://www.sciencedirect.com/science/article/pii/S0888327023007045)
 
 ## Benchmark
+## Classification
+| Tables        | Bayesian Method           | Conformal Prediction  |
+| ------------- |:-------------:| -----:|
+|               | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
 
