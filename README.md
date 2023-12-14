@@ -25,6 +25,8 @@ This repository contains research papers and surveys that are relevant to **Unce
 
 [B9]Weight Uncertainty in Neural Network[ICML 2015](https://proceedings.mlr.press/v37/blundell15.html)
 
+[B10]The No-U-Turn sampler: adaptively setting path lengths in Hamiltonian Monte Carlo[JMLR 2014](https://jmlr.org/papers/volume15/hoffman14a/hoffman14a.pdf)
+
 **Conformal Prediction**
 
 [C1]Conformalized Quantile Regression [NeurIPS 2019](https://proceedings.neurips.cc/paper_files/paper/2019/hash/5103c3584b063c431bd1268e9b5e76fb-Abstract.html)
@@ -110,7 +112,7 @@ Uncertainty Quantification in Machine Learning for Engineering Design and Health
 |                |Approximated Solution   |                       |                        |                       |Closed-form Solution   |                    |
 |                |Variational Inference   |                       |                        |Makrov Chain Mote Carlo|                       |                    |
 |                |Bayes by Backprop       |Monte Carlo Dropout    |Laplacian approximations|Hamiltonian Mote Carlo |                       |                    |
-| UQ on ML       |[B7][B9]                |[B2]                   |[B8]                    |[B6]                   |                       |                    |
+| UQ on ML       |[B7][B9]                |[B2]                   |[B8]                    |[B6][B10]              |                       |                    |
 | UQ on GNN      |
 
 | Conformal Prediction (CP) | 1         |2                        |3                      |4                   |
