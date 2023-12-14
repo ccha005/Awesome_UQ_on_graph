@@ -5,29 +5,45 @@ This repository contains research papers and surveys that are relevant to **Unce
 
 ### UQ on Machine Learning
 
-**Model-based Uncertainty: MC Dropout, BNN**
+**Bayesian Method**
 
-Dropout as a Bayesian Approximation Representing Model Uncertainty in Deep Learning [PMLR 2016](https://proceedings.mlr.press/v48/gal16.html)
+[B1]Variational Inference: A Review for Statisticians [JASA 2017](https://www.tandfonline.com/doi/pdf/10.1080/01621459.2017.1285773)
 
-B-PINNs Bayesian physics-informed neural networks for forward and inverse PDE problems with noisy data [JCP 2020](https://arxiv.org/abs/2003.06097)
+[B2]Dropout as a Bayesian Approximation Representing Model Uncertainty in Deep Learning [ICML 2016](https://proceedings.mlr.press/v48/gal16.html)
 
-Deep Bayesian Active Learning with Image Data [ICML 2017](https://arxiv.org/abs/1703.02910)
+[B3]B-PINNs Bayesian physics-informed neural networks for forward and inverse PDE problems with noisy data [JCP 2020](https://arxiv.org/abs/2003.06097)
 
-**Data-driven Uncertainty: VAE, Conformal Prediction**
+[B4]Stochastic Variational Inference[JMLR 2013](https://jmlr.org/papers/volume14/hoffman13a/hoffman13a.pdf)
 
-Intra Order-Preserving Functions for Calibration of Multi-Class Neural Networks [NeurIPS 2020](https://proceedings.neurips.cc/paper/2020/hash/9bc99c590be3511b8d53741684ef574c-Abstract.html)
+[B5]Deep Bayesian Active Learning with Image Data [ICML 2017](https://arxiv.org/abs/1703.02910)
 
-Conformalized Quantile Regression [NeurIPS 2019](https://proceedings.neurips.cc/paper_files/paper/2019/hash/5103c3584b063c431bd1268e9b5e76fb-Abstract.html)
+[B6]MCMC using Hamiltonian dynamics[Handbook of markov chain monte carlo](https://arxiv.org/abs/1206.1901)
 
-Conformal Prediction Under Covariate Shift [NeurIPS 2019](https://proceedings.neurips.cc/paper/2019/file/8fb21ee7a2207526da55a679f0332de2-Paper.pdf)
+[B7]Probabilistic backpropagation for scalable learning of Bayesian neural networks[ICML 2015](https://proceedings.mlr.press/v37/hernandez-lobatoc15.html)
 
-Adaptive Conformal Inference Under Distribution Shift [NeurIPS 2021](https://proceedings.neurips.cc/paper/2021/hash/0d441de75945e5acbc865406fc9a2559-Abstract.html)
+[B8]A Scalable Laplace Approximation for Neural Networks[ICLR 2018](https://openreview.net/forum?id=Skdvd2xAZ)
 
-Localized conformal prediction: a generalized inference framework for conformal prediction [Biometrika 2023](https://academic.oup.com/biomet/article/110/1/33/6647831?login=false)
+[B9]Weight Uncertainty in Neural Network[ICML 2015](https://proceedings.mlr.press/v37/blundell15.html)
 
-Conformal Prediction with Missing Values [ICML 2023](https://proceedings.mlr.press/v202/zaffran23a.html)
+**Conformal Prediction**
 
-Beyond Pinball Loss: Quantile Methods for Calibrated Uncertainty Quantification [NIPS 2021](https://openreview.net/forum?id=QbVza2PKM7T)
+[C1]Conformalized Quantile Regression [NeurIPS 2019](https://proceedings.neurips.cc/paper_files/paper/2019/hash/5103c3584b063c431bd1268e9b5e76fb-Abstract.html)
+
+[C2]Conformal Prediction Under Covariate Shift [NeurIPS 2019](https://proceedings.neurips.cc/paper/2019/file/8fb21ee7a2207526da55a679f0332de2-Paper.pdf)
+
+[C3]Adaptive Conformal Inference Under Distribution Shift [NeurIPS 2021](https://proceedings.neurips.cc/paper/2021/hash/0d441de75945e5acbc865406fc9a2559-Abstract.html)
+
+[C4]Localized conformal prediction: a generalized inference framework for conformal prediction [Biometrika 2023](https://academic.oup.com/biomet/article/110/1/33/6647831?login=false)
+
+[C5]Conformal Prediction with Missing Values [ICML 2023](https://proceedings.mlr.press/v202/zaffran23a.html)
+
+[C6]Split Localized Conformal Prediction
+
+[C7]A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantication [Foundations and Trends® in Machine Learning](https://arxiv.org/abs/2107.07511)
+
+**Other Methods**
+
+[O1]Beyond Pinball Loss: Quantile Methods for Calibrated Uncertainty Quantification [NIPS 2021](https://openreview.net/forum?id=QbVza2PKM7T)
 
 
 ### UQ on Graph
@@ -52,7 +68,7 @@ Distribution Free Prediction Sets for Node Classification [ICML 2023](https://pr
 
 Uncertainty Quantification over Graph with Conformalized Graph Neural Networks [NeurIPS 2023](https://arxiv.org/abs/2305.14535)
 
-A General Framework for quantifying Aleatoric and Epistemic uncertainty in Graph Neural Networks [Neurocomputing 2023](https://arxiv.org/pdf/2205.09968.pdf) 
+A General Framework for Quantifying Aleatoric and Epistemic Uncertainty in Graph Neural Networks [Neurocomputing 2023](https://arxiv.org/pdf/2205.09968.pdf) 
 
 Predictive Uncertainty Quantification for Graph Neural Network Driven Relaxed Energy Calculations [NeurIPS AI4Science Workshop 2023](https://openreview.net/forum?id=rdgB5BqWCw)
 
@@ -72,26 +88,34 @@ High-Quality Prediction Intervals for Deep Learning- A Distribution-Free, Ensemb
 
 ### UQ on Machine Learning
 
-Uncertainty quantification in scientific machine learning- Methods, metrics, and comparisons [JCP 2023](https://www.sciencedirect.com/science/article/abs/pii/S0021999122009652)
+[S1]Uncertainty quantification in scientific machine learning- Methods, metrics, and comparisons [JCP 2023](https://www.sciencedirect.com/science/article/abs/pii/S0021999122009652)
 
-A review of uncertainty quantification in deep learning Techniques, applications, and challenges [Information Fusion 2021](https://www.sciencedirect.com/science/article/pii/S1566253521001081)
+[S2]A review of uncertainty quantification in deep learning Techniques, applications, and challenges [Information Fusion 2021](https://www.sciencedirect.com/science/article/pii/S1566253521001081)
 
-Basic Framework and Main Methods of Uncertainty Quantification [MPE 2020](https://www.hindawi.com/journals/mpe/2020/6068203/)
+[S3]Basic Framework and Main Methods of Uncertainty Quantification [MPE 2020](https://www.hindawi.com/journals/mpe/2020/6068203/)
 
-Calibrating Uncertainty Models for Steering Angle Estimation [IEEE 2019](https://ieeexplore.ieee.org/document/8917207)
+[S4]Calibrating Uncertainty Models for Steering Angle Estimation [IEEE 2019](https://ieeexplore.ieee.org/document/8917207)
 
-Hands-on Bayesian Neural Networks -- A Tutorial for Deep Learning Users [IEEE CIM 2022](https://arxiv.org/abs/2007.06823)
+[S5]Hands-on Bayesian Neural Networks -- A Tutorial for Deep Learning Users [IEEE CIM 2022](https://arxiv.org/abs/2007.06823)
 
-A view on model misspecification in uncertainty quantification [BNAIC 2022](https://arxiv.org/abs/2210.16938)
+[S6]A view on model misspecification in uncertainty quantification [BNAIC 2022](https://arxiv.org/abs/2210.16938)
 
 
 Uncertainty Quantification in Machine Learning for Engineering Design and Health Prognostics: A Tutorial [Mechanical Systems and Signal Processing 2015](https://www.sciencedirect.com/science/article/pii/S0888327023007045)
 
 ## Benchmark
 ## Classification
-| Tables        | Bayesian Method                               | Conformal Prediction (CP)  |
-| ------------- |:---------------------------------------------:| ------------------------------------------------------:|
-|               | Approximated Inference | Closed-form Solution |Baseline CP|Conformalized Quantile CP |CP with Covariate Shift| CP with Localization|
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Bayesian Method| 1                      |2                      |3                       |4                      |5                      | 6                  |
+|----------------|------------------------|-----------------------|------------------------|-----------------------|-----------------------|--------------------|
+|                |Approximated Solution   |                       |                        |                       |Closed-form Solution   |                    |
+|                |Variational Inference   |                       |                        |Makrov Chain Mote Carlo|                       |                    |
+|                |Bayes by Backprop       |Monte Carlo Dropout    |Laplacian approximations|Hamiltonian Mote Carlo |                       |                    |
+| UQ on ML       |[B7][B9]                |[B2]                   |[B8]                    |[B6]                   |                       |                    |
+| UQ on GNN      |
+
+| Conformal Prediction (CP) | 1         |2                        |3                      |4                   |
+|---------------------------|-----------|-------------------------|-----------------------|--------------------|
+|                           |Baseline CP|Conformalized Quantile CP|CP with Covariate Shift|CP with Localization|
+| UQ on ML                  |[C7]       |[C1]                     |[C2]                   |[C4][C6]            |
+| UQ on GNN                 |
 
