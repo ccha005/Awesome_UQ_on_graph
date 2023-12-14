@@ -41,7 +41,7 @@ This repository contains research papers and surveys that are relevant to **Unce
 
 [C6]Split Localized Conformal Prediction
 
-[C7]A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantication [Foundations and Trends® in Machine Learning](https://arxiv.org/abs/2107.07511)
+[C7]A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification [Foundations and Trends® in Machine Learning](https://arxiv.org/abs/2107.07511)
 
 **Other Methods**
 
