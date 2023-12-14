@@ -43,6 +43,11 @@ This repository contains research papers and surveys that are relevant to **Unce
 
 [C7]A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification [Foundations and Trends® in Machine Learning](https://arxiv.org/abs/2107.07511)
 
+[C8] Multi-Split Conformal Prediction [Statistics & Probability Letters 2022](https://www.sciencedirect.com/science/article/abs/pii/S0167715222000177#:~:text=The%20multi%20split%20approach%20consists,frequency%20greater%20than%20a%20threshold.)
+
+[C9] Stable Conformal Prediction Sets [ICML 2022](https://icml.cc/virtual/2022/oral/16842)
+
+
 **Other Methods**
 
 [O1]Beyond Pinball Loss: Quantile Methods for Calibrated Uncertainty Quantification [NIPS 2021](https://openreview.net/forum?id=QbVza2PKM7T)
