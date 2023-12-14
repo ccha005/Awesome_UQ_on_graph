@@ -109,8 +109,8 @@ Uncertainty Quantification in Machine Learning for Engineering Design and Health
 ## Classification
 | Bayesian Method| 1                      |2                      |3                       |4                      |5                      | 6                  |
 |----------------|------------------------|-----------------------|------------------------|-----------------------|-----------------------|--------------------|
-|                |Approximated Solution   |                       |                        |                       |Closed-form Solution   |                    |
-|                |Variational Inference   |                       |                        |Makrov Chain Mote Carlo|                       |                    |
+|                |Approximated Solution   |&larr;                 |&larr;                  |&larr;                 |Closed-form Solution   |                    |
+|                |Variational Inference   |&larr;                 |&larr;                  |Makrov Chain Mote Carlo|                       |                    |
 |                |Bayes by Backprop       |Monte Carlo Dropout    |Laplacian approximations|Hamiltonian Mote Carlo |                       |                    |
 | UQ on ML       |[B7][B9]                |[B2]                   |[B8]                    |[B6][B10]              |                       |                    |
 | UQ on GNN      |
