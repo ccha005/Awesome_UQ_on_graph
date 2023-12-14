@@ -47,6 +47,8 @@ This repository contains research papers and surveys that are relevant to **Unce
 
 [C9] Stable Conformal Prediction Sets [ICML 2022](https://icml.cc/virtual/2022/oral/16842)
 
+[C10] Cross-conformal predictive distributions[ICML 2018](https://proceedings.mlr.press/v91/vovk18a.html?ref=https://githubhelp.com)
+
 
 **Other Methods**
 
