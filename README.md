@@ -59,39 +59,39 @@ This repository contains research papers and surveys that are relevant to **Unce
 
 **Graphical Model**
 
-Model Uncertainty and Correctability for Directed Graphical Models [SIAM/ASA Journal on Uncertainty Quantification 2022](https://epubs.siam.org/doi/abs/10.1137/21M1434453)
+[P1]Model Uncertainty and Correctability for Directed Graphical Models [SIAM/ASA Journal on Uncertainty Quantification 2022](https://epubs.siam.org/doi/abs/10.1137/21M1434453)
 
-Uncertainty Quantification for Markov Random Fields [SIAM/ASA Journal on Uncertainty Quantification 2021](https://epubs.siam.org/doi/abs/10.1137/20M1374614)
+[P2]Uncertainty Quantification for Markov Random Fields [SIAM/ASA Journal on Uncertainty Quantification 2021](https://epubs.siam.org/doi/abs/10.1137/20M1374614)
 
-Uncertainty Quantification in Graph-Based Classification of High Dimensional Data [SIAM/ASA Journal on Uncertainty Quantification 2018](https://epubs.siam.org/doi/abs/10.1137/17M1134214)
+[P3]The Power of Certainty: A Dirichlet-Multinomial Model for Belief Propagation [SDM 2017](https://epubs.siam.org/doi/pdf/10.1137/1.9781611974973.17)
 
-The Power of Certainty: A Dirichlet-Multinomial Model for Belief Propagation [SDM 2017](https://epubs.siam.org/doi/pdf/10.1137/1.9781611974973.17)
-
-SocNL: Bayesian Label Propagation with Confidence [PAKDD 2015](https://link.springer.com/chapter/10.1007/978-3-319-18038-0_49)
+[P4]SocNL: Bayesian Label Propagation with Confidence [PAKDD 2015](https://link.springer.com/chapter/10.1007/978-3-319-18038-0_49)
 
 **GNN**
 
-Conformal Prediction Sets for Graph Neural Networks [ICML 2023](https://proceedings.mlr.press/v202/h-zargarbashi23a.html)
+[G1]Conformal Prediction Sets for Graph Neural Networks [ICML 2023](https://proceedings.mlr.press/v202/h-zargarbashi23a.html)
 
-Distribution Free Prediction Sets for Node Classification [ICML 2023](https://proceedings.mlr.press/v202/clarkson23a.html)
+[G2]Distribution Free Prediction Sets for Node Classification [ICML 2023](https://proceedings.mlr.press/v202/clarkson23a.html)
 
-Uncertainty Quantification over Graph with Conformalized Graph Neural Networks [NeurIPS 2023](https://arxiv.org/abs/2305.14535)
+[G3]Uncertainty Quantification over Graph with Conformalized Graph Neural Networks [NeurIPS 2023](https://arxiv.org/abs/2305.14535)
 
-A General Framework for Quantifying Aleatoric and Epistemic Uncertainty in Graph Neural Networks [Neurocomputing 2023](https://arxiv.org/pdf/2205.09968.pdf) 
+[G4]A General Framework for Quantifying Aleatoric and Epistemic Uncertainty in Graph Neural Networks [Neurocomputing 2023](https://arxiv.org/pdf/2205.09968.pdf) 
 
-Predictive Uncertainty Quantification for Graph Neural Network Driven Relaxed Energy Calculations [NeurIPS AI4Science Workshop 2023](https://openreview.net/forum?id=rdgB5BqWCw)
+[G5]Predictive Uncertainty Quantification for Graph Neural Network Driven Relaxed Energy Calculations [NeurIPS AI4Science Workshop 2023](https://openreview.net/forum?id=rdgB5BqWCw)
 
-Uncertainty Quantification of Spatiotemporal Travel Demand with Probabilistic Graph Neural Networks [ArXiv 2023](https://arxiv.org/abs/2303.04040)
+[G6]Uncertainty Quantification of Spatiotemporal Travel Demand with Probabilistic Graph Neural Networks [ArXiv 2023](https://arxiv.org/abs/2303.04040)
 
-Uncertainty Quantification of Sparse Travel Demand Prediction with Spatial-Temporal Graph Neural Networks [SIGKDD 2022](https://dl.acm.org/doi/abs/10.1145/3534678.3539093)
+[G7]Uncertainty Quantification of Sparse Travel Demand Prediction with Spatial-Temporal Graph Neural Networks [SIGKDD 2022](https://dl.acm.org/doi/abs/10.1145/3534678.3539093)
 
-JuryGCN: Quantifying Jackknife Uncertainty on Graph Convolutional Networks [KDD 2022](https://dl.acm.org/doi/pdf/10.1145/3534678.3539286)
+[G8]JuryGCN: Quantifying Jackknife Uncertainty on Graph Convolutional Networks [KDD 2022](https://dl.acm.org/doi/pdf/10.1145/3534678.3539286)
 
-Be Confident! Towards Trustworthy Graph Neural Networks via Confidence Calibration [NeurIPS 2021](https://proceedings.neurips.cc/paper/2021/hash/c7a9f13a6c0940277d46706c7ca32601-Abstract.html)
+[G9]Be Confident! Towards Trustworthy Graph Neural Networks via Confidence Calibration [NeurIPS 2021](https://proceedings.neurips.cc/paper/2021/hash/c7a9f13a6c0940277d46706c7ca32601-Abstract.html)
 
-Graph posterior network: Bayesian predictive uncertainty for node classification [NeurIPS 2021](https://proceedings.neurips.cc/paper_files/paper/2021/file/95b431e51fc53692913da5263c214162-Paper.pdf)
+[G10]Graph posterior network: Bayesian predictive uncertainty for node classification [NeurIPS 2021](https://proceedings.neurips.cc/paper_files/paper/2021/file/95b431e51fc53692913da5263c214162-Paper.pdf)
 
-High-Quality Prediction Intervals for Deep Learning- A Distribution-Free, Ensembled Approach [ICML 2018](https://proceedings.mlr.press/v80/pearce18a.html)
+[G11]High-Quality Prediction Intervals for Deep Learning- A Distribution-Free, Ensembled Approach [ICML 2018](https://proceedings.mlr.press/v80/pearce18a.html)
+
+[G12]Uncertainty Quantification in Graph-Based Classification of High Dimensional Data [SIAM/ASA Journal on Uncertainty Quantification 2018](https://epubs.siam.org/doi/abs/10.1137/17M1134214)
 
 ## Survey Papers
 
@@ -120,7 +120,7 @@ Uncertainty Quantification in Machine Learning for Engineering Design and Health
 |                |Variational Inference   |&larr;                 |&larr;                  |Makrov Chain Mote Carlo|                       |                    |
 |                |Bayes by Backprop       |Monte Carlo Dropout    |Laplacian approximations|Hamiltonian Mote Carlo |                       |                    |
 | UQ on ML       |[B7][B9]                |[B2]                   |[B8]                    |[B6][B10]              |                       |                    |
-| UQ on GNN      |
+| UQ on GNN      ||[G4]||[G12]|[P3][P4][G10]
 
 | Conformal Prediction (CP) | 1         |2                        |3                      |4                   |
 |---------------------------|-----------|-------------------------|-----------------------|--------------------|
