@@ -113,18 +113,4 @@ This repository contains research papers and surveys that are relevant to **Unce
 Uncertainty Quantification in Machine Learning for Engineering Design and Health Prognostics: A Tutorial [Mechanical Systems and Signal Processing 2015](https://www.sciencedirect.com/science/article/pii/S0888327023007045)
 
 ## Benchmark
-## Classification
-| Bayesian Method| 1                      |2                      |3                       |4                      |5                      | 6                  |
-|----------------|------------------------|-----------------------|------------------------|-----------------------|-----------------------|--------------------|
-|                |Approximated Solution   |&larr;                 |&larr;                  |&larr;                 |Closed-form Solution   |                    |
-|                |Variational Inference   |&larr;                 |&larr;                  |Makrov Chain Mote Carlo|                       |                    |
-|                |Bayes by Backprop       |Monte Carlo Dropout    |Laplacian approximations|Hamiltonian Mote Carlo |                       |                    |
-| UQ on ML       |[B7][B9]                |[B2]                   |[B8]                    |[B6][B10]              |                       |                    |
-| UQ on GNN      ||[G4]||[G12]|[P3][P4][G10]
-
-| Conformal Prediction (CP) | 1         |2                        |3                      |4                   |
-|---------------------------|-----------|-------------------------|-----------------------|--------------------|
-|                           |Baseline CP|Conformalized Quantile CP|CP with Covariate Shift|CP with Localization|
-| UQ on ML                  |[C7]       |[C1]                     |[C2]                   |[C4][C6]            |
-| UQ on GNN                 |
 
