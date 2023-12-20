@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{multirow}
+\usepackage{array}
+\begin{document}
+
+\begin{table}[]
+\begin{tabular}{|m{1cm} |m{2cm} |m{2cm} |m{2cm} |m{2cm} |m{2cm} |}
+\hline
+ & \multicolumn{5}{|c|}{Bayesian Method} \\ \cline{1-6}
+ & \multicolumn{4}{|c|}{Approximated Solution} & \multirow{3}{2cm}{Closed-form Solution} \\ \cline{1-5}
+ & \multicolumn{3}{|c|}{Variational Inference} & Makrov Chain Mote Carlo &  \\ \cline{1-5}
+ & Bayes by Backprop & Monte Carlo Dropout & Laplacian approximations & Hamiltonian Mote Carlo &  \\ \hline
+UQ on ML & \multicolumn{1}{|l|}{{[}B7{]}{[}B9{]}} & \multicolumn{1}{|l|}{{[}B2{]}} & \multicolumn{1}{|l|}{{[}B8{]}} & {[}B6{]}{[}B10{]} & \multicolumn{1}{|l|}{} \\ \hline
+UQ on GNN & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{{[}G4{]}} & \multicolumn{1}{l|}{{[}G12{]}} &  & \multicolumn{1}{l|}{{[}P3{]}{[}P4{]}{[}G10{]}} \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[]
+\begin{tabular}{|m{2cm} |m{2.5cm} |m{2.5cm} |m{2.5cm} |m{2.5cm} |}
+\hline
+ & \multicolumn{4}{|c|}{Conformal Prediction (CP)} \\ \hline
+ & Baseline CP & Conformalized Quantile CP & CP with Covariate Shift & CP with Localization \\ \hline
+UQ on ML & {{[}C7{]}} & {{[}C1{]}} & {{[}C2{]}} & {[}C4{]}{[}C6{]} \\ \hline
+UQ on GNN & {} & {} & {} &  \\ \hline
+\end{tabular}
+\end{table}
+
+\end{document}
