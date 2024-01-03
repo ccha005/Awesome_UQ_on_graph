@@ -13,7 +13,7 @@ In an MRF, each node is conditionally independent of all other nodes, except for
 
 Formally, 
 we denote a graph $G=(V,E)$ consisting of a set of $n$ random variables $V=\{ X_1, \dots, X_n \}$ and $E$ implies the relationship between any two variables. 
-Each variable $X_i \in V$ may take values in $\{1,\dots, C\}$ where $C$ is the number of classes.
+Each variable $X_i \in V$ may take values in $\{1,\dots, K\}$ where $K$ is the number of classes.
 % given a set of $n$ random variables $V=\{ X_1, \dots, X_n \}$, each taking values in $\{1,\dots, C\}$ where $C$ is the number of classes, 
 An MRF factories the joint distribution $P(V)$ as 
 \begin{equation}
@@ -72,6 +72,6 @@ The AGG function aggregates the messages sent from all $X_j\in \mathcal{N}(X_i)$
 The UPDATE function combines representations from the $l-1$ and the current $l$ layers.
 For example, it is defined as $W\cdot \left[ \mathbf{h}_i^{(l-1)}, \mathbf{a}_i^{(l)} \right]$ with trainable matrix $W$ in GraphSAGE \cite{hamilton2017inductive}.
 $\mathbf{h}^{(0)}_i$ is the input node feature for node $X_i$, 
-and the output of the GNN is $\mathbf{h}_i^{(L)}$, which can be softmaxed to a class distribution $y_i$.
+and the output of the GNN is $\mathbf{h}_i^{(L)}$, which can be softmaxed to a class distribution $\pi(X_i)$.
 The parameters of GNN, $\boldsymbol{\theta} = \{ \theta^{(l)}$, $l=1,\dots,L$ \},
 are trained in an end-to-end style using labeled nodes on $G$.

@@ -14,3 +14,43 @@
 
 
 \subsubsection{Conformal Prediction for Graphs}
+The following definitions are for General ML.
+
+% \noindent \textbf{Definition for General ML.}
+Given a dataset $\mathcal{D}$, one could split it into four disjoint sets, a training set $\mathcal{D}_{train}$, a calibration set $\mathcal{D}_{cal}$, a validation set $\mathcal{D}_{val}$, and a test set $\mathcal{D}_{test}$, such that $\mathcal{D} = \mathcal{D}_{train} \bigcup \mathcal{D}_{cal} \bigcup \mathcal{D}_{val} \bigcup \mathcal{D}_{test}$.
+Let $\hat{y}_i= f(X_i) \in \Delta^K$ be a probability distribution of $K$ classes predicted by the classifier, e.g., a GNN, on $\mathcal{D}_{train}$.
+% 
+
+\begin{definition}[Exchangeability]
+\label{def:exchangeability}
+    For any $z_1, \dots, z_n$ and any permutation $\zeta$ of $\{1, \dots, n\}$, 
+    $\mathbb{P} \left( (Z_{\zeta(1)}, \dots, Z_{\zeta(n)}) = (z_1, \dots, z_n) \right) = 
+    \mathbb{P} \left( (Z_1, \dots, Z_n) = (z_1, \dots, z_n) \right)$ holds. 
+\end{definition}
+
+Given that the calibration set with $n$ data $\mathcal{D}_{cal}=\{ (X_1, y_1), \dots, (X_n, y_n) \}$ and an unseen test data $X_{n+1}$, if $\mathcal{D}_{cal} \bigcup {(X_{n+1}, y_{n+1})}$ is exchangeable, then we can construct a prediction set with coverage guarantee $P(y_{n+1}\in \mathcal{C}(X_{n+1})) \geq 1 - \alpha$ for any specific significance level $\alpha$.
+Formally, \cite{vovk2005algorithmic} shows that
+\begin{theorem}
+    Given an exchangeable set with $n+1$ data $\{ (X_i, y_i)\}_{i=1}^{n+1}$, 
+    any score function $s: \mathcal{X}\times \mathcal{Y}\to \mathbb{R}$ and any specific significance level $\alpha \in (0, 1)$,
+    define quantile $\hat{q}=\textnormal{Quantile}\left( \frac{ \lfloor (n-1)(\alpha) \rfloor }{n}; \{ s(x_i, y_i) \}_{i=1}^n \right)$ and prediction sets 
+    $\mathcal{C}(X_{n+1}) = \{ y: s(X_{n+1},y) \geq \hat{q} \}$.
+    We have
+    \begin{equation}
+        1-\alpha \leq P \left( y_{n+1} \in \mathcal{C}(X_{n+1}) \right) \leq 1- \alpha + \frac{1}{(n+1)}.
+    \end{equation}
+\end{theorem}
+\textcolor{blue}{To add other operations: build quantile and the prediction set, etc.}
+
+The score function $s(X, y)$ measures how $y$ ``conforms'' to the prediction at $X$.
+Selecting a suitable score function is one of the challenges in conformal prediction, especially for conformal prediction in the graphs. 
+% 
+One popular choice is adaptive prediction sets (APS).
+APS first sorts the predicted distribution into descending order, such that 
+$\pi_{\zeta(1)}(X) \geq \pi_{\zeta(2)}(X) \geq \dots \geq \pi_{\zeta(K)}(X)$.
+Then score function is defined as $s(X,y) = \sum_{j} \pi_{\zeta(j)}(X)$,
+and the corresponding prediction set is constructed as $\mathcal{C}(X)=\{ \zeta(1), \dots, \zeta(k^\ast) \}$,
+where $k^\ast=\inf\{ k: \sum_{j=1}^k \pi_{\zeta(j)}(X) \geq \hat{q} \}$.
+% 
+One may utilize a uniform random value to break potential ties between scores \cite{stutz2021learning}.
+
