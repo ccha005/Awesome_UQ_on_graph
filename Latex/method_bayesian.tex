@@ -3,13 +3,15 @@
 \subsubsection{Bayesian Methods Overview}
 \subsubsection{Bayesian Methods for Graphs}
 
-The main objective of using Bayesian methods for semi-supervised node classification on graphs is to obtain the posterior probability distribution of nodes. One route lies in assigning a prior probability distribution to each node, then updating it with evidence propagated from other nodes to obtain the posterior distribution. Yamaguchi et al. \cite{yamaguchi2015socnl} assumed the label is a categorical random variable as $P(\hat{y}_i=k|\boldsymbol{\theta})$, where $\boldsymbol{\theta}$
+Bayesian methods for semi-supervised node classification on graphs focus on obtaining the posterior probability distribution of nodes. One route lies in assigning a prior probability distribution to each node, then updating it with evidence propagated from other nodes to obtain the posterior distribution. Yamaguchi et al. \cite{yamaguchi2015socnl} assumed the label is a categorical random variable as $P(\hat{y}_i=k|\boldsymbol{\theta})$, where $\boldsymbol{\theta}$
  is the parameter of the categorical distribution. 
  Based on the smoothness hypothesis, they believed that a neighbor of node $i$ shares the same parameter $\boldsymbol{\theta}$ as $i$. 
  This leads to the multinomial likelihood function of labels of neighbors of $i$ $P(\hat{N}_i|\boldsymbol{\theta})\propto\Pi_{k=1}^K\theta_k^{n_{ik}}$ and the conjugate Dirichlet prior $P(\boldsymbol{\theta})\propto\Pi_{k=1}^K\theta_k^{\alpha_k-1}$
  , where $n_{ik}$ is the number of i’s neighbors whose label is $k$, and $\boldsymbol{\alpha}=(\alpha_1,\alpha_2,\cdots,\alpha_K)^T$ is the parameter of Dirichlet distribution. 
  Combining these, the posterior distribution of $\boldsymbol{\theta}$ is $P(\boldsymbol{\theta}|\hat{N}_i)\propto\Pi_{k=1}^K\theta_k^{\alpha_k+n_{ik}-1}$. Beyond the smoothness hypothesis and label propagation, Eswaran et al. \cite{eswaran2017power} used compatibility matrices to represent the strength of connections between nodes and propagates multinomial messages to support both homophily and heterophily network effects. 
  To handle high-dimensional features of nodes, Stadler et al. \cite{stadler2021graph} employed MLP encoding and computes node-level pseudo-counts, then propagates them via PPR-based message passing. All three methods utilize Dirichlet priors and posteriors, with the main difference being in the form of multinomial distribution evidence propagated.
+
+ Another route lies in transferring Bayesian neural networks to GNNs. Based on the idea of treating parameters as probability distributions, Munikoti et al. \cite{munikoti2023general} proposed a Bayesian graph neural network framework for quantifying aleatoric and epistemic uncertainties. They derived the relationship between the mean and variance of neurons in one layer of the GNN with the previous layer to propagate aleatoric uncertainty to the model output, and obtained epistemic uncertainty through Monte Carlo dropout.
 
 %In the field of graph learning, Probabilistic Graphical Models (PGM) and Graph Neural Networks (GNNs) are two predominant methods for processing graph data. 
 %This section focuses on exploring various Uncertainty Quantification (UQ) techniques that are specifically designed to measure and quantify the predictive uncertainties of these models. 
