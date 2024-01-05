@@ -1,17 +1,40 @@
 \subsection{Conformal Prediction}
-\subsubsection{Conformal Prediction Overview}
+\subsubsection{Conformal Prediction Overview}\hfill\\
+Conformal Prediction (CP), or Conformal Inference,  is an uncertainty quantification framework that can be applied to almost any model.  With a trained model and a pre-designed significant level $\alpha$, CP takes advantage of the experience of the calibration data to provide the estimated confidence intervals of predicted outcomes based on the scoring equations, which quantify the similarity, or conformity in other words, between the test data and calibration data. The theoretical essentials of CP are illustrated in "Algorithmic Learning in a Random World"\cite{vovk2005algorithmic} by Vladimir Vovk and coauthors in 2005. In this section, we will offer readers a generalized introduction to CP. First, we would like to help readers develop a basic understanding of the frameworks of CP on classification and regression models. Then, we talk about how to generate adaptive CP, which is a trending topic in this domain. We will also cover some content about the combination of CP and Bayesian inference and how to improve the stability of CP. Finally, the methods for evaluating CP will be discussed.\\
 
+\noindent For CP on classification models, assume we have a trained classifier $\hat{f}$ which can output the estimated probability, such as softmax, for each of the total $K$ classes, $[0,1]^K$. Another calibration set of size $n$, $D_{cal}=(X_i,Y_i)_{i\in[n]}$, is applied to quantify how uncertainty the model $\hat{f}$ would be.  With the model $\hat{f}$ and the calibration dataset $D_{cal}$, we want to develop a prediction set $C(X_{test})$ of test input $X_{test}$ that satisfies
+\begin{equation} 
+P(Y_{test}\in C(X_{test})) \ge 1-\alpha\tag{4.2.1-1}
+\end{equation}
+Here we propose a critical assumption that $(X_i, Y_i)$ and $(X_{test}, Y_{test})$ are i.i.d. Some papers will also call $\alpha$ as the error rate or miscoverage rate, but here we stick with the terminology of statistics and call it significance level.\\
 
+\noindent To accurately quantify the performance of $\hat{f}$ on $D_{cal}$, a conformal score is defined as 
+\begin{equation} 
+s_i = 1-\hat{f}(X_i)_{Y_i}\tag{4.2.1-2}
+\end{equation}
+As $\hat{f}(X_i)_{Y_i}$ is the softmax output of the true label $Y_i$, the conformal score $s_i$ will be low when $\hat{f}$ has high confidence in the correct prediction. In other words, $s_i$ will be high when the model is inaccurate. For each element of the calibration set $D_{cal}$, its corresponding conformal $s_i$ score will be calculated. The next key step is to compute the empirical quantile of the conformal score set $S = (s_i)_{i\in[n]}$.
+ \begin{equation} 
+Q_{1-\alpha}(S,D_{cal}):=(1-\alpha)(1+1/|D_{cal}|)\text{-th empirical quantile of }S \tag{4.2.1-3}
+ \end{equation} 
+Lastly, for a given $X_{test}$ whose $Y_{test}$ is unknown, the prediction set is $C(X_{test})=\{y|\hat{f}(X_{test})_y\ge 1-Q_{1-\alpha}\}$.  This prediction set will contain all predicted labels whose softmax outputs are higher than the empirical quantile value to meet the requirement of (4.2.1-1).\\
 
+\noindent The procedure of applying CP on a regression model is similar to the process mentioned above. However, the prediction sets in this case become intervals instead of assembles of predicted labels. Again, let us begin with a trained regressor $\hat{\mu}$ and a calibration dataset $D_{cal}$ that the model has not seen before.  To construct a prediction set that satisfies (4.2.1-1), we also need to calculate the conformal score of $D_{cal}$, but this time we define it as the residual between the predicted values and the true value.
+\begin{equation} 
+r_i = |\hat{\mu}(X_i)-Y_i|\tag{4.2.1-4}
+\end{equation}
+The empirical quantile on $R = (r_i)_{i\in[n]}$ is
+ \begin{equation} 
+Q_{1-\alpha}(R,D_{cal}):=(1-\alpha)(1+1/|D_{cal}|)\text{-th empirical quantile of }R \tag{4.2.1-5}
+ \end{equation} 
+Finally, the predicted interval of i.d.d. $X_{test}$ with given $\alpha$ can be written as $C(X_{test})=[\hat{\mu}(X_{test})-Q_{1-\alpha}(R,D_{cal}),\hat{\mu}(X_{test})+Q_{1-\alpha}(R,D_{cal})]$\\
 
+\noindent One weakness of traditional CP is that it takes all elements within the calibration set to quantify the uncertainty of the trained model. This may cause the model to be overconfident in hard examples but underconfident in easy examples.  However, since we know the value of $X_{test}$, we can make use of the information to make the prediction set $C(X_{test})$ more adaptive to the test input. \\
 
-
-
-
-
-
-
-
+\noindent Designing novel conformal score equations is a widely applied method to improve the adaptiveness of prediction sets. In \cite{romano2020classification}, the authors revised the score equation (4.2.1-2) to generate adaptive prediction sets for classification models.  We follow the setup of the model $\hat{f}$ discussed above. For each element $X_i$ in $D_{cal}$, the trained model $\hat{f}$ can output the softmax result for all potential $K$ classes, $\hat{f}(X_i)_{y_k}=\pi_{y_k}(X_i), k=1,2,..,K$.  During this process, we assign the indices $\{1,2,.., K\}$ to elements within the set $(\pi_{y_k}(X_i))_{k\in[K]}$ from high to low, which means $\pi_{y_1}(X_i)$ is the possibility of the most likely class of $X_i$, whereas $\pi_{y_K}(X_i)$ is the least possible output.  Then, the conformal score is defined as the summation of the first $M$ elements where $y_M=Y_i$, the true class of $X_i$. 
+\begin{equation}
+s_i = \sum_{j=1}^M \pi_{y_j}(X_i)\text{, where } y_M=Y_i\\\tag{4.2.1-6}
+\end{equation}
+In other words, the score equation will keep including the softmax results from high to low until meets the true class. We still define $S$ as the set of $s_i$ and then calculate the quantile of $S$ via (4.2.1-3). With this quantile value, we will form the prediction set $C(X_{test})=\{y_1,..,y_M,y_{M+1}|M:\sup(\sum_{j=1}^M \pi_{y_j}(X_i))<Q_{1-\alpha}\}$. $y_{M+1}$ is included in  $C(X_{test})$ to avoid empty sets. \cite{angelopoulos2020uncertainty} is a well-cited publication using this adaptive prediction method for image classification tasks.\\
 
 \subsubsection{Conformal Prediction for Graphs}
 The following definitions are for General ML.
