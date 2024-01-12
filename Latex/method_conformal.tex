@@ -30,12 +30,23 @@ Finally, the predicted interval of i.d.d. $X_{test}$ with given $\alpha$ can be 
 
 \noindent One weakness of traditional CP is that it takes all elements within the calibration set to quantify the uncertainty of the trained model. This may cause the model to be overconfident in hard examples but underconfident in easy examples.  However, since we know the value of $X_{test}$, we can make use of the information to make the prediction set $C(X_{test})$ more adaptive to the test input. \\
 
-\noindent Designing novel conformal score equations is a widely applied method to improve the adaptiveness of prediction sets. In \cite{romano2020classification}, the authors revised the score equation (4.2.1-2) to generate adaptive prediction sets for classification models.  We follow the setup of the model $\hat{f}$ discussed above. For each element $X_i$ in $D_{cal}$, the trained model $\hat{f}$ can output the softmax result for all potential $K$ classes, $\hat{f}(X_i)_{y_k}=\pi_{y_k}(X_i), k=1,2,..,K$.  During this process, we assign the indices $\{1,2,.., K\}$ to elements within the set $(\pi_{y_k}(X_i))_{k\in[K]}$ from high to low, which means $\pi_{y_1}(X_i)$ is the possibility of the most likely class of $X_i$, whereas $\pi_{y_K}(X_i)$ is the least possible output.  Then, the conformal score is defined as the summation of the first $M$ elements where $y_M=Y_i$, the true class of $X_i$. 
+\noindent Designing novel conformal score equations is a widely applied method to improve the adaptiveness of prediction sets. In \cite{romano2020classification}, the authors revised the score equation (4.2.1-2) to generate adaptive prediction sets for classification models.  We follow the setup of the model $\hat{f}$ discussed above. For each element $X_i$ in $D_{cal}$, the trained model $\hat{f}$ can output the softmax result for all potential $K$ classes, $\hat{f}(X_i)_{y_k}=\pi_{y_k}(X_i), k=1,2,..,K$.  During this process, we assign the indices $\{1,2,.., K\}$ to elements within the set $(\pi_{y_k}(X_i))_{k\in[K]}$ from high to low, which means $\pi_{y_1}(X_i)$ is the possibility of the most likely class of $X_i$, whereas $\pi_{y_K}(X_i)$ is the least possible output.  Then, the conformal score is defined as the summation of the first $M$ elements where $y_M=Y_i$, which is the true class of $X_i$. 
 \begin{equation}
 s_i = \sum_{j=1}^M \pi_{y_j}(X_i)\text{, where } y_M=Y_i\\\tag{4.2.1-6}
 \end{equation}
 In other words, the score equation will keep including the softmax results from high to low until meets the true class. We still define $S$ as the set of $s_i$ and then calculate the quantile of $S$ via (4.2.1-3). With this quantile value, we will form the prediction set $C(X_{test})=\{y_1,..,y_M,y_{M+1}|M:\sup(\sum_{j=1}^M \pi_{y_j}(X_i))<Q_{1-\alpha}\}$. $y_{M+1}$ is included in  $C(X_{test})$ to avoid empty sets. \cite{angelopoulos2020uncertainty} is a well-cited publication using this adaptive prediction method for image classification tasks.\\
 
+\noindent Notice that all the algorithms above are built on the assumption that test data comes from the same distribution of the calibration set. However, the probability distributions between calibration data $D_{cal}$ and test data $D_{test}$ can be different in the real world. Covariant shift is a typical situation in which the distribution of input values changes between $D_{cal}$ and $D_{test}$, e.g. $P_{D_{cal}}(X)\neq P_{D_{test}}(X)$, but their conditional probabilities of obtaining the same output are identical, e.g. $P_{D_{cal}}(Y|X) = P_{D_{test}}(Y|X)$.  \cite{tibshirani2019conformal} introduced using the likelihood ratio between $P_{D_{test}}(X)$ and $P_{D_{cal}}(X)$ to calculate the corresponding weight of each conformal score from the calibration set. To be specific, we define $w(x)=\frac{dP_{D_{test}}(X)}{dP_{D_{cal}}(X)}$, then the weights are
+\begin{equation}
+p_{cal}^i(x)=\frac{w(X_i)}{\sum_{j=1}^n w(X_j)+w(x)}\text{, and } p_{test}(x)=\frac{w(x)}{\sum_{j=1}^n w(X_j)+w(x)}
+\end{equation}
+We take a regression model as an example, like (4.2.1-5), but we rewrite it to illustrate the influence of $p_{cal}$.
+\begin{equation}
+Q(x) = inf\{R_j,\sum_{i=1}^j p_{cal}^i(x)\mathbbm{1}\{R_i<R_j\}\leq 1-\alpha \}
+\end{equation}
+These weights will assign higher priority to conformal scores which are more likely to appear in the test probability distribution.  You may notice the quantile value is related to the input $x$, which can be regarded as a representation of $X_{test}$, and the dependence is even negligible if $n>>1$. \\
+
+\noindent Another kind of probability distribution difference is called distribution shift.  
 \subsubsection{Conformal Prediction for Graphs}
 The following definitions are for General ML.
 
@@ -72,8 +83,78 @@ One popular choice is adaptive prediction sets (APS).
 APS first sorts the predicted distribution into descending order, such that 
 $\pi_{\zeta(1)}(X) \geq \pi_{\zeta(2)}(X) \geq \dots \geq \pi_{\zeta(K)}(X)$.
 Then score function is defined as $s(X,y) = \sum_{j} \pi_{\zeta(j)}(X)$,
-and the corresponding prediction set is constructed as $\mathcal{C}(X)=\{ \zeta(1), \dots, \zeta(k^\ast) \}$,
-where $k^\ast=\inf\{ k: \sum_{j=1}^k \pi_{\zeta(j)}(X) \geq \hat{q} \}$.
+and the corresponding prediction set is constructed as
+\begin{equation}
+    \mathcal{C}(X)=\{ \zeta(1), \dots, \zeta(k^\ast) \}, \quad
+    \textnormal{where} \; k^\ast=\inf\{ k: \sum_{j=1}^k \pi_{\zeta(j)}(X) \geq \hat{q} \}.
+\end{equation}
+
 % 
 One may utilize a uniform random value to break potential ties between scores \cite{stutz2021learning}.
 
+
+\noindent\textbf{Graph and Exchangeability.} 
+
+For node classification tasks on graphs, 
+the exchangeability may be violated for some specific settings \cite{zargarbashi2023conformal}.
+First, 
+in the \textit{transductive} settings, 
+the model has access to the entire graph structure and all the node features during training, calibration, and testing, 
+but the labels of calibration and testing set are not available during training. 
+In this case, the union of calibration and the unlabeled sample is exchangeable.
+However, 
+in the \textit{inductive} settings, 
+the model only has access to the subgraph induced by the nodes in the training set $\mathcal{D}_{train}$ during training.
+The assumption of exchangeability does not hold in this case.
+
+
+In the study \cite{zargarbashi2023conformal},
+a diffused score function, 
+namely Diffused Adaptive Prediction Sets (DAPS), 
+is introduced. 
+DAPS exploits the graph structure based on neighborhood diffusion,
+and the diffused score function is defined as
+\begin{equation}
+    \hat{s}(X_i,y)=(1-\lambda)s(X_i,y) + \frac{\lambda}{|\mathcal{N}_i|} \sum_{X_j\in\mathcal{N}_i} s(X_j, y),
+\end{equation}
+where $\lambda$ signifies the diffusion parameter. 
+From a matrix perspective, 
+given the original score matrix $H\in\mathbb{R}^{|V|\times K}$, 
+where each row is the conformal score for a node, 
+the (1-hop) diffused score matrix is defined as 
+\begin{equation}
+    \hat{H} = (1-\lambda)H + \lambda D^{-1}AH,
+\end{equation}
+where $D$ is the degree matrix.
+Extending it to a general $k$-hop diffused version,
+the formulation is given by 
+\begin{equation}
+    \hat{H}=\lambda_0 H + \sum_{i=1}^k \lambda_i(D^{-1}A)^i \times H.
+\end{equation}
+
+Note that the diffused score function preserves exchangeability if the original scores are exchangeable. 
+This diffusion process proves particularly advantageous in homophilous graphs, 
+where connected nodes exhibit similar ground truth distributions. 
+% 
+The rationale behind this is that for a node surrounded by mostly unperturbed neighbors, 
+its probability can be better estimated by using its neighbors' vectors (information), as long as these vectors are sufficiently similar.
+
+For the non-exchangeable conformal prediction cases,
+the procedure assumes a choice of deterministic fixed weights $w_1,\dots,w_n \in [0,1]$ \cite{barber2023conformal}.
+The prediction set concerning the weighted 
+quantiles of the score distribution 
+\begin{equation}
+\label{eq:cp_nonexchange}
+    \hat{\mathcal{C}}(X) = \left\{ y\in\mathcal{Y}: s(X,y)\leq  \hat{q}_{1-\alpha} \left( \sum_{i=1}^n w_i \delta_{s_i}
+    % + w_{n+1}\delta_{+\infty} 
+    \right) \right\}
+\end{equation}
+
+The inductive cases are studied in \cite{clarkson2023distribution},
+where the principle of exchangeability is not applicable.
+They integrate non-exchangeable conformal prediction with the concept of homophily in graphs, 
+leading to the development of three distinct variants of Neighbourhood Adaptive Prediction Sets (NAPS) for the prediction set construction.
+The primary variant, NAPS, assigns the weights in Eq. (\ref{eq:cp_nonexchange}) to
+$w_i=1$ if $X_i \in \mathcal{N}_{n+1}^T $, where $\mathcal{N}_{n+1}^T$ includes all nodes within $T$-hop neighborhood of node $X_{n+1}$. 
+The second one, NAPS-H, adopts a hyperbolic decay rate for $w_i=t^{-1}$ where $t$ is the $t$-hop neighbor of node $X_{n+1}$.
+The third one, NAPS-G, uses a geometric decay rate for $w_i=2^{-t}$.
