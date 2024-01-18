@@ -1,8 +1,41 @@
 % \section{Methods for Handling Uncertainty}
 \subsection{Bayesian Methods}
-\subsubsection{Bayesian Methods Overview}
-\subsubsection{Bayesian Methods for Graphs}
+\subsubsection{Bayesian Methods Overview}\hfill\\
+In the realm of UQ, Bayesian methods stand as a pivotal approach, offering a powerful framework for dealing with uncertainty in complex systems. 
+At the heart of Bayesian UQ is the application of Bayes' Theorem, which mathematically expresses how our belief or knowledge about a certain parameter or model is updated with evidence. 
+The theorem is elegantly encapsulated in the formula: 
+\begin{equation}
+    \label{eq:Bayes_Theorem}
+    P(\boldsymbol{\theta}|D)=\frac{P(D|\boldsymbol{\theta})P(\boldsymbol{\theta})}{P(D)},
+\end{equation}
+%P(θ|D) = [P(D|θ)P(θ)] / P(D), 
+where $P(\boldsymbol{\theta}|D)$ is the posterior probability of the parameter $\boldsymbol{\theta}$ given the data $D$, $P(D|\boldsymbol{\theta})$ is the likelihood of observing the data given the parameter, $P(\boldsymbol{\theta})$ is the prior probability of the parameter, and $P(D)$ is the marginal likelihood of the data. 
+This Bayesian paradigm shifts the focus from a single 'true' model to a probabilistic distribution of models, reflecting all possible values that the parameters can take, weighted by their likelihood. 
+By incorporating prior knowledge and continuously updating it with new data, Bayesian methods provide a dynamic and adaptive approach to UQ, allowing for a more comprehensive understanding of uncertainty in models.
 
+Advancing from the foundational Bayesian principles, Bayesian Neural Networks (BNNs) offer an intricate method that integrates the flexibility of neural networks with the probabilistic rigor of Bayesian inference. 
+BNNs are predicated on the notion of assigning probability distributions to the neural network's parameters $\boldsymbol{\theta}$, which encapsulates the model's uncertainty. 
+This is a departure from traditional neural networks that often yield a single point estimate for parameters upon training completion.
+During the training phase, BNNs aim to ascertain the posterior distribution of the parameters $P(\boldsymbol{\theta}|D)$. 
+This is a result of updating the prior distribution $P(\boldsymbol{\theta})$ with the likelihood of the observed data $P(D|\boldsymbol{\theta})$, as Eq. (\ref{eq:Bayes_Theorem}).
+In the context of predictions, BNNs leverage Bayesian model averaging during the test phase. 
+This is not merely based on a singular set of parameters but rather an aggregation of multiple parameter sets sampled from the posterior distribution. 
+For a given test sample $\mathbf{x}^*$, the prediction thereby incorporates the model uncertainty, yielding the predictive distribution:
+\begin{equation}
+    \label{eq:Bayes_prediction}
+    p(y^* | \mathbf{x}^*, D) = \int p(y^* | \mathbf{x}^*, \boldsymbol{\theta}) p(\boldsymbol{\theta} | D) d\boldsymbol{\theta}.
+\end{equation}
+The quantification of uncertainty is elegantly captured and decomposed by the relationship \cite{depeweg2018decomposition}:
+\begin{equation}
+\label{eq:Bayes_AU_EU}
+    \underbrace{I(y^*, \boldsymbol{\theta} | \mathbf{x}^*, D)}_{Epistemic} = \underbrace{\mathcal{H}\left[ \mathbb{E}_{P(\boldsymbol{\theta}|D)}\left[P(y^*|\mathbf{x}^*, \boldsymbol{\theta})\right]\right]}_{Entropy} - \underbrace{\mathbb{E}_{P(\boldsymbol{\theta}|D)}\left[\mathcal{H}\left[P(y^*|\mathbf{x}^*, \boldsymbol{\theta})\right]\right]}_{Aleatoric},
+\end{equation}
+where $\mathcal{H}(\cdot)$ is Shannon’s entropy of a probability distribution.
+The \textit{entropy} term represents the total uncertainty in the prediction while the \textit{aleatoric} term reflects the inherent noise in the data that cannot be reduced with more information. 
+The subtraction of aleatoric uncertainty from total uncertainty provides the measure of epistemic uncertainty, which denotes the uncertainty in the model's parameters and reduces as more data becomes available. 
+This mathematical demarcation between the uncertainties empowers BNNs to provide a nuanced understanding of prediction reliability and decision-making under uncertainty.
+
+\subsubsection{Bayesian Methods for Graphs}\hfill\\
 Bayesian methods for semi-supervised node classification on graphs focus on obtaining the posterior probability distribution of nodes. One route lies in assigning a prior probability distribution to each node, then updating it with evidence propagated from other nodes to obtain the posterior distribution. Yamaguchi et al. \cite{yamaguchi2015socnl} assumed the label is a categorical random variable as $P(\hat{y}_i=k|\boldsymbol{\theta})$, where $\boldsymbol{\theta}$
  is the parameter of the categorical distribution. 
  Based on the smoothness hypothesis, they believed that a neighbor of node $i$ shares the same parameter $\boldsymbol{\theta}$ as $i$. 
