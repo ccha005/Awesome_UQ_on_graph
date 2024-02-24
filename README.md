@@ -39,7 +39,7 @@ This repository contains research papers and surveys that are relevant to **Unce
 
 [C5]Conformal Prediction with Missing Values [ICML 2023](https://proceedings.mlr.press/v202/zaffran23a.html)
 
-[C6]Split Localized Conformal Prediction
+[C6]Split Localized Conformal Prediction [Arxiv](https://arxiv.org/pdf/2206.13092.pdf)
 
 [C7]A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification [Foundations and Trends® in Machine Learning](https://arxiv.org/abs/2107.07511)
 
@@ -49,7 +49,25 @@ This repository contains research papers and surveys that are relevant to **Unce
 
 [C10] Cross-conformal predictive distributions[ICML 2018](https://proceedings.mlr.press/v91/vovk18a.html?ref=https://githubhelp.com)
 
+[C11] Algorithmic Learning in a Random World[Book 2005](https://link.springer.com/book/10.1007/978-3-031-06649-8)
 
+[C12] Classification with valid and adaptive coverage [NeurIPS 2020](https://proceedings.neurips.cc/paper/2020/file/244edd7e85dc81602b7615cd705545f5-Paper.pdf)
+
+[C13] Uncertainty sets for image classifiers using conformal prediction [Arxiv 2020](https://arxiv.org/abs/2009.14193)
+
+[C14] Conformal prediction interval for dynamic time-series [ICML 2021](https://proceedings.mlr.press/v139/xu21h/xu21h.pdf)
+
+[C15] Conformal prediction beyond exchangeability [Ann. Statist. 2O23](https://projecteuclid.org/journals/annals-of-statistics/volume-51/issue-2/Conformal-prediction-beyond-exchangeability/10.1214/23-AOS2276.full)
+
+[C16] A comparison of some conformal quantile regression methods [Wiley Online Library](https://onlinelibrary.wiley.com/doi/pdf/10.1002/sta4.261)
+
+[C17] Cross-conformal predictors [AMAI](https://link.springer.com/content/pdf/10.1007/s10472-013-9368-4.pdf)
+
+[C18] Predictive inference with the jackknife+ [Ann. Statist. 2021](https://projecteuclid.org/journals/annals-of-statistics/volume-49/issue-1/Predictive-inference-with-the-jackknife/10.1214/20-AOS1965.full)
+
+[C19]  Bayes-optimal prediction with frequentist coverage control [Bernoulli 2023](https://projecteuclid.org/journals/bernoulli/volume-29/issue-2/Bayes-optimal-prediction-with-frequentist-coverage-control/10.3150/22-BEJ1484.full)
+
+[C20] Learning optimal conformal classifiers [Arxiv](https://arxiv.org/abs/2110.09192)
 **Other Methods**
 
 [O1]Beyond Pinball Loss: Quantile Methods for Calibrated Uncertainty Quantification [NIPS 2021](https://openreview.net/forum?id=QbVza2PKM7T)
