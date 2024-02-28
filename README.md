@@ -93,6 +93,12 @@ This repository contains research papers and surveys that are relevant to **Unce
 
 [G12]Uncertainty Quantification in Graph-Based Classification of High Dimensional Data [SIAM/ASA Journal on Uncertainty Quantification 2018](https://epubs.siam.org/doi/abs/10.1137/17M1134214)
 
+[G13]Bayesian graph convolutional neural networks for semi-supervised
+classification [AAAI 2019](https://ojs.aaai.org/index.php/AAAI/article/download/4531/4409)
+
+[G14]Bayesian graph convolutional neural networks using node copying [ICML Workshop 2019](https://arxiv.org/pdf/1911.04965)
+
+[G15]Non parametric graph learning for bayesian graph neural networks [UAI 2020](http://proceedings.mlr.press/v124/pal20a/pal20a.pdf)
 
 ## Survey Papers
 
