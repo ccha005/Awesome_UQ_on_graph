@@ -25,9 +25,17 @@ For a given test sample $\mathbf{x}^*$, the prediction thereby incorporates the 
     \label{eq:Bayes_prediction}
     p(y^* | \mathbf{x}^*, D) = \int p(y^* | \mathbf{x}^*, \boldsymbol{\theta}) p(\boldsymbol{\theta} | D) d\boldsymbol{\theta}.
 \end{equation}
+Due to the general intractability of the integral, various techniques for inferring $p(\boldsymbol{\theta} | D)$ have been proposed. 
+Gal et al. \cite{gal2016dropout} demonstrated that Monte Carlo dropout is equivalent to sampling from an approximate posterior of $\boldsymbol{\theta}$, allowing Eq. (\ref{eq:Bayes_prediction}) to be simplified to the following Monte Carlo integral:
+\begin{equation}
+    \label{eq:Bayes_MC_dropout}
+    p(y^* | \mathbf{x}^*, D) \approx \frac{1}{S} \sum^{S}_{i=1} p(y^* | \mathbf{x}^*, \boldsymbol{\theta}_i),
+\end{equation}
+where dropout is used to obtain $S$ weights $W_i$.
+
 The quantification of uncertainty is elegantly captured and decomposed by the relationship \cite{depeweg2018decomposition}:
 \begin{equation}
-\label{eq:Bayes_AU_EU}
+\label{eq:Bayes_AU_EU_decomp}
     \underbrace{I(y^*, \boldsymbol{\theta} | \mathbf{x}^*, D)}_{Epistemic} = \underbrace{\mathcal{H}\left[ \mathbb{E}_{P(\boldsymbol{\theta}|D)}\left[P(y^*|\mathbf{x}^*, \boldsymbol{\theta})\right]\right]}_{Entropy} - \underbrace{\mathbb{E}_{P(\boldsymbol{\theta}|D)}\left[\mathcal{H}\left[P(y^*|\mathbf{x}^*, \boldsymbol{\theta})\right]\right]}_{Aleatoric},
 \end{equation}
 where $\mathcal{H}(\cdot)$ is Shannon’s entropy of a probability distribution.
@@ -45,9 +53,30 @@ Bayesian methods for semi-supervised node classification on graphs focus on obta
  To handle high-dimensional features of nodes, Stadler et al. \cite{stadler2021graph} employed MLP encoding and computes node-level pseudo-counts, then propagates them via PPR-based message passing. All three methods utilize Dirichlet priors and posteriors, with the main difference being in the form of multinomial distribution evidence propagated.
 
 Another route lies in transferring general Bayesian neural networks to GNNs. These works consider model parameters, passed messages, etc., as distributions rather than fixed values, and propose a series of Bayesian Graph Neural Networks (BGNNs).
+To address limitations in GCNs' ability to handle uncertain graph structures, Zhang et al. \cite{zhang2019bayesian} treated the observed graph $G_{obs}$ as a sample from a random graph family. As a result, the posterior probability of node (or graph) labels can be computed by:
+\begin{equation}
+    \label{eq: BGCN_random_graph_post}
+    p(\mathbf{Z}|\mathbf{Y}_{\mathcal{L}}, \mathbf{X}, G_{obs})=\int p(\mathbf{Z}|\boldsymbol{\theta}, G, \mathbf{X})p(\boldsymbol{\theta}|\mathbf{Y}_{\mathcal{L}}, G, \mathbf{X})p(G|\lambda)p(\lambda|G_{obs})\,d\boldsymbol{\theta}\,dG \,d\lambda\,.
+\end{equation}
+Here $\boldsymbol{\theta}$ is a random variable representing the parameters of a Bayesian GCN over graph $G$, and $\lambda$ denotes the parameters that characterize a family of random graphs. 
+$\mathbf{Y}_{\mathcal{L}}$ and $\mathbf{X}$ represent the training label set and the node feature matrix, respectively.
+$p(\mathbf{Z}|\boldsymbol{\theta}, G, \mathbf{X})$ can be modelled using a categorical distribution by applying a softmax function to the output of the $L$-layer GCN $\mathbf{Z}=\mathbf{H}^{(L)}$. 
+Due to the intractability of the integral in Eq. (\ref{eq: BGCN_random_graph_post}), the authors employ the following Monte Carlo approximation:
+\begin{equation}
+    \label{eq: BGCN_random_graph_post_MC}
+    p(\mathbf{Z}|\mathbf{Y}_{\mathcal{L}}, \mathbf{X}, G_{obs}) \approx \frac{1}{N_{G}S}\sum_{i=1}^{N_G}\sum_{s=1}^{S} p(\mathbf{Z}|\boldsymbol{\theta}_{s,i}, G_i, \mathbf{X})\,.
+\end{equation}
+In this approximation, $N_G$ graphs $G_i$ are sampled from $p(G|\hat{\lambda})$, where $\hat{\lambda}$ is the parameter of the random graph model obtained through maximum a posteriori estimation $\hat{\lambda}=\arg\max_{\lambda}p(\lambda|G_{obs})$. 
+$S$ weights $\boldsymbol{\theta}$ are drawn from $p(\boldsymbol{\theta}|\mathbf{Y}_{\mathcal{L}}, G_i, \mathbf{X})$ using Monte Carlo dropout across the Bayesian GCN corresponding to $G_i$.
+
+Regarding the specific choice of the random graph model in  Eq. (\ref{eq: BGCN_random_graph_post}), Zhang et al. \cite{zhang2019bayesian} utilized an assortative mixed membership stochastic block model (a-MMSBM) \cite{li2016scalable,gopalan2012scalable}. 
+To more effectively harness the information offered by node features and training labels for the inference of graph topology, Pal et al. \cite{pal2019bayesian} introduced a generative model based on node copying as an alternative to the a-MMSBM. 
+Motivated by comparable considerations, Pal et al. \cite{pal2020non} proposed a non-parametric posterior distribution of the graph $G$ to infer the graph topology.
+
 To model the propagation of uncertainty in message-passing mechanisms, Xu et al. \cite{xu2022uncertainty} treated messages as multivariate Gaussian variables and employed GNNs to predict their means. To align with the intuition that more neighboring nodes provide more evidence, they defined an uncertainty propagation mechanism in GNNs for predicting the covariance of Gaussian distributions, which differs from traditional message passing. The covariance ultimately provides the uncertainty of predictions. 
-Munikoti et al. \cite{munikoti2023general} considered probabilistic links, noise in node features, and modeling errors, treating node features, links between nodes, and model parameters as variables. They propagated aleatoric  uncertainty to the output by defining mechanisms for the propagation of means and variances of the node embeddings in GNN, while also estimating epistemic uncertainty through MC dropout. 
-Zhao et al. \cite{zhao2020uncertainty} viewed model parameters as variables and, based on the methods of decomposing epistemic uncertainty and aleatoric uncertainty in Bayesian deep learning \cite{depeweg2018decomposition, malinin2018predictive}, uses MC dropout to obtain both types of uncertainty. Additionally, this work incorporates uncertainty from evidence theory, namely \textit{vacuity} due to lack of evidence and \textit{dissonance} due to conflicting evidence, offering a richer representation of uncertainty.
+Munikoti et al. \cite{munikoti2023general} considered probabilistic links, noise in node features, and modeling errors, treating node features, links between nodes, and model parameters as variables. They propagated aleatoric uncertainty to the output by defining mechanisms for the propagation of means and variances of the node embeddings in GNN, while also estimating epistemic uncertainty through MC dropout. 
+Zhao et al. \cite{zhao2020uncertainty} viewed model parameters as variables and then obtained both epistemic uncertainty and aleatoric uncertainty based on Eq. (\ref{eq:Bayes_AU_EU_decomp}). 
+Additionally, this work incorporates uncertainty from evidence theory, namely \textit{vacuity} due to lack of evidence and \textit{dissonance} due to conflicting evidence, offering a richer representation of uncertainty.
  %Another route lies in transferring general Bayesian neural networks to GNNs. These works consider model parameters, passed messages, etc., as distributions rather than fixed values, and propose a series of Bayesian Graph Neural Networks (BGNNs).
  %Munikoti et al. \cite{munikoti2023general} proposed a Bayesian graph neural network framework for quantifying aleatoric and epistemic uncertainties. They derived the relationship between the mean and variance of neurons in one layer of the GNN with the previous layer to propagate aleatoric uncertainty to the model output, and obtained epistemic uncertainty through Monte Carlo dropout.
 

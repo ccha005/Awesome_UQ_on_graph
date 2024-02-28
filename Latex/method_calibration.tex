@@ -1,3 +1,30 @@
 \subsection{Calibration}
-\subsubsection{Calibration Overview}
+\subsubsection{Calibration Overview}\hfill\\
+Classification tasks by machine learning are preferred to output both the predicted label and the confidence of the prediction, which can be regarded as the probability that the predicted label is correct~\cite{vasilev2023calibration}. For example, with a trained model $f$, the estimation of correctness, or accuracy, of its predictions with confidence = 0.8 is expected to be 80$\%$. The calibration performance of modern neural networks has been proven poor due to a series of factors, including network width, depth, batch normalization, and weight decay~\cite{guo2017calibration}.
+
+\textbf{Calibration Formulation:} We begin with a classifier $f$ trained by feature set $X$ and corresponding label set $Y$ whose label space is $\mathcal{Y} = \{1,..., K\}$. $\forall x \in X$ with the true label $y$, $f$ applies softmax operation to output a probability vector, $\textbf{v}(x)=(v_1(x),...,v_K(x)),\sum_{i=1}^Kv_i(x)=1$. The predicted label is the one with the highest value, $v_i(x)$, which is the confidence, $\hat{p}(x)$, of the prediction.
+\begin{equation}
+    \hat{y}(x)=\arg \max_{i\in K} v_i,\text{ } \hat{p}(x)=v_{\hat{y}}.
+\end{equation}
+A model is well-calibrated if the probability of correct prediction equals the prediction confidence for all labels and all confidence levels~\cite{guo2017calibration}.
+\begin{equation}\label{eq: well-calibrated}
+    \mathbf{P}(y=i|v_i=p)=p, \text{ } \forall i \in \mathcal{Y}, \text{ } \forall p \in [0,1].
+\end{equation}
+
+\textbf{Calibration Evaluation:} 
+
+i) Expected Calibration Error (ECE):
+We divide the entire confidence space [0,1] into $M$ equal-size intervals $I_m = (\frac{m-1}{M},\frac{m}{M}]$. $B_m$ represents the set of samples whose confidences fall into $I_m$. The accuracy and confidence of $B_m$ are illustrated below.
+\begin{equation}
+    acc(B_m)=\frac{1}{|B_m|}\sum_{i\in B_m}\textbf{1}(\hat{y}_i=y_i),
+\end{equation}
+\begin{equation}
+    conf(B_m)=\frac{1}{|B_m|}\sum_{i\in B_m}\hat{p}_i.
+\end{equation}
+Expected Calibration Error (ECE) is designed to approximate the absolute difference between the two sides of Eq.~(\ref{eq: well-calibrated}) using the accuracy and confidence of $B_m$ as below. We can also plot $acc(B_m)$ and $conf(B_m)$ called a reliability diagram to visualize whether a model is well-calibrated.
+\begin{equation}
+    ECE=\sum_{m=1}^M\frac{|B_m|}{n}|acc(B_m)-conf(B_m)|.
+\end{equation}
+Some works are extending the concept of ECE to make it suitable for different scenarios. \cite{naeini2015obtaining} introduces Maximum Calibration Error(MCE), $MCE=\max_m|acc(B_m)-conf(B_m)|$, to compute the maximum gap between accuracy and confidence. \cite{kull2019beyond} designed classwise ECE (cwECE), $cwECE=\frac{1}{K}\sum_{i=1}_K\sum_{m=1}^M\frac{|B_m|}{n}|acc(B_m)-conf(B_m)|$, to see averaged ECE on the class level.
+
 \subsubsection{Calibration for Graphs}
