@@ -1,30 +1,84 @@
 \subsection{Calibration}
 \subsubsection{Calibration Overview}\hfill\\
-Classification tasks by machine learning are preferred to output both the predicted label and the confidence of the prediction, which can be regarded as the probability that the predicted label is correct~\cite{vasilev2023calibration}. For example, with a trained model $f$, the estimation of correctness, or accuracy, of its predictions with confidence = 0.8 is expected to be 80$\%$. The calibration performance of modern neural networks has been proven poor due to a series of factors, including network width, depth, batch normalization, and weight decay~\cite{guo2017calibration}.
+Classification tasks by machine learning are preferred to output both the predicted label and the confidence of the prediction, which can be regarded as the probability that the predicted label is correct. For example, with a trained model $f$, the estimation of correctness, or accuracy, of its predictions with confidence = 0.8 is expected to be 80$\%$. The calibration performance of modern neural networks has been proven poor due to a series of factors, including network width, depth, batch normalization, and weight decay~\cite{guo2017calibration}.
 
-\textbf{Calibration Formulation:} We begin with a classifier $f$ trained by feature set $X$ and corresponding label set $Y$ whose label space is $\mathcal{Y} = \{1,..., K\}$. $\forall x \in X$ with the true label $y$, $f$ applies softmax operation to output a probability vector, $\textbf{v}(x)=(v_1(x),...,v_K(x)),\sum_{i=1}^Kv_i(x)=1$. The predicted label is the one with the highest value, $v_i(x)$, which is the confidence, $\hat{p}(x)$, of the prediction.
+\textbf{Calibration Formulation:} 
+
+We begin with a classifier $f$ trained by feature set $X$ and corresponding label set $Y$ whose label space is $\mathcal{Y} = \{1,..., K\}$. With $n$ inputs $x_i \in X$ having true label $y_i$, $f$ applies softmax operation to output a probability vector, $\textbf{v}(x_i)=\textbf{v}_i=(v_i^1(x),...,v_i^K(x)),\sum_{j=1}^Kv_i^j=1$. The predicted label of $x_i$, denoted by $\hat{y}_i$, is the element with the highest value, which is the confidence, $\hat{p}_i$, of the prediction.
 \begin{equation}
-    \hat{y}(x)=\arg \max_{i\in K} v_i,\text{ } \hat{p}(x)=v_{\hat{y}}.
+    \hat{y}_i=\arg \max_{j\in K} v_i^j,\text{ } \hat{p}_i=\max_{j\in K} v_i^j.
 \end{equation}
 A model is well-calibrated if the probability of correct prediction equals the prediction confidence for all labels and all confidence levels~\cite{guo2017calibration}.
 \begin{equation}\label{eq: well-calibrated}
-    \mathbf{P}(y=i|v_i=p)=p, \text{ } \forall i \in \mathcal{Y}, \text{ } \forall p \in [0,1].
+    \mathbf{P}(y_i=j|v_i^j=p)=p, \text{ } \forall j \in \mathcal{Y}, \text{ } \forall p \in [0,1].
 \end{equation}
 
 \textbf{Calibration Evaluation:} 
 
 i) Expected Calibration Error (ECE):
-We divide the entire confidence space [0,1] into $M$ equal-size intervals $I_m = (\frac{m-1}{M},\frac{m}{M}]$. $B_m$ represents the set of samples whose confidences fall into $I_m$. The accuracy and confidence of $B_m$ are illustrated below.
+We divide the entire confidence space [0,1] into $M$ equal-size intervals $I_m = (\frac{m-1}{M},\frac{m}{M}]$. $B_m$ represents the set of samples whose confidences fall into $I_m$. The accuracy and confidence of $B_m$ are illustrated below, where $y_i$ and $\hat{y}_i$ are the true and predicted label of input $x_i$, and $\hat{p}_i$ is the confidence of the preduction.
 \begin{equation}
     acc(B_m)=\frac{1}{|B_m|}\sum_{i\in B_m}\textbf{1}(\hat{y}_i=y_i),
 \end{equation}
 \begin{equation}
     conf(B_m)=\frac{1}{|B_m|}\sum_{i\in B_m}\hat{p}_i.
 \end{equation}
-Expected Calibration Error (ECE) is designed to approximate the absolute difference between the two sides of Eq.~(\ref{eq: well-calibrated}) using the accuracy and confidence of $B_m$ as below. We can also plot $acc(B_m)$ and $conf(B_m)$ called a reliability diagram to visualize whether a model is well-calibrated.
+Expected Calibration Error (ECE) is designed to approximate the absolute difference between the two sides of Eq.~(\ref{eq: well-calibrated}) using the accuracy and confidence of $B_m$ as below. We can also plot $acc(B_m)$ and $conf(B_m)$ called a reliability diagram to visualize a model's calibration performance. The plot of a well-calibrated model should follow a diagonal, indicating $acc(B_m)=conf(B_m)$.
 \begin{equation}
     ECE=\sum_{m=1}^M\frac{|B_m|}{n}|acc(B_m)-conf(B_m)|.
 \end{equation}
 Some works are extending the concept of ECE to make it suitable for different scenarios. \cite{naeini2015obtaining} introduces Maximum Calibration Error(MCE), $MCE=\max_m|acc(B_m)-conf(B_m)|$, to compute the maximum gap between accuracy and confidence. \cite{kull2019beyond} designed classwise ECE (cwECE), $cwECE=\frac{1}{K}\sum_{i=1}_K\sum_{m=1}^M\frac{|B_m|}{n}|acc(B_m)-conf(B_m)|$, to see averaged ECE on the class level.
 
+ii) Proper Scoring Rules: The constraint of ECE is the loss of accuracy due to the finite number of $I_m$. Thus, the continuous proper scoring rule can act as an alternative to ECE. For example, with training $n$ samples, we can apply negative log-likelihood (NLL) as below, where $\hat{p}_{i,y_i}$ is the $x_i$'s confidence of the correct label $y_i$. 
+\begin{equation}
+    NLL=\frac{1}{n}\sum_{i=1}^n \log(\hat{p}_{i,y_i})
+\end{equation}
+NLL is minimized when the model assigns a high probability to the correct class for each instance, which means the model is rewarded for being confident in its correct predictions. However, this does not necessarily mean that the model is well-calibrated. A well-calibrated model not only makes accurate predictions but also outputs probability estimates that reflect the true likelihood of the prediction being correct. As~\cite{krishnan2020improving,mukhoti2020calibrating} stated, miscalibration in machine learning models has been linked to the overfitting of NLL.
+
+Brier Score (BS)~\cite{brier1950verification} is a more sophisticated metric as it considers a sample's confidence in all labels. $\hat{p}_{i,j}$ is the confidence of sample $i$ in label $j$.
+\begin{equation}
+    BS=\frac{1}{n}\sum_{i=1}^n\sum_{j=1}^K(\hat{p}_{i,j}-\mathbbm{1}(y_i=j))
+\end{equation}
+
+\textbf{Calibration Method:}
+
+The processing of calibrating a model's prediction can be post-processed (post hoc), or incorporated during the model's training. Based on this, we categorize calibration methods and introduce them as below.
+
+(i) Post-processed Calibration:
+Post-processed calibration requires an unseen calibration set, which should not be the same as the training set, as a model loss on training data would be biased compared with the loss on unseen data.
+
+Histogram binning was initially proposed in~\cite{zadrozny2001obtaining} as a non-parametric calibration method of decision trees and naive Bayesian classifiers, and this method can be generalized to almost all models. Assume we have a binary classification task with label space $\mathcal{Y} = \{0,1\}$ and $\hat{p}_{i,1}$ as the confidence of sample $i$ in label 1. Here we slightly revise the definition of $B_m$. Instead of being the set of samples whose prediction confidences, $\hat{p}_i$, fall into $(\frac{m-1}{M},\frac{m}{M}]$, now $B_m$ includes samples whose $\hat{p}_{i,1}$ is in the interval. Then, we try to minimize the equation below, where $\theta_m$ is the estimated number of positive-class samples in the $B_m$ set. For a test sample $x_t$ whose $\hat{p}_{t,1}$ belong to $I_m$, $\hat{p}_{t,1}$ should be replaced by $\theta_m$ as a calibrated confidence.
+\begin{equation}
+    \min_{\theta_1,...,\theta_M}\sum_{m=1}^M\sum_{i\in B_m}(\theta_m-y_i)^2
+\end{equation}
+
+$I_m$ in histogram binning is usually assigned according to equal-width or equal-frequency methods with pre-defined total bin number $M$. Isotonic regression by~\cite{zadrozny2002transforming} insists the number and size of $I_m$ should be optimized as well. We write $I_m$ as an interval of $(a_{m-1},a_m]$, and isotonic regression optimizes the following objective function.
+\begin{equation}
+    \min_{\substack{\theta_1 \leq,...,\leq\theta_M\\a_0\leq,...\leq a_M=1}}\sum_{m=1}^M\sum_{i=1}^n\mathbbm{1}(a_{m-1}\leq \hat{p}_{i,1}\leq a_{m})(\theta_m-y_i)^2.
+\end{equation}
+Both methods can be applied to multi-class classification tasks using the one-vs-rest strategy.
+
+As we mentioned previously, $\textbf{v}(x)=(v_1(x),...,v_K(x))$ is the output vector where $v_i(x)$ indicates the probability of $x$'s label $y=i$. This $\textbf{v}$ is transformed from a logit vector $\textbf{z}$ via softmax function $\sigma(\cdot)$.
+\begin{equation}
+    \textbf{v}=\sigma(\textbf{z})=\frac{( e^{z_1}, ..., e^{z_K})}{\sum_{i=1}^K e^{z_i}}
+\end{equation}
+Platt scaling is introduced by~\cite{platt1999probabilistic} as a parametric calibration method for support vector machines, and it can be generalized by adding scale and location parameters as below, which can be optimized by NLL as discussed above.
+\begin{equation}
+    \textbf{v}=\sigma(\textbf{W}\cdot\textbf{z}+\textbf{b})
+\end{equation}
+When $\textbf{W}$ is a scaler as $\frac{1}{T}$ and $\textbf{b}=0$, it is temperature scaling. We are using the same scale factor for different $z_i$ and the predicted class remains unchanged. When $\textbf{W}$ is a diagonal matrix $\in \mathbf{R}^{K\times K}$, it becomes vector scaling, assigning different scale factors to classes. $\textbf{W}$ can be an ordinary matrix as well, which is the most generalized form, but this form may lead to overfitting by over-parameterization.
+
+(ii) Calibration during Training: The true label of input sample $x_i$ can be represented as a one-hot vector $\textbf{y}_i$ where the element corresponding to correct label $y_i$ is 1 and the rest elements are 0. The cross-entropy (CE) of predicted vector $\textbf{v}_i$ and $\textbf{y}_i$ is listed below, where $y_i^j$ and $v_i^j$ denote j-th elements of vector $\textbf{y}_{i}$ and $\textbf{v}_{i}$.
+\begin{equation}
+    CE(\textbf{y}_i,\textbf{v}_i)=-\sum_{j=1}^K y_i^j\log v_i^j
+\end{equation}
+Label smoothing can be applied to calibration as stated in~\cite{muller2019does} by preventing over-confidence. Tuning parameter $\alpha \in [0,1]$, the one-hot vector $\textbf{y}_i$ will be smoother. When $\alpha=1$, $\textbf{y'}_i$ will represent a uniform distribution. As we train $CE(\textbf{y'}_i,\textbf{v}_i)$, label smoothing encourages the model to be less confident, as it penalizes the model for assigning full probability to the ground truth label. 
+\begin{equation}
+    \textbf{y}_i=(y_i^1,...,y_i^K)\rightarrow\textbf{y'}_i=((1-\alpha)y_i^1+\frac{\alpha}{K},...,(1-\alpha)y_i^K+\frac{\alpha}{K})
+\end{equation}
+Focal loss (FL) was introduced by~\cite{lin2017focal} to address the problem of class imbalance and this loss function, as shown below, was applied to calibration in~\cite{mukhoti2020calibrating}. 
+\begin{equation}
+    FL(x_i)=-(1-v_i^{\hat{y}_i})^\gamma \log(v_i^{\hat{y}_i}), \gamma\geq 0
+\end{equation}
+Focal loss only considers confidence in the true label and the loss value will decrease faster as we increase $\gamma$. Thus, it can prevent being over-confident. If $\gamma=0$, FL goes back to CE.
 \subsubsection{Calibration for Graphs}

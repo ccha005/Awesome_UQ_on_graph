@@ -95,7 +95,7 @@ This repository contains research papers and surveys that are relevant to **Unce
 
 [G4]A General Framework for Quantifying Aleatoric and Epistemic Uncertainty in Graph Neural Networks [Neurocomputing 2023](https://arxiv.org/pdf/2205.09968.pdf) 
 
-[G5]Predictive Uncertainty Quantification for Graph Neural Network Driven Relaxed Energy Calculations [NeurIPS AI4Science Workshop 2023](https://openreview.net/forum?id=rdgB5BqWCw)
+[G5]Predictive Uncertainty Quantification for Graph Neural Network Driven Relaxed Energy Calcul1ations [NeurIPS AI4Science Workshop 2023](https://openreview.net/forum?id=rdgB5BqWCw)
 
 [G6]Uncertainty Quantification of Spatiotemporal Travel Demand with Probabilistic Graph Neural Networks [ArXiv 2023](https://arxiv.org/abs/2303.04040)
 

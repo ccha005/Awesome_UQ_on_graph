@@ -9,7 +9,7 @@ The theorem is elegantly encapsulated in the formula:
     P(\boldsymbol{\theta}|D)=\frac{P(D|\boldsymbol{\theta})P(\boldsymbol{\theta})}{P(D)},
 \end{equation}
 %P(θ|D) = [P(D|θ)P(θ)] / P(D), 
-where $P(\boldsymbol{\theta}|D)$ is the posterior probability of the parameter $\boldsymbol{\theta}$ given the data $D$, $P(D|\boldsymbol{\theta})$ is the likelihood of observing the data given the parameter, $P(\boldsymbol{\theta})$ is the prior probability of the parameter, and $P(D)$ is the marginal likelihood of the data. 
+where $P(\boldsymbol{\theta}|D)$ is the posterior probability of the parameter $\boldsymbol{\theta}$ given the data $D=\{X,Y\}$, $P(D|\boldsymbol{\theta})$ is the likelihood of observing the data given the parameter, $P(\boldsymbol{\theta})$ is the prior probability of the parameter, and $P(D)$ is the marginal likelihood of the data. 
 This Bayesian paradigm shifts the focus from a single 'true' model to a probabilistic distribution of models, reflecting all possible values that the parameters can take, weighted by their likelihood. 
 By incorporating prior knowledge and continuously updating it with new data, Bayesian methods provide a dynamic and adaptive approach to UQ, allowing for a more comprehensive understanding of uncertainty in models.
 
@@ -25,15 +25,24 @@ For a given test sample $\mathbf{x}^*$, the prediction thereby incorporates the 
     \label{eq:Bayes_prediction}
     p(y^* | \mathbf{x}^*, D) = \int p(y^* | \mathbf{x}^*, \boldsymbol{\theta}) p(\boldsymbol{\theta} | D) d\boldsymbol{\theta}.
 \end{equation}
+
 Due to the general intractability of the integral, various techniques for inferring $p(\boldsymbol{\theta} | D)$ have been proposed. 
 Gal et al. \cite{gal2016dropout} demonstrated that Monte Carlo dropout is equivalent to sampling from an approximate posterior of $\boldsymbol{\theta}$, allowing Eq. (\ref{eq:Bayes_prediction}) to be simplified to the following Monte Carlo integral:
 \begin{equation}
     \label{eq:Bayes_MC_dropout}
     p(y^* | \mathbf{x}^*, D) \approx \frac{1}{S} \sum^{S}_{i=1} p(y^* | \mathbf{x}^*, \boldsymbol{\theta}_i),
 \end{equation}
-where dropout is used to obtain $S$ weights $W_i$.
+where dropout is used to obtain $S$ weights $\boldsymbol{\theta}_i$. 
+Hasanzadeh et al. \cite{hasanzadeh2020bayesian} extended the concept of dropout to graphs, introducing Graph DropConnect (GDC) to more effectively leverage the topological structure of graphs. 
+Another technique for approximating the posterior distribution p(\boldsymbol{\theta} | D) is variational inference (VI). 
+The objective is to approximate a distribution $q_{\phi}(\boldsymbol{\theta}) $ that is close to the posterior $p(\boldsymbol{\theta} | D)$. 
+This can be achieved by minimizing the Kullback-Leibler divergence $\text{KL}(q_{\phi}(\boldsymbol{\theta}) \| p(\boldsymbol{\theta} | D))$, and in practice, by maximizing the following evidence lower bound (ELBO) \cite{blei2017variational}:
+\begin{equation}
+    \label{Bayesian_VI_ELBO}
+    \mathcal{L}_{\text{ELBO}}(\phi)=\int q_{\phi}(\boldsymbol{\theta}) \log p(Y | X, \boldsymbol{\theta}) d\boldsymbol{\theta} - \text{KL}(q_{\phi}(\boldsymbol{\theta}) \| p(\boldsymbol{\theta})))
+\end{equation}
 
-The quantification of uncertainty is elegantly captured and decomposed by the relationship \cite{depeweg2018decomposition}:
+Once $P(\boldsymbol{\theta}|D)$ is obtained, the uncertainty quantified by the above Bayesian framework can be elegantly decomposed by the following relationship:\cite{depeweg2018decomposition}:
 \begin{equation}
 \label{eq:Bayes_AU_EU_decomp}
     \underbrace{I(y^*, \boldsymbol{\theta} | \mathbf{x}^*, D)}_{Epistemic} = \underbrace{\mathcal{H}\left[ \mathbb{E}_{P(\boldsymbol{\theta}|D)}\left[P(y^*|\mathbf{x}^*, \boldsymbol{\theta})\right]\right]}_{Entropy} - \underbrace{\mathbb{E}_{P(\boldsymbol{\theta}|D)}\left[\mathcal{H}\left[P(y^*|\mathbf{x}^*, \boldsymbol{\theta})\right]\right]}_{Aleatoric},
@@ -73,10 +82,27 @@ Regarding the specific choice of the random graph model in  Eq. (\ref{eq: BGCN_r
 To more effectively harness the information offered by node features and training labels for the inference of graph topology, Pal et al. \cite{pal2019bayesian} introduced a generative model based on node copying as an alternative to the a-MMSBM. 
 Motivated by comparable considerations, Pal et al. \cite{pal2020non} proposed a non-parametric posterior distribution of the graph $G$ to infer the graph topology.
 
+In addition to considering the observed graph as sampled from a random graph family, some studies also treat the inputs and other elements within the GNN as random variables.
 To model the propagation of uncertainty in message-passing mechanisms, Xu et al. \cite{xu2022uncertainty} treated messages as multivariate Gaussian variables and employed GNNs to predict their means. To align with the intuition that more neighboring nodes provide more evidence, they defined an uncertainty propagation mechanism in GNNs for predicting the covariance of Gaussian distributions, which differs from traditional message passing. The covariance ultimately provides the uncertainty of predictions. 
-Munikoti et al. \cite{munikoti2023general} considered probabilistic links, noise in node features, and modeling errors, treating node features, links between nodes, and model parameters as variables. They propagated aleatoric uncertainty to the output by defining mechanisms for the propagation of means and variances of the node embeddings in GNN, while also estimating epistemic uncertainty through MC dropout. 
 Zhao et al. \cite{zhao2020uncertainty} viewed model parameters as variables and then obtained both epistemic uncertainty and aleatoric uncertainty based on Eq. (\ref{eq:Bayes_AU_EU_decomp}). 
-Additionally, this work incorporates uncertainty from evidence theory, namely \textit{vacuity} due to lack of evidence and \textit{dissonance} due to conflicting evidence, offering a richer representation of uncertainty.
+Additionally, this work incorporates uncertainty from evidence theory, namely \textit{vacuity} due to lack of evidence and \textit{dissonance} due to conflicting evidence, offering a richer representation of uncertainty. 
+Elinas et al. \cite{elinas2020variational}considered the adjacency matrix $\mathbf{A}$ as a random variable. 
+The prior distribution of the adjacency matrix $\mathbf{A}$ is given by:
+\begin{equation}
+    \label{Elinas_prior_A}
+    p(\mathbf{A})=\Pi_{ij}p(A_{ij}),\,
+    \text{with}\,p(A_{ij})=\text{Bern}(A_{ij}|\rho_{ij}^o), 
+\end{equation}
+where $\text{Bern}(A_{ij}|\rho_{ij}^o)$ is a Bernoulli distribution over $\rho_{ij}^o$. 
+The variational posterior, which takes a form similar to the prior, is given by:
+\begin{equation}
+    \label{Elinas_var_post_A}
+    q_{\phi}(\mathbf{A})=\Pi_{ij}q_{\phi}(A_{ij}),\,
+    \text{with}\,q_{\phi}(A_{ij})=\text{Bern}(A_{ij}|\rho_{ij}),\, \rho_{ij}>0, 
+\end{equation}
+where $\rho_{ij}$ are free parameters then $\phi = \{\rho_{ij}\}$. 
+By relaxing the discrete distribution to a continuous Concrete distribution \cite{jang2016categorical,maddison2016concrete} and maximizing the ELBO, they are able to estimate the parameters $\phi$ of the posterior $q_{\phi}(\mathbf{A})$. 
+Munikoti et al. \cite{munikoti2023general} considered probabilistic links, noise in node features, and modeling errors, treating node features, links between nodes, and model parameters as variables. They propagated aleatoric uncertainty to the output by defining mechanisms for the propagation of means and variances of the node embeddings in GNN, while also estimating epistemic uncertainty through MC dropout. 
  %Another route lies in transferring general Bayesian neural networks to GNNs. These works consider model parameters, passed messages, etc., as distributions rather than fixed values, and propose a series of Bayesian Graph Neural Networks (BGNNs).
  %Munikoti et al. \cite{munikoti2023general} proposed a Bayesian graph neural network framework for quantifying aleatoric and epistemic uncertainties. They derived the relationship between the mean and variance of neurons in one layer of the GNN with the previous layer to propagate aleatoric uncertainty to the model output, and obtained epistemic uncertainty through Monte Carlo dropout.
 
