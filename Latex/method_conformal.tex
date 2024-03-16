@@ -136,6 +136,32 @@ in the \textit{inductive} settings,
 the model only has access to the subgraph induced by the nodes in the training set $\mathcal{D}_{train}$ during training.
 The assumption of exchangeability does not hold in this case.
 
+In the study \cite{kang2022jurygcn}, 
+the uncertainty of a node $X_i$ inferred a GNN is defined by:
+\begin{equation}
+    \mathbb{U}(X_i)=\mathbb{C}^+(X_i) - \mathbb{C}^-(X_i),
+\end{equation}
+where $\mathbb{C}^+(X_i) $ and $ \mathbb{C}^-(X_i)$ are the lower and upper bound of the predictive confidence interval of node $X_i$ by the jackknife method, respectively:
+\begin{equation}
+\begin{aligned}
+    & \mathbb{C}^+(X_i) = \textnormal{Quantile}(1-\alpha; \|f(X_i;\Theta^\ast_{\epsilon,j})\|_2 + err_j | \forall j \in \mathcal{D}_{train} \backslash \{ X_j \}), \\
+    & \mathbb{C}^-(X_i) = \textnormal{Quantile}(\alpha; \|f(X_i;\Theta^\ast_{\epsilon,j})\|_2 - err_j | \forall j \in \mathcal{D}_{train} \backslash \{ X_j \}),
+\end{aligned}
+\end{equation}
+where $err_j = \| y_j, f(j, \Theta_{\epsilon,j}^\ast) \|_2$ is the leave-one-out (LOO) error of node $X_j$.
+$\Theta_{\epsilon,j}^\ast$ is the loss when upweighting the importance of a node $X_j$ with small constant $\epsilon$:
+\begin{equation}
+    \Theta_{\epsilon,j}^\ast=\arg\min_\Theta \epsilon \ell(X_j, y_j) + \frac{1}{|\mathcal{D}_{train}|} \sum_{X_i \in \mathcal{D}_{train}} \ell(X_i, y_i),
+\end{equation} 
+$\ell$ is a node-specific loss, such as cross-entropy.
+The influence function is considered to estimate the LOO loss and $\Theta_{\epsilon,j}^\ast$, without retraining the model.
+Specifically, 
+the influence function is defined as
+\begin{equation}
+\label{eq:influence_function_estimation}
+    \Theta_{\epsilon,j}^\ast \approx \Theta^\ast + \epsilon H^{-1}_{\Theta^\ast} \nabla_{\Theta} \ell(X_j, y_j),
+\end{equation}
+where $H_{\Theta^\ast}$ is the Hessian matrix with respect to the model parameters, and Eq. (\ref{eq:influence_function_estimation}) is effectively estimated by the vectorization and the Hessian-vector product.
 
 In the study \cite{zargarbashi2023conformal},
 a diffused score function, 

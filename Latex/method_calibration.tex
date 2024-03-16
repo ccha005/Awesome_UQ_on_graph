@@ -16,14 +16,14 @@ A model is well-calibrated if the probability of correct prediction equals the p
 \textbf{Calibration Evaluation:} 
 
 i) Expected Calibration Error (ECE):
-We divide the entire confidence space [0,1] into $M$ equal-size intervals $I_m = (\frac{m-1}{M},\frac{m}{M}]$. $B_m$ represents the set of samples whose confidences fall into $I_m$. The accuracy and confidence of $B_m$ are illustrated below, where $y_i$ and $\hat{y}_i$ are the true and predicted label of input $x_i$, and $\hat{p}_i$ is the confidence of the preduction.
+We divide the entire confidence space [0,1] into $M$ equal-size intervals $I_m = (\frac{m-1}{M},\frac{m}{M}]$. $B_m$ represents the set of samples whose confidences fall into $I_m$. The accuracy and confidence of $B_m$ are illustrated below, where $y_i$ and $\hat{y}_i$ are the true and predicted label of input $x_i$, and $\hat{p}_i$ is the confidence of the prediction.
 \begin{equation}
     acc(B_m)=\frac{1}{|B_m|}\sum_{i\in B_m}\textbf{1}(\hat{y}_i=y_i),
 \end{equation}
 \begin{equation}
     conf(B_m)=\frac{1}{|B_m|}\sum_{i\in B_m}\hat{p}_i.
 \end{equation}
-Expected Calibration Error (ECE) is designed to approximate the absolute difference between the two sides of Eq.~(\ref{eq: well-calibrated}) using the accuracy and confidence of $B_m$ as below. We can also plot $acc(B_m)$ and $conf(B_m)$ called a reliability diagram to visualize a model's calibration performance. The plot of a well-calibrated model should follow a diagonal, indicating $acc(B_m)=conf(B_m)$.
+Expected Calibration Error (ECE) is designed to approximate the absolute difference between the two sides of Eq.~(\ref{eq: well-calibrated}) using the accuracy and confidence of $B_m$ as below. We can also plot $acc(B_m)$ and $conf(B_m)$ called a reliability diagram~\cite{niculescu2005predicting} to visualize a model's calibration performance. The plot of a well-calibrated model should follow a diagonal, indicating $acc(B_m)=conf(B_m)$.
 \begin{equation}
     ECE=\sum_{m=1}^M\frac{|B_m|}{n}|acc(B_m)-conf(B_m)|.
 \end{equation}
@@ -52,11 +52,12 @@ Histogram binning was initially proposed in~\cite{zadrozny2001obtaining} as a no
     \min_{\theta_1,...,\theta_M}\sum_{m=1}^M\sum_{i\in B_m}(\theta_m-y_i)^2
 \end{equation}
 
-$I_m$ in histogram binning is usually assigned according to equal-width or equal-frequency methods with pre-defined total bin number $M$. Isotonic regression by~\cite{zadrozny2002transforming} insists the number and size of $I_m$ should be optimized as well. We write $I_m$ as an interval of $(a_{m-1},a_m]$, and isotonic regression optimizes the following objective function.
+$I_m$ in histogram binning is usually assigned according to equal-width or equal-frequency methods with pre-defined total bin number $M$. Isotonic regression by~\cite{zadrozny2002transforming} insists the number and size of $I_m$ should be optimized as well. We write $I_m$ as an interval of $(a_{m-1},a_m]$, and isotonic regression optimizes the following objective function. 
 \begin{equation}
     \min_{\substack{\theta_1 \leq,...,\leq\theta_M\\a_0\leq,...\leq a_M=1}}\sum_{m=1}^M\sum_{i=1}^n\mathbbm{1}(a_{m-1}\leq \hat{p}_{i,1}\leq a_{m})(\theta_m-y_i)^2.
 \end{equation}
-Both methods can be applied to multi-class classification tasks using the one-vs-rest strategy.
+\cite{kuleshov2018accurate} applied isotonic regression to deep learning
+models for regression tasks with promising performance. Both histogram binning and isotonic regression can be applied to multi-class classification tasks using the one-vs-rest strategy.
 
 As we mentioned previously, $\textbf{v}(x)=(v_1(x),...,v_K(x))$ is the output vector where $v_i(x)$ indicates the probability of $x$'s label $y=i$. This $\textbf{v}$ is transformed from a logit vector $\textbf{z}$ via softmax function $\sigma(\cdot)$.
 \begin{equation}
@@ -81,4 +82,33 @@ Focal loss (FL) was introduced by~\cite{lin2017focal} to address the problem of 
     FL(x_i)=-(1-v_i^{\hat{y}_i})^\gamma \log(v_i^{\hat{y}_i}), \gamma\geq 0
 \end{equation}
 Focal loss only considers confidence in the true label and the loss value will decrease faster as we increase $\gamma$. Thus, it can prevent being over-confident. If $\gamma=0$, FL goes back to CE.
-\subsubsection{Calibration for Graphs}
+\subsubsection{Calibration for Graphs}\hfill\\
+Calibration on graph neural networks has started to draw people's attention recently. GNNs for classification tasks can generate softmax outputs that can be regarded as probabilities that the predicted results are correct. Accuracy alone is not enough for high-stake decision-making. 
+
+~\cite{teixeira2019graph} is one of the first works investigating the calibration of GNNs. As it states, traditional calibration methods are used for models with i.i.d. data. However, when dealing with graph data (relational data), the features or state of a node can depend on the features or states of its neighbors. This is inherently a dependent structure because the properties of one node are not solely determined by that node alone but also by its context within the graph. This dependence makes the calibration of GNNs challenging. Besides, the class imbalance will cause collapsed predictions, so it is necessary to rebalance classes during training by weighting loss function. This work trained Graph Convolutional Networks~\cite{kipf2016semi}, Graph Attention Networks~\cite{velivckovic2017graph}, and Graph Graph Isomorphism Networks~\cite{xu2018powerful} on multiple datasets, concluding that GNNs can be miscalibrated and existing methods can not recalibrate them. Compared with histogram binning and isotonic regression, temperature scaling usually outputs the best calibration results in the experiment. Moreover, a new ECE-derived metric, $\text{ECE}_{\geq 50}$, is proposed as an ECE computed only over examples with confidence higher than 50\%, because people care more about the calibration on predicted labels.
+
+CaGCN is a topology-aware post-hoc calibration GNN model developed by \cite{wang2021confident} under a validated assumption that neighboured nodes share similar ground truth confidence levels. It observes that GNNs tend to be under-confident in their predictions. This paper focuses on an undirected attributed graph, $G=(V, E)$, for semi-supervised node classification tasks, with adjacent matrix $\textbf{A}\in \mathbb{R}^{N\times N}$ and the node feature matrix $\textbf{X} =[\textbf{x}_1,...,\textbf{x}_N]^T$. The output of a $l$-layer GCN before the softmax layer can be calculated below, where $\textbf{W}^{(l)}$ is the weight matrix of $l$-th layer and $\sigma(\cdot)$ is the activation function.
+\begin{equation}
+    \textbf{V} = \textbf{A}\sigma(...\textbf{A}\sigma(\textbf{A}\textbf{X}\textbf{W}^{(1)})\textbf{W}^{(2)}...)\textbf{W}^{(l)} = [\textbf{v}_1,..., \textbf{v}_N]^T.
+\end{equation}
+ CaGCN is a non-linear calibration model that takes topology information into account for relational data and can preserve the accuracy of the original classification GCN. With $\textbf{V}=[\textbf{v}_1,...,\textbf{v}_N]^T$, where $\textbf{v}_i=[v_{i,1},...,v_{i,K}]$ is the logit output of node $i$ with $K$ potential labels. CaGCN works as another GCN on $\textbf{V}$ to calibrate predictions as follows:
+ \begin{equation}
+     \textbf{t}=\sigma^{+}(\textbf{A}\sigma(...\textbf{A}\sigma(\textbf{A}\textbf{V}\textbf{W}^{(1)})\textbf{W}^{(2)}...)\textbf{W}^{(l)})=[t_1,...,t_N]^T
+ \end{equation}
+ \begin{equation}
+     \textbf{v'}_i=[v_{i,1}/t_i,...,v_{i,K}/t_i]^T, \text{ }\textbf{z}_i=[\sigma_{SM}(v'_{i,1}),...,\sigma_{SM}(v'_{i,K})]
+ \end{equation}
+ Temperature $t_i$ for each node $i$ is a non-negative scalar, obtained by the final layer of CaGCN by $\sigma^{+}(x)=1/(1+log(e^x))$, which is an element-wise softplus activation function. With $\sigma_{SM}$ as a softmax function of $\textbf{v'}_i$, $\hat{p}_i=\max_k z_{i,k}$ is the confidence of prediction of node $i$. As $t_I$ is only a scaler, temperature scaling on $\textbf{v'}_i$ does not influence the original prediction accuracy. The model is trained on a customized objective function balancing the loss between NLL and calibration.
+
+ Graph Attention Temperature Scaling (GATS) is developed by~\cite{hsu2022makes}, introducing the attention mechanism in the calibration model. By the experiment of GCN~\cite{kipf2016semi} and GAT~\cite{velivckovic2017graph} on seven datasets. It validated the general under-confident tendency previously claimed by~\cite{wang2021confident}. Also, relative confidence level, $\delta \hat{p}_i$, and node homophily are proposed as below to measure the confidence similarity and label similarity among neighbor nodes. 
+ \begin{equation}
+     \text{Relative confidence}=\delta \hat{p}_i=\hat{p}_i-\frac{1}{|n(i)|}\sum_{j \in n(i)}\hat{p}_j
+ \end{equation}
+ \begin{equation}
+     \text{Node homophily}=\log(\frac{n_a+1}{n_d+1})
+ \end{equation}
+$n(i)$ indicates the neighbor nodes of node $i$, $n_a$ is the number of agreeing neighbors, and $n_d$ is the number of disagreeing ones. Experimental results show calibration error decreases as node homophily increases and absolute relative confidence, $|\delta \hat{p}_i|$ decreases, proving the insight from~\cite{wang2021confident} as well. Based on the above discussion of influential factors, GATS produce node-wise temperature, $T_i$, as follows.
+\begin{equation}
+    \forall i \in V, T_i=\frac{1}{H}\sum_{h=1}^H \text{softplus}(w\delta\hat{p}_i+\sum_{j\in n(i)}\alpha_{i,j}\gamma_j\tau_j^h)+T_0
+\end{equation}
+Global bias $T_0$ accounts for the general under-confident tendency. Relative confidence,$\delta\hat{p}_i$, is incorporated with a learnable parameter $w$ as an additional contribution term. It also aggregates neighborhood influences $\tau_j$ with attention coefficient $\alpha_{i,j}$. Distance to training nodes is represented as a node-wise scaling factor $\gamma_j$. Finally, the above expression works on a multi-head formulation, and $h$ stands for $h$-th attention head. Experiments demonstrate the overall performance of GATS is better than CaGCN on eight datasets.
