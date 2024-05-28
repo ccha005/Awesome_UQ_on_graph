@@ -5,6 +5,42 @@ This repository contains research papers and surveys that are relevant to **Unce
 
 ### UQ on Machine Learning
 
+**Source**
+
+[S1]Omitted variable bias: Examining management research with the impact threshold of a confounding variable (ITCV)[Journal of Management 2022](https://journals.sagepub.com/doi/full/10.1177/01492063211006458)
+
+[S2]Omitted variable bias in machine-learned causal models.[2021](https://www.econstor.eu/handle/10419/260381)
+
+[S3]Making sense of sensitivity: Extending omitted variable bias[2020](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&as_vis=1&q=Making+sense+of+sensitivity%3A+Extending+omitted+variable+bias&btnG=)
+
+[S4]Aleatory or epistemic? Does it matter?[2009](https://www.sciencedirect.com/science/article/abs/pii/S0167473008000556)
+
+[S5]Sources of Uncertainty in Machine Learning–A Statisticians’ View[Arxiv2023](https://arxiv.org/abs/2305.16703)
+
+[S6]Dealing with noise problem in machine learning data-sets: A systematic review.[Procedia Computer Science 2019](https://www.sciencedirect.com/science/article/pii/S1877050919318575)
+
+[S7]The emergence of probability: A philosophical study of early ideas about probability, induction, and statistical inference[2006](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&as_vis=1&q=The+emergence+of+probability%3A+A+philosophical+study+of+early+ideas+about+probability%2C+induction%2C+and+statistical+inference&btnG=)
+
+[S8]Aleatory and epistemic uncertainty in probability elicitation with an example from hazardous waste management.[1996](https://www.sciencedirect.com/science/article/abs/pii/S0951832096000774)
+
+[S9]Quantifying epistemic uncertainty in deep learning[Arxiv 2021](https://arxiv.org/abs/2110.12122)
+
+[S10]Aleatoric and epistemic uncertainty in machine learning: An introduction to concepts and methods[Machine Learning 2021](https://link.springer.com/article/10.1007/s10994-021-05946-3)
+
+[S11]What uncertainties do we need in Bayesian deep learning for computer vision? [NIPS2017](https://proceedings.neurips.cc/paper/2017/hash/2650d6089a6d640c5e85b2b88265dc2b-Abstract.html)
+
+[S12]Deup: Direct epistemic uncertainty prediction [Arxiv 2021](https://arxiv.org/abs/2102.08501)
+
+[S13]Statistical analysis with missing data [2021](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&as_vis=1&q=Statistical+analysis+with+missing+data.&btnG=)
+
+[S14]A general framework for quantifying aleatoric and epistemic uncertainty in graph neural networks[Neurocompting 2023](https://www.sciencedirect.com/science/article/abs/pii/S0925231222014424)
+
+[S15]Epistemic uncertainty sampling [Discovery science 2019](https://link.springer.com/chapter/10.1007/978-3-030-33778-0_7)
+
+[S16]Pervasive label errors in test sets destabilize machine learning benchmark [Arxiv 2021](https://arxiv.org/abs/2103.14749)
+
+[S17]A Deeper Look into Aleatoric and Epistemic Uncertainty Disentanglement [CVF 2021](https://ieeexplore.ieee.org/abstract/document/9857056?casa_token=tavc4KHf2CMAAAAA:pwv3ZZI4yueJuO1iYo1O31Dgs1KK_2hgbfaqE-6bRTOz1GhxdKbe8hCGxWhU5MlwrDFFO3I9pZKh)
+
 **Bayesian Method**
 
 [B1]Variational Inference: A Review for Statisticians [JASA 2017](https://www.tandfonline.com/doi/pdf/10.1080/01621459.2017.1285773)
@@ -81,7 +117,7 @@ This repository contains research papers and surveys that are relevant to **Unce
 
 [CA3]Accurate uncertainties for deep learning using calibrated regression[ICML 2018](https://proceedings.mlr.press/v80/kuleshov18a.html)
 
-[CA4]Probabilistic outputs for support vector machines and comparisons to regularized likelihood methods [Advances in large margin classifiers 1999](https://www.researchgate.net/profile/John-Platt-2/publication/2594015_Probabilistic_Outputs_for_Support_Vector_Machines_and_Comparisons_to_Regularized_Likelihood_Methods/links/004635154cff5262d6000000/Probabilistic-Outputs-for-Support-Vector-Machines-and-Comparisons-to-Regularized-Likelihood-Methods.pdf)
+[CA4]Probabilistic outputs for support vector machines and comparisons to regularized likelihood methods [Advances in large margin classifiers](https://www.researchgate.net/profile/John-Platt-2/publication/2594015_Probabilistic_Outputs_for_Support_Vector_Machines_and_Comparisons_to_Regularized_Likelihood_Methods/links/004635154cff5262d6000000/Probabilistic-Outputs-for-Support-Vector-Machines-and-Comparisons-to-Regularized-Likelihood-Methods.pdf)
 
 [CA5]When does label smoothing help? [NIPS2019](https://proceedings.neurips.cc/paper_files/paper/2019/hash/f1748d6b0fd9d439f71450117eba2725-Abstract.html)
 
