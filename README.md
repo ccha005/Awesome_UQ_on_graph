@@ -29,45 +29,74 @@ This repository contains research papers and surveys that are relevant to **Unce
 
 **Conformal Prediction**
 
-[C1]Conformalized Quantile Regression [NeurIPS 2019](https://proceedings.neurips.cc/paper_files/paper/2019/hash/5103c3584b063c431bd1268e9b5e76fb-Abstract.html)
+[CP1]Conformalized Quantile Regression [NeurIPS 2019](https://proceedings.neurips.cc/paper_files/paper/2019/hash/5103c3584b063c431bd1268e9b5e76fb-Abstract.html)
 
-[C2]Conformal Prediction Under Covariate Shift [NeurIPS 2019](https://proceedings.neurips.cc/paper/2019/file/8fb21ee7a2207526da55a679f0332de2-Paper.pdf)
+[CP2]Conformal Prediction Under Covariate Shift [NeurIPS 2019](https://proceedings.neurips.cc/paper/2019/file/8fb21ee7a2207526da55a679f0332de2-Paper.pdf)
 
-[C3]Adaptive Conformal Inference Under Distribution Shift [NeurIPS 2021](https://proceedings.neurips.cc/paper/2021/hash/0d441de75945e5acbc865406fc9a2559-Abstract.html)
+[CP3]Adaptive Conformal Inference Under Distribution Shift [NeurIPS 2021](https://proceedings.neurips.cc/paper/2021/hash/0d441de75945e5acbc865406fc9a2559-Abstract.html)
 
-[C4]Localized conformal prediction: a generalized inference framework for conformal prediction [Biometrika 2023](https://academic.oup.com/biomet/article/110/1/33/6647831?login=false)
+[CP4]Localized conformal prediction: a generalized inference framework for conformal prediction [Biometrika 2023](https://academic.oup.com/biomet/article/110/1/33/6647831?login=false)
 
-[C5]Conformal Prediction with Missing Values [ICML 2023](https://proceedings.mlr.press/v202/zaffran23a.html)
+[CP5]Conformal Prediction with Missing Values [ICML 2023](https://proceedings.mlr.press/v202/zaffran23a.html)
 
-[C6]Split Localized Conformal Prediction [Arxiv](https://arxiv.org/pdf/2206.13092.pdf)
+[CP6]Split Localized Conformal Prediction [Arxiv](https://arxiv.org/pdf/2206.13092.pdf)
 
-[C7]A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification [Foundations and Trends® in Machine Learning](https://arxiv.org/abs/2107.07511)
+[CP7]A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification [Foundations and Trends® in Machine Learning](https://arxiv.org/abs/2107.07511)
 
-[C8] Multi-Split Conformal Prediction [Statistics & Probability Letters 2022](https://www.sciencedirect.com/science/article/abs/pii/S0167715222000177#:~:text=The%20multi%20split%20approach%20consists,frequency%20greater%20than%20a%20threshold.)
+[CP8] Multi-Split Conformal Prediction [Statistics & Probability Letters 2022](https://www.sciencedirect.com/science/article/abs/pii/S0167715222000177#:~:text=The%20multi%20split%20approach%20consists,frequency%20greater%20than%20a%20threshold.)
 
-[C9] Stable Conformal Prediction Sets [ICML 2022](https://icml.cc/virtual/2022/oral/16842)
+[CP9] Stable Conformal Prediction Sets [ICML 2022](https://icml.cc/virtual/2022/oral/16842)
 
-[C10] Cross-conformal predictive distributions[ICML 2018](https://proceedings.mlr.press/v91/vovk18a.html?ref=https://githubhelp.com)
+[CP10] Cross-conformal predictive distributions[ICML 2018](https://proceedings.mlr.press/v91/vovk18a.html?ref=https://githubhelp.com)
 
-[C11] Algorithmic Learning in a Random World[Book 2005](https://link.springer.com/book/10.1007/978-3-031-06649-8)
+[CP11] Algorithmic Learning in a Random World[Book 2005](https://link.springer.com/book/10.1007/978-3-031-06649-8)
 
-[C12] Classification with valid and adaptive coverage [NeurIPS 2020](https://proceedings.neurips.cc/paper/2020/file/244edd7e85dc81602b7615cd705545f5-Paper.pdf)
+[CP12] Classification with valid and adaptive coverage [NeurIPS 2020](https://proceedings.neurips.cc/paper/2020/file/244edd7e85dc81602b7615cd705545f5-Paper.pdf)
 
-[C13] Uncertainty sets for image classifiers using conformal prediction [Arxiv 2020](https://arxiv.org/abs/2009.14193)
+[CP13] Uncertainty sets for image classifiers using conformal prediction [Arxiv 2020](https://arxiv.org/abs/2009.14193)
 
-[C14] Conformal prediction interval for dynamic time-series [ICML 2021](https://proceedings.mlr.press/v139/xu21h/xu21h.pdf)
+[CP14] Conformal prediction interval for dynamic time-series [ICML 2021](https://proceedings.mlr.press/v139/xu21h/xu21h.pdf)
 
-[C15] Conformal prediction beyond exchangeability [Ann. Statist. 2O23](https://projecteuclid.org/journals/annals-of-statistics/volume-51/issue-2/Conformal-prediction-beyond-exchangeability/10.1214/23-AOS2276.full)
+[CP15] Conformal prediction beyond exchangeability [Ann. Statist. 2O23](https://projecteuclid.org/journals/annals-of-statistics/volume-51/issue-2/Conformal-prediction-beyond-exchangeability/10.1214/23-AOS2276.full)
 
-[C16] A comparison of some conformal quantile regression methods [Wiley Online Library](https://onlinelibrary.wiley.com/doi/pdf/10.1002/sta4.261)
+[CP16] A comparison of some conformal quantile regression methods [Wiley Online Library](https://onlinelibrary.wiley.com/doi/pdf/10.1002/sta4.261)
 
-[C17] Cross-conformal predictors [AMAI](https://link.springer.com/content/pdf/10.1007/s10472-013-9368-4.pdf)
+[CP17] Cross-conformal predictors [AMAI](https://link.springer.com/content/pdf/10.1007/s10472-013-9368-4.pdf)
 
-[C18] Predictive inference with the jackknife+ [Ann. Statist. 2021](https://projecteuclid.org/journals/annals-of-statistics/volume-49/issue-1/Predictive-inference-with-the-jackknife/10.1214/20-AOS1965.full)
+[CP18] Predictive inference with the jackknife+ [Ann. Statist. 2021](https://projecteuclid.org/journals/annals-of-statistics/volume-49/issue-1/Predictive-inference-with-the-jackknife/10.1214/20-AOS1965.full)
 
-[C19]  Bayes-optimal prediction with frequentist coverage control [Bernoulli 2023](https://projecteuclid.org/journals/bernoulli/volume-29/issue-2/Bayes-optimal-prediction-with-frequentist-coverage-control/10.3150/22-BEJ1484.full)
+[CP19]  Bayes-optimal prediction with frequentist coverage control [Bernoulli 2023](https://projecteuclid.org/journals/bernoulli/volume-29/issue-2/Bayes-optimal-prediction-with-frequentist-coverage-control/10.3150/22-BEJ1484.full)
 
-[C20] Learning optimal conformal classifiers [Arxiv](https://arxiv.org/abs/2110.09192)
+[CP20] Learning optimal conformal classifiers [Arxiv](https://arxiv.org/abs/2110.09192)
+
+[CP21] Knowing what you know: valid and validated confidence sets in multiclass and multilabel prediction [JMLR2021](https://www.jmlr.org/papers/v22/20-753.html)
+
+[CP22] Improving conditional coverage via orthogonal quantile regression [NIPS2021](https://proceedings.neurips.cc/paper_files/paper/2021/hash/1006ff12c465532f8c574aeaa4461b16-Abstract.html)
+
+**Calibration**
+
+[CA1] Obtaining calibrated probability estimates from decision trees and naive Bayesian classifiers [ICML2021](https://cseweb.ucsd.edu/~elkan/calibrated.pdf)
+
+[CA2]Transforming classifier scores into accurate multiclass probability estimates [KDD 2002](https://dl.acm.org/doi/abs/10.1145/775047.775151?casa_token=paJquWBAGcEAAAAA:Rom9rJ8vuvp64B3vQNWGX5ObNCV_Fu40LBVUUVA7rS5HtMkjhoPpzNGjLHa86EqWkAV9EmrBaqf1Jw)
+
+[CA3]Accurate uncertainties for deep learning using calibrated regression[ICML 2018](https://proceedings.mlr.press/v80/kuleshov18a.html)
+
+[CA4]Probabilistic outputs for support vector machines and comparisons to regularized likelihood methods [Advances in large margin classifiers 1999](https://www.researchgate.net/profile/John-Platt-2/publication/2594015_Probabilistic_Outputs_for_Support_Vector_Machines_and_Comparisons_to_Regularized_Likelihood_Methods/links/004635154cff5262d6000000/Probabilistic-Outputs-for-Support-Vector-Machines-and-Comparisons-to-Regularized-Likelihood-Methods.pdf)
+
+[CA5]When does label smoothing help? [NIPS2019](https://proceedings.neurips.cc/paper_files/paper/2019/hash/f1748d6b0fd9d439f71450117eba2725-Abstract.html)
+
+[CA6]Focal loss for dense object detection [ICCV 2017](https://openaccess.thecvf.com/content_iccv_2017/html/Lin_Focal_Loss_for_ICCV_2017_paper.html)
+
+[CA7]Calibrating deep neural networks using focal loss [NIPS 2020](https://proceedings.neurips.cc/paper/2020/hash/aeb7b30ef1d024a76f21a1d40e30c302-Abstract.html)
+
+[CA8]Obtaining well-calibrated probabilities using Bayesian binning [AAAI 2015](https://ojs.aaai.org/index.php/AAAI/article/view/9602)
+
+[CA9]Beyond temperature scaling: Obtaining well-calibrated multi-class probabilities with Dirichlet calibration. [NIPS 2019](https://proceedings.neurips.cc/paper/2019/hash/8ca01ea920679a0fe3728441494041b9-Abstract.html)
+
+[CA10]A graph is more than its nodes: Towards structured uncertainty-aware learning on graphs [Arxiv 2022](https://arxiv.org/abs/2210.15575)
+
+[CA11]Improving model calibration with accuracy versus uncertainty optimization [NIPS 2020](https://proceedings.neurips.cc/paper_files/paper/2020/hash/d3d9446802a44259755d38e6d163e820-Abstract.html)
+
 **Other Methods**
 
 [O1]Beyond Pinball Loss: Quantile Methods for Calibrated Uncertainty Quantification [NIPS 2021](https://openreview.net/forum?id=QbVza2PKM7T)
