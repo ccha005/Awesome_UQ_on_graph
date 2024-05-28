@@ -7,25 +7,25 @@ This repository contains research papers and surveys that are relevant to **Unce
 
 **Source**
 
-[S1]Omitted variable bias: Examining management research with the impact threshold of a confounding variable (ITCV)[Journal of Management 2022](https://journals.sagepub.com/doi/full/10.1177/01492063211006458)
+[S1]Omitted variable bias: Examining management research with the impact threshold of a confounding variable (ITCV) [Journal of Management 2022](https://journals.sagepub.com/doi/full/10.1177/01492063211006458)
 
-[S2]Omitted variable bias in machine-learned causal models.[2021](https://www.econstor.eu/handle/10419/260381)
+[S2]Omitted variable bias in machine-learned causal models [2021](https://www.econstor.eu/handle/10419/260381)
 
-[S3]Making sense of sensitivity: Extending omitted variable bias[2020](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&as_vis=1&q=Making+sense+of+sensitivity%3A+Extending+omitted+variable+bias&btnG=)
+[S3]Making sense of sensitivity: Extending omitted variable bias [2020](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&as_vis=1&q=Making+sense+of+sensitivity%3A+Extending+omitted+variable+bias&btnG=)
 
-[S4]Aleatory or epistemic? Does it matter?[2009](https://www.sciencedirect.com/science/article/abs/pii/S0167473008000556)
+[S4]Aleatory or epistemic? Does it matter? [2009](https://www.sciencedirect.com/science/article/abs/pii/S0167473008000556)
 
-[S5]Sources of Uncertainty in Machine Learning–A Statisticians’ View[Arxiv2023](https://arxiv.org/abs/2305.16703)
+[S5]Sources of Uncertainty in Machine Learning–A Statisticians’ View [Arxiv2023](https://arxiv.org/abs/2305.16703)
 
-[S6]Dealing with noise problem in machine learning data-sets: A systematic review.[Procedia Computer Science 2019](https://www.sciencedirect.com/science/article/pii/S1877050919318575)
+[S6]Dealing with noise problem in machine learning data-sets: A systematic review [Procedia Computer Science 2019](https://www.sciencedirect.com/science/article/pii/S1877050919318575)
 
-[S7]The emergence of probability: A philosophical study of early ideas about probability, induction, and statistical inference[2006](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&as_vis=1&q=The+emergence+of+probability%3A+A+philosophical+study+of+early+ideas+about+probability%2C+induction%2C+and+statistical+inference&btnG=)
+[S7]The emergence of probability: A philosophical study of early ideas about probability, induction, and statistical inference [2006](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&as_vis=1&q=The+emergence+of+probability%3A+A+philosophical+study+of+early+ideas+about+probability%2C+induction%2C+and+statistical+inference&btnG=)
 
-[S8]Aleatory and epistemic uncertainty in probability elicitation with an example from hazardous waste management.[1996](https://www.sciencedirect.com/science/article/abs/pii/S0951832096000774)
+[S8]Aleatory and epistemic uncertainty in probability elicitation with an example from hazardous waste management [1996](https://www.sciencedirect.com/science/article/abs/pii/S0951832096000774)
 
-[S9]Quantifying epistemic uncertainty in deep learning[Arxiv 2021](https://arxiv.org/abs/2110.12122)
+[S9]Quantifying epistemic uncertainty in deep learning [Arxiv 2021](https://arxiv.org/abs/2110.12122)
 
-[S10]Aleatoric and epistemic uncertainty in machine learning: An introduction to concepts and methods[Machine Learning 2021](https://link.springer.com/article/10.1007/s10994-021-05946-3)
+[S10]Aleatoric and epistemic uncertainty in machine learning: An introduction to concepts and methods [Machine Learning 2021](https://link.springer.com/article/10.1007/s10994-021-05946-3)
 
 [S11]What uncertainties do we need in Bayesian deep learning for computer vision? [NIPS2017](https://proceedings.neurips.cc/paper/2017/hash/2650d6089a6d640c5e85b2b88265dc2b-Abstract.html)
 
@@ -33,7 +33,7 @@ This repository contains research papers and surveys that are relevant to **Unce
 
 [S13]Statistical analysis with missing data [2021](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&as_vis=1&q=Statistical+analysis+with+missing+data.&btnG=)
 
-[S14]A general framework for quantifying aleatoric and epistemic uncertainty in graph neural networks[Neurocompting 2023](https://www.sciencedirect.com/science/article/abs/pii/S0925231222014424)
+[S14]A general framework for quantifying aleatoric and epistemic uncertainty in graph neural networks [Neurocompting 2023](https://www.sciencedirect.com/science/article/abs/pii/S0925231222014424)
 
 [S15]Epistemic uncertainty sampling [Discovery science 2019](https://link.springer.com/chapter/10.1007/978-3-030-33778-0_7)
 
@@ -191,17 +191,17 @@ classification [AAAI 2019](https://ojs.aaai.org/index.php/AAAI/article/download/
 
 [G19]On calibration of graph neural networks for node classification [ICJNN 2022](https://ieeexplore.ieee.org/abstract/document/9892866?casa_token=8gacSN0Z8ZgAAAAA:CerSGnfSVX_nsRe4cGLqdUs6_azca6GyO1_TmcVX_cj3owsYYbtUa610H2yzMBqXsNJu6wDuYWCM)
 
-[G20]Calibrate automated graph neural network via hyperparameter uncertainty[CIKM 2022](https://dl.acm.org/doi/abs/10.1145/3511808.3557556?casa_token=4GVPgq11RzAAAAAA:0R-Cn6wtL5wMwR0Hjzf_SLjjBHaw9RXcHgJfQMTRi5XsXF_raV2er86RL-AagzKEBVl01auGftS3sw)
+[G20]Calibrate automated graph neural network via hyperparameter uncertainty [CIKM 2022](https://dl.acm.org/doi/abs/10.1145/3511808.3557556?casa_token=4GVPgq11RzAAAAAA:0R-Cn6wtL5wMwR0Hjzf_SLjjBHaw9RXcHgJfQMTRi5XsXF_raV2er86RL-AagzKEBVl01auGftS3sw)
 
 [G21]Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks [ICLR 2024](https://arxiv.org/abs/2401.03350)
 
 [G22]A multi-view confidence-calibrated framework for fair and stable graph representation learning [ICDM 2021](https://ieeexplore.ieee.org/abstract/document/9679093?casa_token=pNyFkDpFxKYAAAAA:APzIRm9B8tSczE7x-70OtnXxqRX2JL6Av10PM2WvYOYZILgptsE90-hZe1Y-2pXO2cgMo27tq888)
 
-[G23]Link prediction based on graph neural network[NIPS 2018](https://proceedings.neurips.cc/paper/2018/hash/53f0d7c537d99b3824f0f99d62ea2428-Abstract.html)
+[G23]Link prediction based on graph neural network [NIPS 2018](https://proceedings.neurips.cc/paper/2018/hash/53f0d7c537d99b3824f0f99d62ea2428-Abstract.html)
 
-[G24]In-n-Out: Calibrating Graph Neural Networks for Link Prediction[Arxiv 2024](https://arxiv.org/abs/2403.04605)
+[G24]In-n-Out: Calibrating Graph Neural Networks for Link Prediction [Arxiv 2024](https://arxiv.org/abs/2403.04605)
 
-[G25]On Estimating Link Prediction Uncertainty Using Stochastic Centering[ICASSP 2024](https://cmsworkshops.com/ICASSP2024/view_paper.php?PaperNum=7277)
+[G25]On Estimating Link Prediction Uncertainty Using Stochastic Centering [ICASSP 2024](https://cmsworkshops.com/ICASSP2024/view_paper.php?PaperNum=7277)
 ## Survey Papers
 
 ### UQ on Machine Learning
