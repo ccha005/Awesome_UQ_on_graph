@@ -118,6 +118,25 @@ classification [AAAI 2019](https://ojs.aaai.org/index.php/AAAI/article/download/
 
 [G15]Non parametric graph learning for bayesian graph neural networks [UAI 2020](http://proceedings.mlr.press/v124/pal20a/pal20a.pdf)
 
+[G16]Are graph neural networks miscalibrated? [Arxiv](https://arxiv.org/abs/1905.02296)
+
+[G17]What Makes Graph Neural Networks Miscalibrated? [NIPS 2022](https://proceedings.neurips.cc/paper_files/paper/2022/hash/5975754c7650dfee0682e06e1fec0522-Abstract-Conference.html)
+
+[G18]GCL: Graph calibration loss for trustworthy graph neural network [MM 2022](https://dl.acm.org/doi/abs/10.1145/3503161.3548423?casa_token=oLE-X0PMypAAAAAA:EcB27ENIY5OkXut9rLe_LocviSKEPoJtxPyS3fmqZ7RG3ayU1CTbvwpbT5XJeLpGmrHqyanUuK7wZg)
+
+[G19]On calibration of graph neural networks for node classification [ICJNN 2022](https://ieeexplore.ieee.org/abstract/document/9892866?casa_token=8gacSN0Z8ZgAAAAA:CerSGnfSVX_nsRe4cGLqdUs6_azca6GyO1_TmcVX_cj3owsYYbtUa610H2yzMBqXsNJu6wDuYWCM)
+
+[G20]Calibrate automated graph neural network via hyperparameter uncertainty[CIKM 2022](https://dl.acm.org/doi/abs/10.1145/3511808.3557556?casa_token=4GVPgq11RzAAAAAA:0R-Cn6wtL5wMwR0Hjzf_SLjjBHaw9RXcHgJfQMTRi5XsXF_raV2er86RL-AagzKEBVl01auGftS3sw)
+
+[G21]Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks [ICLR 2024](https://arxiv.org/abs/2401.03350)
+
+[G22]A multi-view confidence-calibrated framework for fair and stable graph representation learning [ICDM 2021](https://ieeexplore.ieee.org/abstract/document/9679093?casa_token=pNyFkDpFxKYAAAAA:APzIRm9B8tSczE7x-70OtnXxqRX2JL6Av10PM2WvYOYZILgptsE90-hZe1Y-2pXO2cgMo27tq888)
+
+[G23]Link prediction based on graph neural network[NIPS 2018](https://proceedings.neurips.cc/paper/2018/hash/53f0d7c537d99b3824f0f99d62ea2428-Abstract.html)
+
+[G24]In-n-Out: Calibrating Graph Neural Networks for Link Prediction[Arxiv 2024](https://arxiv.org/abs/2403.04605)
+
+[G25]On Estimating Link Prediction Uncertainty Using Stochastic Centering[ICASSP 2024](https://cmsworkshops.com/ICASSP2024/view_paper.php?PaperNum=7277)
 ## Survey Papers
 
 ### UQ on Machine Learning
