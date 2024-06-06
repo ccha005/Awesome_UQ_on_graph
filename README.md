@@ -5,7 +5,7 @@ This repository contains research papers and surveys that are relevant to **Unce
 
 ### UQ on Machine Learning
 
-**Source**
+**Uncertainty Source**
 ID | Paper Titles | Venues | Years 
 --- | :------ | :---:  | :---:
 [S17](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/f2217062e9a397a1dca429e7d70bc6ca-Abstract-round1.html) | Pervasive label errors in test sets destabilize machine learning benchmark | NeurIPS | 2024
@@ -118,32 +118,39 @@ ID | Paper Titles | Venues | Years
 **GNN**
 ID | Paper Titles | Venues | Years 
 --- | :------ | :---:  | :---:
-[G25](https://arxiv.org/abs/2401.03350) | Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks | ICLR | 2024
-[G24](https://arxiv.org/abs/2403.04605) | In-n-Out: Calibrating Graph Neural Networks for Link Prediction | arXiv | 2024
-[G23](https://cmsworkshops.com/ICASSP2024/view_paper.php?PaperNum=7277) | On Estimating Link Prediction Uncertainty Using Stochastic Centering | ICASSP | 2024
-[G22](https://proceedings.mlr.press/v202/h-zargarbashi23a.html) | Conformal Prediction Sets for Graph Neural Networks | ICML | 2023
-[G21](https://proceedings.mlr.press/v202/clarkson23a.html) | Distribution Free Prediction Sets for Node Classification | ICML | 2023
-[G20](https://arxiv.org/abs/2305.14535) | Uncertainty Quantification over Graph with Conformalized Graph Neural Networks | NeurIPS | 2023
 [G19](https://www.sciencedirect.com/science/article/abs/pii/S0925231222014424) | A General Framework for Quantifying Aleatoric and Epistemic Uncertainty in Graph Neural Networks | Neurocomputing | 2023
-[G18](https://openreview.net/forum?id=rdgB5BqWCw) | Predictive Uncertainty Quantification for Graph Neural Network Driven Relaxed Energy Calcul1ations | NeurIPS Workshop | 2023
+[G18](https://openreview.net/forum?id=rdgB5BqWCw) | Predictive Uncertainty Quantification for Graph Neural Network Driven Relaxed Energy Calculations | NeurIPS Workshop | 2023
 [G17](https://arxiv.org/abs/2303.04040) | Uncertainty Quantification of Spatiotemporal Travel Demand with Probabilistic Graph Neural Networks | SIGKDD | 2022
 [G16](https://dl.acm.org/doi/abs/10.1145/3534678.3539093) | Uncertainty Quantification of Sparse Travel Demand Prediction with Spatial-Temporal Graph Neural Networks | SIGKDD | 2022
-[G15](https://dl.acm.org/doi/abs/10.1145/3534678.3539286) | JuryGCN: Quantifying Jackknife Uncertainty on Graph Convolutional Networks | SIGKDD | 2022
-[G14](https://proceedings.neurips.cc/paper_files/paper/2022/hash/5975754c7650dfee0682e06e1fec0522-Abstract-Conference.html) | What Makes Graph Neural Networks Miscalibrated? | NeurIPS | 2022
-[G13](https://dl.acm.org/doi/abs/10.1145/3503161.3548423?casa_token=oLE-X0PMypAAAAAA:EcB27ENIY5OkXut9rLe_LocviSKEPoJtxPyS3fmqZ7RG3ayU1CTbvwpbT5XJeLpGmrHqyanUuK7wZg) | GCL: Graph calibration loss for trustworthy graph neural network | MM | 2022
-[G12](https://ieeexplore.ieee.org/abstract/document/9892866?casa_token=8gacSN0Z8ZgAAAAA:CerSGnfSVX_nsRe4cGLqdUs6_azca6GyO1_TmcVX_cj3owsYYbtUa610H2yzMBqXsNJu6wDuYWCM) | On calibration of graph neural networks for node classification | ICJNN | 2022
-[G11](https://dl.acm.org/doi/abs/10.1145/3511808.3557556?casa_token=4GVPgq11RzAAAAAA:0R-Cn6wtL5wMwR0Hjzf_SLjjBHaw9RXcHgJfQMTRi5XsXF_raV2er86RL-AagzKEBVl01auGftS3sw) | Calibrate automated graph neural network via hyperparameter uncertainty | CIKM | 2022
-[G10](https://proceedings.neurips.cc/paper/2021/hash/c7a9f13a6c0940277d46706c7ca32601-Abstract.html) | Be Confident! Towards Trustworthy Graph Neural Networks via Confidence Calibration | NeurIPS | 2021
 [G9](https://proceedings.neurips.cc/paper_files/paper/2021/hash/95b431e51fc53692913da5263c214162-Abstract.html) | Graph posterior network: Bayesian predictive uncertainty for node classification | NeurIPS | 2021
-[G8](https://ieeexplore.ieee.org/abstract/document/9679093?casa_token=pNyFkDpFxKYAAAAA:APzIRm9B8tSczE7x-70OtnXxqRX2JL6Av10PM2WvYOYZILgptsE90-hZe1Y-2pXO2cgMo27tq888) | A multi-view confidence-calibrated framework for fair and stable graph representation learning | ICDM | 2021
 [G7](https://proceedings.mlr.press/v124/pal20a.html) | Non parametric graph learning for bayesian graph neural networks | UAI | 2020
 [G6](https://ojs.aaai.org/index.php/AAAI/article/download/4531/4409) | Bayesian graph convolutional neural networks for semi-supervised classification | AAAI | 2019
 [G5](https://arxiv.org/abs/1911.04965) | Bayesian graph convolutional neural networks using node copying | ICML Workshop | 2019
-[G4](https://arxiv.org/abs/1905.02296) | Are graph neural networks miscalibrated? | ICML Workshop | 2019
 [G3](https://proceedings.mlr.press/v80/pearce18a.html) | High-Quality Prediction Intervals for Deep Learning- A Distribution-Free, Ensembled Approach | ICML | 2018
 [G2](https://epubs.siam.org/doi/abs/10.1137/17M1134214) | Uncertainty Quantification in Graph-Based Classification of High Dimensional Data | JUQ | 2018
 [G1](https://proceedings.neurips.cc/paper/2018/hash/53f0d7c537d99b3824f0f99d62ea2428-Abstract.html) | Link prediction based on graph neural network | NeurIPS | 2018
 
+**Calibration for Graphs**
+ID | Paper Titles | Venues | Years 
+--- | :------ | :---:  | :---:
+[CAG10](https://arxiv.org/abs/1905.02296) | Are graph neural networks miscalibrated? | ICML Workshop | 2019
+[CAG9](https://ieeexplore.ieee.org/abstract/document/9679093?casa_token=pNyFkDpFxKYAAAAA:APzIRm9B8tSczE7x-70OtnXxqRX2JL6Av10PM2WvYOYZILgptsE90-hZe1Y-2pXO2cgMo27tq888) | A multi-view confidence-calibrated framework for fair and stable graph representation learning | ICDM | 2021
+[CAG8](https://proceedings.neurips.cc/paper/2021/hash/c7a9f13a6c0940277d46706c7ca32601-Abstract.html) | Be Confident! Towards Trustworthy Graph Neural Networks via Confidence Calibration | NeurIPS | 2021
+[CAG7](https://dl.acm.org/doi/abs/10.1145/3511808.3557556?casa_token=4GVPgq11RzAAAAAA:0R-Cn6wtL5wMwR0Hjzf_SLjjBHaw9RXcHgJfQMTRi5XsXF_raV2er86RL-AagzKEBVl01auGftS3sw) | Calibrate automated graph neural network via hyperparameter uncertainty | CIKM | 2022
+[CAG6](https://ieeexplore.ieee.org/abstract/document/9892866?casa_token=8gacSN0Z8ZgAAAAA:CerSGnfSVX_nsRe4cGLqdUs6_azca6GyO1_TmcVX_cj3owsYYbtUa610H2yzMBqXsNJu6wDuYWCM) | On calibration of graph neural networks for node classification | ICJNN | 2022
+[CAG5](https://dl.acm.org/doi/abs/10.1145/3503161.3548423?casa_token=oLE-X0PMypAAAAAA:EcB27ENIY5OkXut9rLe_LocviSKEPoJtxPyS3fmqZ7RG3ayU1CTbvwpbT5XJeLpGmrHqyanUuK7wZg) | GCL: Graph calibration loss for trustworthy graph neural network | MM | 2022
+[CAG4](https://proceedings.neurips.cc/paper_files/paper/2022/hash/5975754c7650dfee0682e06e1fec0522-Abstract-Conference.html) | What Makes Graph Neural Networks Miscalibrated? | NeurIPS | 2022
+[CAG3](https://arxiv.org/abs/2403.04605) | In-n-Out: Calibrating Graph Neural Networks for Link Prediction | arXiv | 2024
+[CAG2](https://arxiv.org/abs/2401.03350) | Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks | ICLR | 2024
+[CAG1](https://cmsworkshops.com/ICASSP2024/view_paper.php?PaperNum=7277) | On Estimating Link Prediction Uncertainty Using Stochastic Centering | ICASSP | 2024
+
+**Conformal Prediction for Graphs**
+ID | Paper Titles | Venues | Years 
+--- | :------ | :---:  | :---:
+[CPG4](https://dl.acm.org/doi/abs/10.1145/3534678.3539286) | JuryGCN: Quantifying Jackknife Uncertainty on Graph Convolutional Networks | SIGKDD | 2022
+[CPG3](https://proceedings.mlr.press/v202/h-zargarbashi23a.html) | Conformal Prediction Sets for Graph Neural Networks | ICML | 2023
+[CPG2](https://proceedings.mlr.press/v202/clarkson23a.html) | Distribution Free Prediction Sets for Node Classification | ICML | 2023
+[CPG1](https://arxiv.org/abs/2305.14535) | Uncertainty Quantification over Graph with Conformalized Graph Neural Networks | NeurIPS | 2023
 
 **Out-of-Distribution Measurements for Graphs**
 ID | Paper Titles | Venues | Years 
