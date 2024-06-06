@@ -123,6 +123,14 @@ ID | Paper Titles | Venues | Years
 [G2](https://epubs.siam.org/doi/abs/10.1137/17M1134214) | Uncertainty Quantification in Graph-Based Classification of High Dimensional Data | JUQ | 2018
 [G1](https://proceedings.neurips.cc/paper/2018/hash/53f0d7c537d99b3824f0f99d62ea2428-Abstract.html) | Link prediction based on graph neural network | NeurIPS | 2018
 
+**Conformal Prediction for Graphs**
+ID | Paper Titles | Venues | Years 
+--- | :------ | :---:  | :---:
+[CPG4](https://dl.acm.org/doi/abs/10.1145/3534678.3539286) | JuryGCN: Quantifying Jackknife Uncertainty on Graph Convolutional Networks | SIGKDD | 2022
+[CPG3](https://proceedings.mlr.press/v202/h-zargarbashi23a.html) | Conformal Prediction Sets for Graph Neural Networks | ICML | 2023
+[CPG2](https://proceedings.mlr.press/v202/clarkson23a.html) | Distribution Free Prediction Sets for Node Classification | ICML | 2023
+[CPG1](https://arxiv.org/abs/2305.14535) | Uncertainty Quantification over Graph with Conformalized Graph Neural Networks | NeurIPS | 2023
+
 **Calibration for Graphs**
 ID | Paper Titles | Venues | Years 
 --- | :------ | :---:  | :---:
@@ -136,14 +144,6 @@ ID | Paper Titles | Venues | Years
 [CAG3](https://arxiv.org/abs/2403.04605) | In-n-Out: Calibrating Graph Neural Networks for Link Prediction | arXiv | 2024
 [CAG2](https://arxiv.org/abs/2401.03350) | Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks | ICLR | 2024
 [CAG1](https://cmsworkshops.com/ICASSP2024/view_paper.php?PaperNum=7277) | On Estimating Link Prediction Uncertainty Using Stochastic Centering | ICASSP | 2024
-
-**Conformal Prediction for Graphs**
-ID | Paper Titles | Venues | Years 
---- | :------ | :---:  | :---:
-[CPG4](https://dl.acm.org/doi/abs/10.1145/3534678.3539286) | JuryGCN: Quantifying Jackknife Uncertainty on Graph Convolutional Networks | SIGKDD | 2022
-[CPG3](https://proceedings.mlr.press/v202/h-zargarbashi23a.html) | Conformal Prediction Sets for Graph Neural Networks | ICML | 2023
-[CPG2](https://proceedings.mlr.press/v202/clarkson23a.html) | Distribution Free Prediction Sets for Node Classification | ICML | 2023
-[CPG1](https://arxiv.org/abs/2305.14535) | Uncertainty Quantification over Graph with Conformalized Graph Neural Networks | NeurIPS | 2023
 
 **Out-of-Distribution Measurements for Graphs**
 ID | Paper Titles | Venues | Years 
