@@ -110,10 +110,10 @@ ID | Paper Titles | Venues | Years
 **Graphical Model**
 ID | Paper Titles | Venues | Years 
 --- | :------ | :---:  | :---:
-[P1](https://epubs.siam.org/doi/abs/10.1137/21M1434453) | Model Uncertainty and Correctability for Directed Graphical Models | JUQ | 2022
-[P2](https://epubs.siam.org/doi/abs/10.1137/20M1374614) | Uncertainty Quantification for Markov Random Fields | JUQ | 2021
-[P3](https://epubs.siam.org/doi/10.1137/1.9781611974973.17) | The Power of Certainty: A Dirichlet-Multinomial Model for Belief Propagation | ICDM | 2017
-[P4](https://link.springer.com/chapter/10.1007/978-3-319-18038-0_49) | SocNL: Bayesian Label Propagation with Confidence | PAKDD | 2015
+[P4](https://epubs.siam.org/doi/abs/10.1137/21M1434453) | Model Uncertainty and Correctability for Directed Graphical Models | JUQ | 2022
+[P3](https://epubs.siam.org/doi/abs/10.1137/20M1374614) | Uncertainty Quantification for Markov Random Fields | JUQ | 2021
+[P2](https://epubs.siam.org/doi/10.1137/1.9781611974973.17) | The Power of Certainty: A Dirichlet-Multinomial Model for Belief Propagation | ICDM | 2017
+[P1](https://link.springer.com/chapter/10.1007/978-3-319-18038-0_49) | SocNL: Bayesian Label Propagation with Confidence | PAKDD | 2015
 
 **GNN**
 ID | Paper Titles | Venues | Years 
