@@ -69,6 +69,7 @@ ID | Paper Titles | Venues | Years
 **Calibration**
 ID | Paper Titles | Venues | Years 
 --- | :------ | :---:  | :---:
+[CA12](https://openreview.net/forum?id=QbVza2PKM7T) | Beyond Pinball Loss: Quantile Methods for Calibrated Uncertainty Quantification | NeurIPS | 2021
 [CA11](https://arxiv.org/abs/2210.15575) | A graph is more than its nodes: Towards structured uncertainty-aware learning on graphs | NeurIPS Workshop | 2022
 [CA10](https://proceedings.neurips.cc/paper_files/paper/2020/hash/d3d9446802a44259755d38e6d163e820-Abstract.html) | Improving model calibration with accuracy versus uncertainty optimization | NeurIPS | 2020
 [CA9](https://proceedings.neurips.cc/paper/2020/hash/aeb7b30ef1d024a76f21a1d40e30c302-Abstract.html) | Calibrating deep neural networks using focal loss | NeurIPS | 2020
@@ -95,14 +96,6 @@ ID | Paper Titles | Venues | Years
 [D3](https://pubsonline.informs.org/doi/abs/10.1287/mnsc.1120.1641) | Robust solutions of optimization problems affected by uncertain probabilities | Management Science | 2013 
 [D2](https://optimization-online.org/wp-content/uploads/2012/11/3677.pdf) | Kullback-Leibler divergence constrained distributionally robust optimization | | 2013
 [D1](https://link.springer.com/article/10.1007/s10107-005-0678-0) | Ambiguous chance constrained problems and robust optimization | Mathematical Programming  | 2006
-
-
-
-
-**Other Methods**
-ID | Paper Titles | Venues | Years 
---- | :------ | :---:  | :---:
-[O1](https://openreview.net/forum?id=QbVza2PKM7T) | Beyond Pinball Loss: Quantile Methods for Calibrated Uncertainty Quantification | NeurIPS | 2021
 
 
 ### UQ on Graph
