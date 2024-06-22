@@ -349,7 +349,7 @@ ID | Paper Titles | Venues | Years
 </table>
 
 ## Tutorial
-| Tutorial | G | Bayes | CP | Cal | OOD | Others | Venues | Year |
+| Tutorial | Graphic Model | Bayes | CP | Cal | OOD | Others | Venues | Year |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [Graph Learning: Principles, Challenges, and Open Directions](https://icml.cc/virtual/2024/tutorial/35233) | :heavy_check_mark: |  |  |  |  |  | ICML | 2024 |
 | [Formalizing Robustness in Neural Networks: Explainability, Uncertainty, and Intervenability](https://alregib.ece.gatech.edu/aaai-2024-tutorial/) |  |  |  |  | :heavy_check_mark: |  | AAAI | 2024 |
