@@ -377,4 +377,32 @@ ID | Paper Titles | Venues | Years
 | [The Art of Gaussian Processes: Classical and Contemporary](https://neurips.cc/virtual/2021/tutorial/21890) |  | :heavy_check_mark: |  |  |  |  | NeurIPS | 2021 |
 | [On Calibration and Out-of-Domain Generalization](https://iclr.cc/virtual/2021/3912) |  |  |  | :heavy_check_mark: | :heavy_check_mark: |  | ICLR | 2021 |
 | [Deep Graph Learning: Foundations, Advances and Applications](https://ai.tencent.com/ailab/ml/KDD-Deep-Graph-Learning.html) | :heavy_check_mark: |  |  |  |  |  | KDD | 2020 |
-| [Differential Deep Learning on Graphs and its Applications](?http://www.calvinzang.com/DDLG_AAAI_2020.html) | :heavy_check_mark: |  | 
+| [Differential Deep Learning on Graphs and its Applications](http://www.calvinzang.com/DDLG_AAAI_2020.html) | :heavy_check_mark: |  |  |  |  |  | AAAI | 2020 |
+| [Bayesian Deep Learning and a Probabilistic Perspective of Model Construction](https://icml.cc/virtual/2020/tutorial/5750) |  | :heavy_check_mark: |  |  |  |  | ICML | 2020 |
+| [Robust Deep Learning Methods for Anomaly Detection](https://raghavchalapathy.github.io/KDD-Tutorials-2020-Deep-Robust-Anomaly-Detection/) |  |  |  |  | :heavy_check_mark: |  | KDD | 2020 |
+| [How to calibrate your neural network classifier: Getting true probabilities from a classification model](https://github.com/nplan-io/kdd2020-calibration) |  |  |  | :heavy_check_mark: |  |  | KDD | 2020 |
+| [Advances in Approximate Inference](https://neurips.cc/virtual/2020/tutorial/16651) |  |  |  |  |  | :heavy_check_mark: | NeurIPS | 2020 |
+| [Practical Uncertainty Estimation and Out-of-Distribution Robustness in Deep Learning](https://neurips.cc/virtual/2020/tutorial/16649) |  |  |  |  | :heavy_check_mark: |  | NeurIPS | 2020 |
+| [Graph Representation Learning](https://www.cs.mcgill.ca/~wlh/grl_book/) | :heavy_check_mark: |  |  |  |  |  | AAAI | 2019 |
+| [Representation Learning on Graphs and Manifolds](https://iclr.cc/virtual/2019/workshop/631) | :heavy_check_mark: |  |  |  |  |  | ICLR | 2019 |
+| [A Primer on PAC-Bayesian Learning](https://icml.cc/virtual/2019/tutorial/4338) |  | :heavy_check_mark: |  |  |  |  | ICML | 2019 |
+| [Deep Learning with Bayesian Principles](https://neurips.cc/virtual/2019/tutorial/13205) |  | :heavy_check_mark: |  |  |  |  | NeurIPS | 2019 |
+| [Deep Bayesian Mining, Learning and Understanding](https://dl.acm.org/doi/10.1145/3292500.3332267) |  | :heavy_check_mark: |  |  |  |  | KDD | 2019 |
+| [Deep Bayesian and Sequential Learning](http://chien.cm.nctu.edu.tw/home/aaai-tutorial/) |  | :heavy_check_mark: |  |  |  |  | AAAI | 2019 |
+| [Knowledge-based Sequential Decision-Making under Uncertainty](http://www.cs.binghamton.edu/~szhang/2019_aaai_tutorial/) |  |  |  |  |  | :heavy_check_mark: | AAAI | 2019 |
+| [Tractable Probabilistic Models: Representations, Algorithms, Learning, and Applications](https://web.cs.ucla.edu/~guyvdb/slides/TPMTutorialUAI19.pdf) |  |  |  |  |  | :heavy_check_mark: | UAI | 2019 |
+| [Variational Bayes and Beyond: Bayesian Inference for Big Data](https://icml.cc/virtual/2018/tutorial/1858) |  | :heavy_check_mark: |  |  |  |  | ICML | 2018 |
+| [Scalable Bayesian Inference](https://neurips.cc/virtual/2018/tutorial/10984) |  | :heavy_check_mark: |  |  |  |  | NeurIPS | 2018 |
+| [Bayesian Incremental Learning for Deep Neural Networks](https://iclr.cc/virtual/2018/workshop/474) |  | :heavy_check_mark: |  |  |  |  | ICLR | 2018 |
+| [Bayesian Approaches for Blackbox Optimization](https://www.microsoft.com/en-us/research/video/bayesian-approaches-for-black-box-optimization/) |  | :heavy_check_mark: |  |  |  |  | UAI | 2018 |
+| [Uncertainty Estimation via Stochastic Batch Normalization](https://iclr.cc/virtual/2018/workshop/458) |  |  |  |  |  | :heavy_check_mark: | ICLR | 2018 |
+| [Deep Probabilistic Modelling with Gaussian Processes](https://neurips.cc/virtual/2017/tutorial/8731) |  | :heavy_check_mark: |  |  |  |  | NeurIPS | 2017 |
+| [Statistical Relational Artificial Intelligence: Logic, Probability and Computation](https://neurips.cc/virtual/2017/tutorial/8739) |  |  |  |  |  | :heavy_check_mark: | NeurIPS | 2017 |
+| [Non-IID Learning](https://www.researchgate.net/publication/321049891_Non-IID_Learning) |  |  |  |  | :heavy_check_mark: |  | KDD | 2017 |
+| [Reasoning Under Uncertainty with Subjective Logic](https://www.auai.org/uai2016/tutorials_pres/subj_logic.pdf) |  |  |  |  |  | :heavy_check_mark: | UAI | 2016 |
+| [Bayesian Time Series Modeling: Structured Representations for Scalability](https://icml.cc/2015/index.html%3Fp=97.html) |  | :heavy_check_mark: |  |  |  |  | ICML | 2015 |
+| [Optimal Algorithms for Learning Bayesian Network Structures](https://www.auai.org/uai2015/proceedings/slides/UAI2015_LearningBN_PartI.pdf) |  | :heavy_check_mark: |  |  |  |  | UAI | 2015 |
+| [Computational Complexity of Bayesian Networks](https://www.auai.org/uai2015/proceedings/slides/UAI2015_Comp_LN.pdf) |  | :heavy_check_mark: |  |  |  |  | UAI | 2015 |
+| [Probabilistic Programming](https://neurips.cc/virtual/2015/tutorial/4892) |  |  |  |  |  | :heavy_check_mark: | NeurIPS | 2015 |
+| [Bayesian Posterior Inference in the Big Data Arena: An introduction to probabilistic programming](https://icml.cc/2014/index/article/17.htm)|  | :heavy_check_mark: |  |  |  |  |ICML | 2014|
+| [Approximate Bayesian Computation (ABC)](https://neurips.cc/virtual/2013/tutorial/3686)|  | :heavy_check_mark: |  |  |  |  | NeurIPS | 2013|
