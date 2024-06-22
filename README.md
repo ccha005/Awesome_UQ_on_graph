@@ -220,16 +220,18 @@ ID | Paper Titles | Venues | Years
 <table>
     <thead>
         <tr>
-            <th>Layer 1</th>
-            <th>Layer 2</th>
-            <th>Layer 3</th>
+            <th>Method</th>
+            <th>Model</th>
+            <th>Algorithm</th>
+            <th>Codelink</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td rowspan=4>L1 Name</td>
-            <td rowspan=2>L2 Name A</td>
-            <td>L3 Name A</td>
+            <td rowspan=4>Bayesian Method</td>
+            <td rowspan=2>General Model</td>
+            <td>VAEs</td>
+            <td><a href="https://github.com/AntixK/PyTorch-VAE" style="display:block;">&nbsp;</a></td>
         </tr>
         <tr>
             <td>L3 Name B</td>
