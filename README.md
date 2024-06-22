@@ -347,3 +347,34 @@ ID | Paper Titles | Venues | Years
         </tr>
     </tbody>
 </table>
+
+## Tutorial
+| Tutorial | G | Bayes | CP | Cal | OOD | Others | Venues | Year |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| [Graph Learning: Principles, Challenges, and Open Directions](https://icml.cc/virtual/2024/tutorial/35233) | :heavy_check_mark: |  |  |  |  |  | ICML | 2024 |
+| [Formalizing Robustness in Neural Networks: Explainability, Uncertainty, and Intervenability](https://alregib.ece.gatech.edu/aaai-2024-tutorial/) |  |  |  |  | :heavy_check_mark: |  | AAAI | 2024 |
+| [Distribution-Free Predictive Uncertainty Quantification: Strengths and Limits of Conformal Prediction](https://icml.cc/virtual/2024/tutorial/35231) |  |  | :heavy_check_mark: |  |  |  | ICML | 2024 |
+| [Distribution-Free Predictive Uncertainty Quantification: Strengths and Limits of Conformal Prediction ](/) |  |  | :heavy_check_mark: |  |  |  | UAI | 2024 |
+| [Graph Neural Networks: Foundation, Frontiers and Applications](https://graph-neural-networks.github.io/tutorial_kdd23.html) | :heavy_check_mark: |  |  |  |  |  | KDD | 2023 |
+| [Large-Scale Graph Neural Networks: The Past and New Frontiers](https://dl.acm.org/doi/10.1145/3580305.3599565) | :heavy_check_mark: |  |  |  |  |  | KDD | 2023 |
+| [Hyperbolic Graph Neural Networks: A Tutorial on Methods and Applications](https://dl.acm.org/doi/10.1145/3580305.3599562) | :heavy_check_mark: |  |  |  |  |  | KDD | 2023 |
+| [Fairness in Graph Machine Learning: Recent Advances and Future Prospectives](https://dl.acm.org/doi/10.1145/3580305.3599555) | :heavy_check_mark: |  |  |  |  |  | KDD | 2023 |
+| [Graph Neural Networks: Foundation, Frontiers and Applications](https://graph-neural-networks.github.io/tutorial_aaai23.html) | :heavy_check_mark: |  |  |  |  |  | AAAI | 2023 |
+| [Temporal Graph Mining for Fraud Detection](https://mtcazzolato.github.io/tutorial-icdm23/) | :heavy_check_mark: |  |  |  |  |  | ICDM | 2023 |
+| [Recent Advances in Bayesian Optimization](https://bayesopt-tutorial.github.io/) |  | :heavy_check_mark: |  |  |  |  | AAAI | 2023 |
+| [Uncertainty Quantification in Deep Learning](https://lingkai-kong.com/kdd23_tutorial/) |  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |  | KDD | 2023 |
+| [Modeling and Exploiting Data Heterogeneity under Distribution Shifts](https://neurips.cc/virtual/2023/tutorial/73953) |  |  |  |  | :heavy_check_mark: |  | NeurIPS | 2023 |
+| [Trustworthy Graph Learning: Reliability, Explainability, and Privacy Protection](https://ai.tencent.com/ailab/ml/twgl/) | :heavy_check_mark: |  |  |  |  |  | KDD | 2022 |
+| [Algorithmic Fairness on Graphs: Methods and Trends](https://dl.acm.org/doi/abs/10.1145/3534678.3542599) | :heavy_check_mark: |  |  |  |  |  | KDD | 2022 |
+| [Automated Learning from Graph-Structured Data](https://quanmingyao.github.io/AutoML.github.io/aaai22-tutorial.html) | :heavy_check_mark: |  |  |  |  |  | AAAI | 2022 |
+| [Fairness in Graph Mining: Metrics, Algorithms, and Applications](https://yushundong.github.io/ICDM_2022_tutorial.html) | :heavy_check_mark: |  |  |  |  |  | ICDM | 2022 |
+| [Advances in Bayesian Optimization](https://neurips.cc/virtual/2022/tutorial/55806) |  | :heavy_check_mark: |  |  |  |  | NeurIPS | 2022 |
+| [Bayesian Optimization: From Foundations to Advanced Topics](https://bayesopt-tutorial.github.io/syllabus/combined.pdf) |  | :heavy_check_mark: |  |  |  |  | AAAI | 2022 |
+| [Sampling as First-Order Optimization over a space of probability measures ](https://icml.cc/virtual/2022/tutorial/18437) |  |  |  |  |  |  | ICML | 2022 |
+| [Probabilistic Circuits: Representations, Inference, Learning and Applications](https://neurips.cc/virtual/2022/tutorial/55809) |  |  |  |  |  | :heavy_check_mark: | NeurIPS | 2022 |
+| [Graph Representation Learning: Foundations, Methods, Applications and Systems](https://kdd2021graph.github.io/) | :heavy_check_mark: |  |  |  |  |  | KDD | 2021 |
+| [Toward Explainable Deep Anomaly Detection](https://dl.acm.org/doi/10.1145/3447548.3470794) |  |  |  |  | :heavy_check_mark: |  | KDD | 2021 |
+| [The Art of Gaussian Processes: Classical and Contemporary](https://neurips.cc/virtual/2021/tutorial/21890) |  | :heavy_check_mark: |  |  |  |  | NeurIPS | 2021 |
+| [On Calibration and Out-of-Domain Generalization](https://iclr.cc/virtual/2021/3912) |  |  |  | :heavy_check_mark: | :heavy_check_mark: |  | ICLR | 2021 |
+| [Deep Graph Learning: Foundations, Advances and Applications](https://ai.tencent.com/ailab/ml/KDD-Deep-Graph-Learning.html) | :heavy_check_mark: |  |  |  |  |  | KDD | 2020 |
+| [Differential Deep Learning on Graphs and its Applications](?http://www.calvinzang.com/DDLG_AAAI_2020.html) | :heavy_check_mark: |  | 
