@@ -228,20 +228,161 @@ ID | Paper Titles | Venues | Years
     </thead>
     <tbody>
         <tr>
-            <td rowspan=4>Bayesian Method</td>
+            <td rowspan=14>Bayesian Method</td>
             <td rowspan=2>General Model</td>
             <td>VAEs</td>
-            <td><a href="https://github.com/AntixK/PyTorch-VAE">&nbsp;</a></td>
+            <td><a href="https://github.com/AntixK/PyTorch-VAE">Link</a></td>
         </tr>
         <tr>
-            <td>L3 Name B</td>
+            <td>BNNs</td>
+            <td><a href="https://github.com/Harry24k/bayesian-neural-network-pytorch">Link</a></td>
         </tr>
         <tr>
-            <td rowspan=2>L2 Name B</td>
-            <td>L3 Name C</td>
+            <td rowspan=12>Graphic Model</td>
+            <td>NETCONF</td>
+            <td><a href="https://dhivyaeswaran.github.io/code/netconf.zip">Link</a></td>
         </tr>
         <tr>
-            <td>L3 Name D</td>
+            <td>GPN</td>
+            <td><a href="https://www.daml.in.tum.de/graph-postnet">Link</a></td>
+        </tr>
+        <tr>
+          <td>VGAE</td>
+          <td><a href="https://github.com/tkipf/gae">Link</a></td>
+        </tr>
+        <tr>
+            <td>DGVAE</td>
+            <td><a href="https://github.com/xiyou3368/DGVAE">Link</a></td>
+        </tr>
+        <tr>
+            <td>SIG-VAE</td>
+            <td><a href="https://github.com/sigvae/SIGraphVAE">Link</a></td>
+        </tr>
+        <tr>
+            <td>VGNAE</td>
+            <td><a href="https://github.com/SeongJinAhn/VGNAE">Link</a></td>
+        </tr>
+        <tr>
+            <td>Graphite</td>
+            <td><a href="https://github.com/ermongroup/graphite">Link</a></td>
+        </tr>
+        <tr>
+            <td>VGRNN</td>
+            <td><a href="https://github.com/VGraphRNN/VGRNN">Link</a></td>
+        </tr>
+        <tr>
+            <td>Bayesian GCNN</td>
+            <td><a href="https://github.com/huawei-noah/BGCN">Link</a></td>
+        </tr>
+        <tr>
+            <td>Bayesian GCNN (node copying)</td>
+            <td><a href="https://github.com/floregol/BGCN_copying">Link</a></td>
+        </tr>
+        <tr>
+            <td>S-BGCN-T-K</td>
+            <td><a href="https://github.com/zxj32/uncertainty-GNN">Link</a></td>
+        </tr>
+        <tr>
+            <td>VGCN</td>
+            <td><a href="https://github.com/ebonilla/VGCN">Link</a></td>
+        </tr>
+        <tr>
+            <td rowspan=13>Conformal Prediction</td>
+            <td rowspan=9>General Model</td>
+            <td>CPCS</td>
+            <td><a href="https://github.com/ryantibs/conformal/tree/master/tibshirani2019">Link</a></td>
+        </tr>
+        <tr>
+            <td>CQR</td>
+            <td><a href="https://github.com/yromano/cqr">Code</a></td>
+        </tr>
+        <tr>
+            <td>APS</td>
+            <td><a href="https://github.com/msesia/arc">Code</a></td>
+        </tr>
+        <tr>
+            <td>conformalbayes</td>
+            <td><a href="https://github.com/CoryMcCartan/conformalbayes">Code</a></td>
+        </tr>
+        <tr>
+            <td>EnbPI</td>
+            <td><a href="https://github.com/hamrel-cxu/EnbPI">Code</a></td>
+        </tr>
+        <tr>
+            <td>CP with Missing Values</td>
+            <td><a href="https://github.com/mzaffran/ConformalPredictionMissingValues">Code</a></td>
+        </tr>
+        <tr>
+            <td>LCP</td>
+            <td><a href="https://github.com/LeyingGuan/LCP">Code</a></td>
+        </tr>
+        <tr>
+            <td>stabCP</td>
+            <td><a href="https://github.com/EugeneNdiaye/stable_conformal_prediction">Code</a></td>
+        </tr>
+        <tr>
+            <td>OQR</td>
+            <td><a href="https://github.com/Shai128/oqr">Code</a></td>
+        </tr>
+        <tr>
+            <td rowspan=4>Graphic Model</td>
+            <td>NAPS</td>
+            <td><a href="https://github.com/jase-clarkson/graph_cp">Code</a></td>
+        </tr>
+        <tr>
+            <td>DAPS</td>
+            <td><a href="https://github.com/soroushzargar/DAPS">Code</a></td>
+        </tr>
+        <tr>
+            <td>CF-GNN</td>
+            <td><a href="https://github.com/snap-stanford/conformalized-gnn">Code</a></td>
+        </tr>
+        <tr>
+            <td>JuryGCN</td>
+            <td><a href="https://github.com/BlueWhaleZhou/JuryGCN_UQ">Code</a></td>
+        </tr>
+        <tr>
+            <td rowspan=10>Calibration</td>
+            <td rowspan=5>General Model</td>
+            <td>Dirichlet Calibration</td>
+            <td><a href="https://github.com/dirichletcal/dirichletcal.github.io">Link</a></td>
+        </tr>
+        <tr>
+            <td>Calibrated Regression</td>
+            <td><a href="https://github.com/AnthonyRentsch/calibrated_regression?tab=readme-ov-file">Code</a></td>
+        </tr>
+        <tr>
+            <td>Focal Calibration</td>
+            <td><a href="https://github.com/torrvision/focal_calibration">Code</a></td>
+        </tr>
+        <tr>
+            <td>Label Smoothing</td>
+            <td><a href="https://github.com/seominseok0429/label-smoothing-visualization-pytorch">Code</a></td>
+        </tr>
+        <tr>
+            <td>Spline Calibration</td>
+            <td><a href="https://github.com/kartikgupta-at-anu/spline-calibration">Code</a></td>
+        </tr>
+        <tr>
+            <td rowspan=5>Graphic Model</td>
+            <td>G-&Delta;UQ</td>
+            <td><a href="https://github.com/pujacomputes/gduq">Link</a></td>
+        </tr>
+        <tr>
+            <td>CaGCN</td>
+            <td><a href="https://github.com/BUPT-GAMMA/CaGCN">Code</a></td>
+        </tr>
+        <tr>
+            <td>GATS</td>
+            <td><a href="https://github.com/hans66hsu/GATS">Code</a></td>
+        </tr>
+        <tr>
+            <td>RBS</td>
+            <td><a href="https://github.com/liu-yushan/calGNN">Code</a></td>
+        </tr>
+        <tr>
+            <td>HyperU-GCN</td>
+            <td><a href="https://github.com/xyang2316/HyperU-GCN">Code</a></td>
         </tr>
     </tbody>
 </table>
