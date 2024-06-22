@@ -176,5 +176,43 @@ ID | Paper Titles | Venues | Years
 [S2](https://ieeexplore.ieee.org/document/8917207) | Calibrating Uncertainty Models for Steering Angle Estimation | ITSC | 2019
 [S1](https://www.sciencedirect.com/science/article/pii/S0888327023007045) | Uncertainty Quantification in Machine Learning for Engineering Design and Health Prognostics: A Tutorial | MSSP | 2015
 
-## Benchmark
-
+## Open-Source Code
+| Method | Model | Method | Code Link |
+|--------|-------|--------|-----------|
+| Bayesian Method | General Model | VAEs | [Code](https://github.com/AntixK/PyTorch-VAE) |
+|          |           | BNNs | [Code](https://github.com/Harry24k/bayesian-neural-network-pytorch) |
+|          | Graphic Model | NETCONF | [Code](https://dhivyaeswaran.github.io/code/netconf.zip) |
+|          |           | GPN | [Code](https://www.daml.in.tum.de/graph-postnet) |
+|          |           | VGAE | [Code](https://github.com/tkipf/gae) |
+|          |           | DGVAE | [Code](https://github.com/xiyou3368/DGVAE) |
+|          |           | SIG-VAE | [Code](https://github.com/sigvae/SIGraphVAE) |
+|          |           | VGNAE | [Code](https://github.com/SeongJinAhn/VGNAE) |
+|          |           | Graphite | [Code](https://github.com/ermongroup/graphite) |
+|          |           | VGRNN  | [Code](https://github.com/VGraphRNN/VGRNN) |
+|          |           | Bayesian GCNN  | [Code](https://github.com/huawei-noah/BGCN) |
+|          |           | Bayesian GCNN (node copying) | [Code](https://github.com/floregol/BGCN_copying) |
+|          |           | S-BGCN-T-K | [Code](https://github.com/zxj32/uncertainty-GNN) |
+|          |           | VGCN | [Code](https://github.com/ebonilla/VGCN) |
+| Conformal Prediction | General Model | CPCS | [Code](https://github.com/jase-clarkson/graph_cp) |
+|          |           | CQR | [Code](https://github.com/yromano/cqr) |
+|          |           | APS | [Code](https://github.com/msesia/arc) |
+|          |           | conformalbayes | [Code](https://github.com/CoryMcCartan/conformalbayes) |
+|          |           | EnbPI | [Code](https://github.com/hamrel-cxu/EnbPI) |
+|          |           | CP with Missing Values | [Code](https://github.com/mzaffran/ConformalPredictionMissingValues) |
+|          |           | LCP | [Code](https://github.com/LeyingGuan/LCP) |
+|          |           | stabCP | [Code](https://github.com/EugeneNdiaye/stable_conformal_prediction) |
+|          |           | OQR | [Code](https://github.com/Shai128/oqr) |
+|          | Graphic Model | NAPS | [Code](https://github.com/jase-clarkson/graph_cp) |
+|          |           | DAPS  | [Code](https://github.com/soroushzargar/DAPS) |
+|          |           | CF-GNN  | [Code](https://github.com/snap-stanford/conformalized-gnn) |
+|          |           | JuryGCN  | [Code](https://github.com/BlueWhaleZhou/JuryGCN_UQ) |
+| Calibration | General Model | Dirichlet Calibration | [Code](https://github.com/dirichletcal/dirichletcal.github.io) |
+|          |           | Calibrated Regression | [Code](https://github.com/AnthonyRentsch/calibrated_regression?tab=readme-ov-file) |
+|          |           | Focal Calibration  | [Code](https://github.com/torrvision/focal_calibration) |
+|          |           | Label Smoothing  | [Code](https://github.com/seominseok0429/label-smoothing-visualization-pytorch) |
+|          |           | Spline Calibration  | [Code](https://github.com/kartikgupta-at-anu/spline-calibration) |
+|          | Graphic Model | G-$\Delta$UQ  | [Code](https://github.com/pujacomputes/gduq) |
+|          |           | CaGCN  | [Code](https://github.com/BUPT-GAMMA/CaGCN) |
+|          |           | GATS | [Code](https://github.com/hans66hsu/GATS) |
+|          |           | RBS  | [Code](https://github.com/liu-yushan/calGNN) |
+|          |           | HyperU-GCN  | [Code](https://github.com/xyang2316/HyperU-GCN) |
