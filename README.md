@@ -231,7 +231,7 @@ ID | Paper Titles | Venues | Years
             <td rowspan=4>Bayesian Method</td>
             <td rowspan=2>General Model</td>
             <td>VAEs</td>
-            <td><a href="https://github.com/AntixK/PyTorch-VAE" style="display:block;">&nbsp;</a></td>
+            <td><a href="https://github.com/AntixK/PyTorch-VAE">&nbsp;</a></td>
         </tr>
         <tr>
             <td>L3 Name B</td>
