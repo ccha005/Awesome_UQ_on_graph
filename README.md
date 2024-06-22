@@ -406,3 +406,6 @@ ID | Paper Titles | Venues | Years
 | [Probabilistic Programming](https://neurips.cc/virtual/2015/tutorial/4892) |  |  |  |  |  | :heavy_check_mark: | NeurIPS | 2015 |
 | [Bayesian Posterior Inference in the Big Data Arena: An introduction to probabilistic programming](https://icml.cc/2014/index/article/17.htm)|  | :heavy_check_mark: |  |  |  |  |ICML | 2014|
 | [Approximate Bayesian Computation (ABC)](https://neurips.cc/virtual/2013/tutorial/3686)|  | :heavy_check_mark: |  |  |  |  | NeurIPS | 2013|
+| [Exact Approximate Learning](https://neurips.cc/virtual/2012/tutorial/3133)||  |  |  |  | :heavy_check_mark: | NeurIPS | 2012|
+| [Linear Programming Relaxations for Graphical Models](https://neurips.cc/virtual/2011/tutorial/2509)|:heavy_check_mark: |  |  |  |  |  | NeurIPS | 2011|
+| [Modern Bayesian Nonparametrics](https://neurips.cc/virtual/2011/tutorial/2506)|| :heavy_check_mark: |  |  |  |  | NeurIPS | 2011|
