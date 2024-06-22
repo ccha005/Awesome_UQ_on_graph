@@ -177,45 +177,6 @@ ID | Paper Titles | Venues | Years
 [S1](https://www.sciencedirect.com/science/article/pii/S0888327023007045) | Uncertainty Quantification in Machine Learning for Engineering Design and Health Prognostics: A Tutorial | MSSP | 2015
 
 ## Open-Source Code
-| Method | Model | Method | Code Link |
-|--------|-------|--------|-----------|
-| Bayesian Method | General Model | VAEs | [Code](https://github.com/AntixK/PyTorch-VAE) |
-|          |           | BNNs | [Code](https://github.com/Harry24k/bayesian-neural-network-pytorch) |
-|          | Graphic Model | NETCONF | [Code](https://dhivyaeswaran.github.io/code/netconf.zip) |
-|          |           | GPN | [Code](https://www.daml.in.tum.de/graph-postnet) |
-|          |           | VGAE | [Code](https://github.com/tkipf/gae) |
-|          |           | DGVAE | [Code](https://github.com/xiyou3368/DGVAE) |
-|          |           | SIG-VAE | [Code](https://github.com/sigvae/SIGraphVAE) |
-|          |           | VGNAE | [Code](https://github.com/SeongJinAhn/VGNAE) |
-|          |           | Graphite | [Code](https://github.com/ermongroup/graphite) |
-|          |           | VGRNN  | [Code](https://github.com/VGraphRNN/VGRNN) |
-|          |           | Bayesian GCNN  | [Code](https://github.com/huawei-noah/BGCN) |
-|          |           | Bayesian GCNN (node copying) | [Code](https://github.com/floregol/BGCN_copying) |
-|          |           | S-BGCN-T-K | [Code](https://github.com/zxj32/uncertainty-GNN) |
-|          |           | VGCN | [Code](https://github.com/ebonilla/VGCN) |
-| Conformal Prediction | General Model | CPCS | [Code](https://github.com/jase-clarkson/graph_cp) |
-|          |           | CQR | [Code](https://github.com/yromano/cqr) |
-|          |           | APS | [Code](https://github.com/msesia/arc) |
-|          |           | conformalbayes | [Code](https://github.com/CoryMcCartan/conformalbayes) |
-|          |           | EnbPI | [Code](https://github.com/hamrel-cxu/EnbPI) |
-|          |           | CP with Missing Values | [Code](https://github.com/mzaffran/ConformalPredictionMissingValues) |
-|          |           | LCP | [Code](https://github.com/LeyingGuan/LCP) |
-|          |           | stabCP | [Code](https://github.com/EugeneNdiaye/stable_conformal_prediction) |
-|          |           | OQR | [Code](https://github.com/Shai128/oqr) |
-|          | Graphic Model | NAPS | [Code](https://github.com/jase-clarkson/graph_cp) |
-|          |           | DAPS  | [Code](https://github.com/soroushzargar/DAPS) |
-|          |           | CF-GNN  | [Code](https://github.com/snap-stanford/conformalized-gnn) |
-|          |           | JuryGCN  | [Code](https://github.com/BlueWhaleZhou/JuryGCN_UQ) |
-| Calibration | General Model | Dirichlet Calibration | [Code](https://github.com/dirichletcal/dirichletcal.github.io) |
-|          |           | Calibrated Regression | [Code](https://github.com/AnthonyRentsch/calibrated_regression?tab=readme-ov-file) |
-|          |           | Focal Calibration  | [Code](https://github.com/torrvision/focal_calibration) |
-|          |           | Label Smoothing  | [Code](https://github.com/seominseok0429/label-smoothing-visualization-pytorch) |
-|          |           | Spline Calibration  | [Code](https://github.com/kartikgupta-at-anu/spline-calibration) |
-|          | Graphic Model | G-$\Delta$UQ  | [Code](https://github.com/pujacomputes/gduq) |
-|          |           | CaGCN  | [Code](https://github.com/BUPT-GAMMA/CaGCN) |
-|          |           | GATS | [Code](https://github.com/hans66hsu/GATS) |
-|          |           | RBS  | [Code](https://github.com/liu-yushan/calGNN) |
-|          |           | HyperU-GCN  | [Code](https://github.com/xyang2316/HyperU-GCN) |
 
 <table>
     <thead>
@@ -294,52 +255,52 @@ ID | Paper Titles | Venues | Years
         </tr>
         <tr>
             <td>CQR</td>
-            <td><a href="https://github.com/yromano/cqr">Code</a></td>
+            <td><a href="https://github.com/yromano/cqr">Link</a></td>
         </tr>
         <tr>
             <td>APS</td>
-            <td><a href="https://github.com/msesia/arc">Code</a></td>
+            <td><a href="https://github.com/msesia/arc">Link</a></td>
         </tr>
         <tr>
             <td>conformalbayes</td>
-            <td><a href="https://github.com/CoryMcCartan/conformalbayes">Code</a></td>
+            <td><a href="https://github.com/CoryMcCartan/conformalbayes">Link</a></td>
         </tr>
         <tr>
             <td>EnbPI</td>
-            <td><a href="https://github.com/hamrel-cxu/EnbPI">Code</a></td>
+            <td><a href="https://github.com/hamrel-cxu/EnbPI">Link</a></td>
         </tr>
         <tr>
             <td>CP with Missing Values</td>
-            <td><a href="https://github.com/mzaffran/ConformalPredictionMissingValues">Code</a></td>
+            <td><a href="https://github.com/mzaffran/ConformalPredictionMissingValues">Link</a></td>
         </tr>
         <tr>
             <td>LCP</td>
-            <td><a href="https://github.com/LeyingGuan/LCP">Code</a></td>
+            <td><a href="https://github.com/LeyingGuan/LCP">Link</a></td>
         </tr>
         <tr>
             <td>stabCP</td>
-            <td><a href="https://github.com/EugeneNdiaye/stable_conformal_prediction">Code</a></td>
+            <td><a href="https://github.com/EugeneNdiaye/stable_conformal_prediction">Link</a></td>
         </tr>
         <tr>
             <td>OQR</td>
-            <td><a href="https://github.com/Shai128/oqr">Code</a></td>
+            <td><a href="https://github.com/Shai128/oqr">Link</a></td>
         </tr>
         <tr>
             <td rowspan=4>Graphic Model</td>
             <td>NAPS</td>
-            <td><a href="https://github.com/jase-clarkson/graph_cp">Code</a></td>
+            <td><a href="https://github.com/jase-clarkson/graph_cp">Link</a></td>
         </tr>
         <tr>
             <td>DAPS</td>
-            <td><a href="https://github.com/soroushzargar/DAPS">Code</a></td>
+            <td><a href="https://github.com/soroushzargar/DAPS">Link</a></td>
         </tr>
         <tr>
             <td>CF-GNN</td>
-            <td><a href="https://github.com/snap-stanford/conformalized-gnn">Code</a></td>
+            <td><a href="https://github.com/snap-stanford/conformalized-gnn">Link</a></td>
         </tr>
         <tr>
             <td>JuryGCN</td>
-            <td><a href="https://github.com/BlueWhaleZhou/JuryGCN_UQ">Code</a></td>
+            <td><a href="https://github.com/BlueWhaleZhou/JuryGCN_UQ">Link</a></td>
         </tr>
         <tr>
             <td rowspan=10>Calibration</td>
@@ -349,19 +310,19 @@ ID | Paper Titles | Venues | Years
         </tr>
         <tr>
             <td>Calibrated Regression</td>
-            <td><a href="https://github.com/AnthonyRentsch/calibrated_regression?tab=readme-ov-file">Code</a></td>
+            <td><a href="https://github.com/AnthonyRentsch/calibrated_regression?tab=readme-ov-file">Link</a></td>
         </tr>
         <tr>
             <td>Focal Calibration</td>
-            <td><a href="https://github.com/torrvision/focal_calibration">Code</a></td>
+            <td><a href="https://github.com/torrvision/focal_calibration">Link</a></td>
         </tr>
         <tr>
             <td>Label Smoothing</td>
-            <td><a href="https://github.com/seominseok0429/label-smoothing-visualization-pytorch">Code</a></td>
+            <td><a href="https://github.com/seominseok0429/label-smoothing-visualization-pytorch">Link</a></td>
         </tr>
         <tr>
             <td>Spline Calibration</td>
-            <td><a href="https://github.com/kartikgupta-at-anu/spline-calibration">Code</a></td>
+            <td><a href="https://github.com/kartikgupta-at-anu/spline-calibration">Link</a></td>
         </tr>
         <tr>
             <td rowspan=5>Graphic Model</td>
@@ -370,19 +331,19 @@ ID | Paper Titles | Venues | Years
         </tr>
         <tr>
             <td>CaGCN</td>
-            <td><a href="https://github.com/BUPT-GAMMA/CaGCN">Code</a></td>
+            <td><a href="https://github.com/BUPT-GAMMA/CaGCN">Link</a></td>
         </tr>
         <tr>
             <td>GATS</td>
-            <td><a href="https://github.com/hans66hsu/GATS">Code</a></td>
+            <td><a href="https://github.com/hans66hsu/GATS">Link</a></td>
         </tr>
         <tr>
             <td>RBS</td>
-            <td><a href="https://github.com/liu-yushan/calGNN">Code</a></td>
+            <td><a href="https://github.com/liu-yushan/calGNN">Link</a></td>
         </tr>
         <tr>
             <td>HyperU-GCN</td>
-            <td><a href="https://github.com/xyang2316/HyperU-GCN">Code</a></td>
+            <td><a href="https://github.com/xyang2316/HyperU-GCN">Link</a></td>
         </tr>
     </tbody>
 </table>
