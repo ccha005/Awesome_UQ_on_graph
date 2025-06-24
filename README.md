@@ -1,7 +1,28 @@
-# Awesome_UQ_on_graph
-This repository contains research papers and surveys that are relevant to **Uncertainty Quantification**, especially those on **Graphs**.
+# 📘 Awesome UQ on Graph
 
-## Research Papers
+A curated compilation of resources—papers, tools, tutorials, and code—for **Uncertainty Quantification (UQ)** in graph learning frameworks, including both **Graph Neural Networks (GNNs)** and **Probabilistic Graphical Models (PGMs)**.
+
+---
+
+## 🎓 Featured Preprint
+
+**Uncertainty Quantification on Graph Learning: A Survey**  
+_Chao Chen, Chenghua Guo, Rui Xu, Xiangwen Liao, Xi Zhang, Sihong Xie, Hui Xiong, Philip Yu_  
+Link: [https://arxiv.org/abs/2404.14642](https://arxiv.org/abs/2404.14642)
+
+
+This comprehensive survey dives into:
+
+- **Sources of uncertainty** — aleatoric vs epistemic; stemming from data, model, or inference.
+- **Techniques for representation** — Bayesian learning, Gaussian Process models, Dirichlet priors, and more.
+- **Handling methods** — calibration (e.g. temperature scaling), conformal prediction, adversarial robustness strategies.
+- **Evaluation protocols** — calibration metrics, coverage-based assessments.
+- **Use cases** in safety-critical areas like healthcare and autonomous driving. 
+
+---
+
+
+## 📚 Research Papers
 
 ### UQ on Machine Learning
 
@@ -163,7 +184,7 @@ ID | Paper Titles | Venues | Years
 [DG1](http://arxiv.org/abs/2006.04131) | Deep graph contrastive representation learning | ICML Workshop | 2020
 
 
-## Survey Papers
+## 📑 Survey Papers
 
 ### UQ on Machine Learning
 ID | Paper Titles | Venues | Years 
@@ -176,7 +197,7 @@ ID | Paper Titles | Venues | Years
 [S2](https://ieeexplore.ieee.org/document/8917207) | Calibrating Uncertainty Models for Steering Angle Estimation | ITSC | 2019
 [S1](https://www.sciencedirect.com/science/article/pii/S0888327023007045) | Uncertainty Quantification in Machine Learning for Engineering Design and Health Prognostics: A Tutorial | MSSP | 2015
 
-## Open-Source Code
+## ⚙ Open-Source Code
 
 <table>
     <thead>
@@ -348,7 +369,7 @@ ID | Paper Titles | Venues | Years
     </tbody>
 </table>
 
-## Tutorial
+## 📃 Tutorial
 | Tutorial | Graphic Model | Bayes | CP | Cal | OOD | Others | Venues | Year |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | [Graph Learning: Principles, Challenges, and Open Directions](https://icml.cc/virtual/2024/tutorial/35233) | :heavy_check_mark: |  |  |  |  |  | ICML | 2024 |
@@ -409,3 +430,15 @@ ID | Paper Titles | Venues | Years
 | [Exact Approximate Learning](https://neurips.cc/virtual/2012/tutorial/3133)||  |  |  |  | :heavy_check_mark: | NeurIPS | 2012|
 | [Linear Programming Relaxations for Graphical Models](https://neurips.cc/virtual/2011/tutorial/2509)|:heavy_check_mark: |  |  |  |  |  | NeurIPS | 2011|
 | [Modern Bayesian Nonparametrics](https://neurips.cc/virtual/2011/tutorial/2506)|| :heavy_check_mark: |  |  |  |  | NeurIPS | 2011|
+
+## 📢 Citation
+
+If you find this repository helpful, please consider citing our survey:
+
+<pre><code>@article{chen2024uncertainty,
+  title={Uncertainty Quantification on Graph Learning: A Survey},
+  author={Chen, Chao and Guo, Chenghua and Xu, Rui and Liao, Xiangwen and Zhang, Xi and Xie, Sihong and Xiong, Hui and Yu, Philip},
+  journal={arXiv preprint arXiv:2404.14642},
+  year={2024}
+}
+</code></pre>
